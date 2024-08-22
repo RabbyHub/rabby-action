@@ -78,7 +78,6 @@ export type WalletProvider = {
     chainId: number,
     nonce: number
   ) => Promise<any[]>;
-  // TODO: move findChain to a separate file
   findChain: (params: {
     enum?: CHAINS_ENUM | string | null;
     id?: number | null;
@@ -86,6 +85,5 @@ export type WalletProvider = {
     hex?: string | null;
     networkId?: string | null;
   }) => Chain | null | undefined;
-  // TODO: move ALIAS_ADDRESS to a separate file
   ALIAS_ADDRESS: Record<string, string>;
 };

@@ -44,7 +44,7 @@ interface BatchPermit2ActionData extends BatchPermit2Action {
   sig_expire_at: number | undefined;
 }
 
-type ParsedTransactionActionData = {
+export type ParsedTransactionActionData = {
   swap?: {
     payToken: TokenItem;
     receiveToken: ReceiveTokenItem;
@@ -126,7 +126,7 @@ type ParsedTransactionActionData = {
   };
 };
 
-type ParsedTypedDataActionData = {
+export type ParsedTypedDataActionData = {
   chainId?: string;
   brand?: {
     logo_url: string;

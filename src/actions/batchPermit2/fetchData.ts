@@ -3,7 +3,7 @@ import {
   BatchApproveTokenRequireData,
   FetchActionRequiredData,
 } from '../../types';
-import { waitQueueFinished } from '../../../utils';
+import { waitQueueFinished } from '../../utils/waitQueueFinished';
 
 export const fetchDataBatchPermit2: FetchActionRequiredData = async (
   options
