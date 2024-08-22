@@ -7,6 +7,7 @@ export type FormatSecurityEngineContextParameters =
       type: 'transaction';
       actionData: ParsedActionData<'transaction'>;
       requireData: ActionRequireData;
+      isTestnet: boolean;
       chainId?: string;
       provider: {
         getTimeSpan: (time: number) => {
@@ -22,6 +23,7 @@ export type FormatSecurityEngineContextParameters =
       type: 'typed_data';
       actionData: ParsedActionData<'typed_data'>;
       requireData?: ActionRequireData;
+      isTestnet: boolean;
       chainId?: string;
       origin: string;
       provider: {
