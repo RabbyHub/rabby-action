@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContractCall -> Transaction: fetchDataContractCall 1`] = `
+{
+  "bornAt": 0,
+  "call": {
+    "contract": {
+      "id": "0x1111111254eeb25477b68fb85ed929f73a960582",
+      "protocol": {
+        "logo_url": "https://static.debank.com/image/project/logo_url/1inch2/a4fcc0d0e8daddd0313ad14172e11aff.png",
+        "name": "1inch",
+      },
+    },
+    "func": "",
+  },
+  "contract": {},
+  "hasInteraction": true,
+  "id": "0x1111111254eeb25477b68fb85ed929f73a960582",
+  "nativeTokenSymbol": "ETH",
+  "payNativeTokenAmount": "0x165cd59da18c9eb",
+  "protocol": null,
+  "rank": 65,
+  "receiverInWallet": false,
+  "unexpectedAddr": null,
+}
+`;
+
+exports[`ContractCall -> Transaction: formatSecurityEngineContractCall 1`] = `
+{
+  "contractCall": {
+    "chainId": "eth",
+    "id": "0x1111111254eeb25477b68fb85ed929f73a960582",
+  },
+}
+`;
+
+exports[`ContractCall -> Transaction: parseActionContractCall 1`] = `
+{
+  "contractCall": {},
+}
+`;
+
+exports[`ContractCall -> TypedData: fetchDataContractCall 1`] = `{}`;
+
+exports[`ContractCall -> TypedData: formatSecurityEngineContractCall 1`] = `
+{
+  "contractCall": {
+    "chainId": "eth",
+    "id": undefined,
+  },
+}
+`;
+
+exports[`ContractCall -> TypedData: parseActionContractCall 1`] = `
+{
+  "actionType": null,
+  "brand": undefined,
+  "chainId": 1,
+  "contractCall": {},
+  "contractId": "0xcccccccccccccccccccccccccccccccccccccccc",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;

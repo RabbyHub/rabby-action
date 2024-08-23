@@ -16,7 +16,7 @@ import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
  * https://extension-tests.revoke.cash/
  * [Seaport v1] button
  */
-test('AssetOrder - typedData', async () => {
+test('AssetOrder -> TypedData', async () => {
   const actionData = parseTypedDataAction(parseActionAssetOrder)({
     type: 'typed_data',
     data: parseTxData['action'],
@@ -47,4 +47,4 @@ test('AssetOrder - typedData', async () => {
   expect(ctx).toMatchSnapshot('formatSecurityEngineAssetOrder');
 });
 
-test.todo('AssetOrder - transaction');
+test.todo('AssetOrder -> Transaction');

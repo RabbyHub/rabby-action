@@ -45,6 +45,7 @@ export const fetchActionRequiredData: FetchActionRequiredData = async (
     fetchDataApproveToken(options),
     fetchDataAssetOrder(options),
     fetchDataCancelTx(options),
+    // @deprecated we don't parse common action data anymore, will be removed in the future
     fetchDataCommon(options),
     fetchDataContractCall(options),
     fetchDataCrossSwapToken(options),

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AssetOrder -> Text: formatSecurityEngineVerifyAddress 1`] = `
+{
+  "verifyAddress": {
+    "allowOrigins": [
+      "https://metamask.github.io",
+    ],
+    "origin": "https://rabby.io",
+  },
+}
+`;
+
+exports[`AssetOrder -> Text: parseActionVerifyAddress 1`] = `
+{
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "verifyAddress": {
+    "allow_origins": [
+      "https://metamask.github.io",
+    ],
+    "desc": "You are verifying address on metamask.github.io",
+    "protocol": null,
+    "user": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  },
+}
+`;

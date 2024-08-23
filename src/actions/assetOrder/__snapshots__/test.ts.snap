@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AssetOrder - typedData: fetchDataAssetOrder 1`] = `
+exports[`AssetOrder -> TypedData: fetchDataAssetOrder 1`] = `
 {
   "bornAt": 1591388241,
   "hasInteraction": true,
@@ -17,7 +17,7 @@ exports[`AssetOrder - typedData: fetchDataAssetOrder 1`] = `
 }
 `;
 
-exports[`AssetOrder - typedData: formatSecurityEngineAssetOrder 1`] = `
+exports[`AssetOrder -> TypedData: formatSecurityEngineAssetOrder 1`] = `
 {
   "assetOrder": {
     "chainId": "eth",
@@ -30,7 +30,7 @@ exports[`AssetOrder - typedData: formatSecurityEngineAssetOrder 1`] = `
 }
 `;
 
-exports[`AssetOrder - typedData: parseActionAssetOrder 1`] = `
+exports[`AssetOrder -> TypedData: parseActionAssetOrder 1`] = `
 {
   "actionType": "swap_order",
   "assetOrder": {
