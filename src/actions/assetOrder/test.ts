@@ -3,32 +3,32 @@ import {
   formatProvider,
   walletProvider,
   SENDER,
-  CHAIN_ID,
+  ETH_CHAIN_ID,
   ORIGIN,
 } from '../../../__mocks__';
-import { ParsedTypedDataActionData } from '../../types';
 import { parseTxData, txData } from './mocks';
 import { parseActionAssetOrder } from './parseAction';
 import { fetchDataAssetOrder } from './fetchData';
 import { formatSecurityEngineAssetOrder } from './formatSecurityEngine';
+import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
 
 /**
  * https://extension-tests.revoke.cash/
  * [Seaport v1] button
  */
 test('AssetOrder - typedData', async () => {
-  const actionData = (await parseActionAssetOrder({
+  const actionData = parseTypedDataAction(parseActionAssetOrder)({
     type: 'typed_data',
     data: parseTxData['action'],
     typedData: txData,
     sender: SENDER,
-  })) as ParsedTypedDataActionData;
+  });
   expect(actionData).toMatchSnapshot('parseActionAssetOrder');
 
   const requireData = await fetchDataAssetOrder({
     type: 'typed_data',
     actionData,
-    chainId: CHAIN_ID,
+    chainId: ETH_CHAIN_ID,
     walletProvider,
     apiProvider,
     sender: SENDER,
@@ -39,7 +39,7 @@ test('AssetOrder - typedData', async () => {
     type: 'typed_data',
     actionData,
     requireData,
-    chainId: CHAIN_ID,
+    chainId: ETH_CHAIN_ID,
     isTestnet: false,
     provider: formatProvider,
     origin: ORIGIN,

@@ -1,6 +1,6 @@
 import {
   apiProvider,
-  CHAIN_ID,
+  ETH_CHAIN_ID,
   formatProvider,
   SENDER,
   walletProvider,
@@ -16,21 +16,21 @@ import { parseActionApproveNFT } from './parseAction';
  * - approve('0x7a250d5630b4cf539739df2c5dacb4c659f2488d', 745)
  */
 test('ApproveNFT', async () => {
-  const actionData = (await parseActionApproveNFT({
+  const actionData = parseActionApproveNFT({
     type: 'transaction',
     data: parseTxData['action'],
     balanceChange: preExecData.balance_change,
     tx: txData,
     preExecVersion: preExecData.pre_exec_version,
     gasUsed: preExecData.gas.gas_used,
-  })) as ParsedTransactionActionData;
+  }) as ParsedTransactionActionData;
   expect(actionData).toMatchSnapshot('parseActionApproveNFT');
 
   const requireData = await fetchDataApproveNFT({
     type: 'transaction',
     actionData,
     contractCall: parseTxData.contract_call,
-    chainId: CHAIN_ID,
+    chainId: ETH_CHAIN_ID,
     sender: SENDER,
     walletProvider,
     tx: txData,
@@ -42,7 +42,7 @@ test('ApproveNFT', async () => {
     type: 'transaction',
     actionData,
     requireData,
-    chainId: CHAIN_ID,
+    chainId: ETH_CHAIN_ID,
     isTestnet: false,
     provider: formatProvider,
   });

@@ -1,6 +1,6 @@
 import {
   apiProvider,
-  CHAIN_ID,
+  ETH_CHAIN_ID,
   formatProvider,
   SENDER,
   walletProvider,
@@ -16,21 +16,21 @@ import { formatSecurityEngineApproveToken } from './formatSecurityEngine';
  * [approve()] button
  */
 test('ApproveToken', async () => {
-  const actionData = (await parseActionApproveToken({
+  const actionData = parseActionApproveToken({
     type: 'transaction',
     data: parseTxData['action'],
     balanceChange: preExecData.balance_change,
     tx: txData,
     preExecVersion: preExecData.pre_exec_version,
     gasUsed: preExecData.gas.gas_used,
-  })) as ParsedTransactionActionData;
+  }) as ParsedTransactionActionData;
   expect(actionData).toMatchSnapshot('parseActionApproveToken');
 
   const requireData = await fetchDataApproveToken({
     type: 'transaction',
     actionData,
     contractCall: parseTxData.contract_call,
-    chainId: CHAIN_ID,
+    chainId: ETH_CHAIN_ID,
     sender: SENDER,
     walletProvider,
     tx: txData,
@@ -42,7 +42,7 @@ test('ApproveToken', async () => {
     type: 'transaction',
     actionData,
     requireData,
-    chainId: CHAIN_ID,
+    chainId: ETH_CHAIN_ID,
     isTestnet: false,
     provider: formatProvider,
   });

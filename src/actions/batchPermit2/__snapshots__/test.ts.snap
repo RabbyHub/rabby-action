@@ -127,6 +127,7 @@ exports[`BatchPermit2: formatSecurityEngineBatchPermit2 1`] = `
 
 exports[`BatchPermit2: parseActionBatchPermit2 1`] = `
 {
+  "actionType": "permit2_approve_token_list",
   "batchPermit2": {
     "expire_at": 1680868093,
     "permit2_id": "0x000000000022d473030f116ddee9f6b43ac78ba3",
@@ -231,5 +232,9 @@ exports[`BatchPermit2: parseActionBatchPermit2 1`] = `
       },
     ],
   },
+  "brand": undefined,
+  "chainId": "1",
+  "contractId": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
 }
 `;

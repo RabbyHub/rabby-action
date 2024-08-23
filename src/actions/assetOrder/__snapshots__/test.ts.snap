@@ -1,14 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AssetOrder - typedData: fetchDataAssetOrder 1`] = `{}`;
+exports[`AssetOrder - typedData: fetchDataAssetOrder 1`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0x00000000006c3852cbef3e08e8df289169ede581",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": false,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "unexpectedAddr": null,
+}
+`;
 
 exports[`AssetOrder - typedData: formatSecurityEngineAssetOrder 1`] = `
 {
   "assetOrder": {
     "chainId": "eth",
-    "from": undefined,
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
     "hasReceiveAssets": true,
-    "id": undefined,
+    "id": "0x00000000006c3852cbef3e08e8df289169ede581",
     "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
     "specificBuyer": undefined,
   },
@@ -17,6 +32,7 @@ exports[`AssetOrder - typedData: formatSecurityEngineAssetOrder 1`] = `
 
 exports[`AssetOrder - typedData: parseActionAssetOrder 1`] = `
 {
+  "actionType": "swap_order",
   "assetOrder": {
     "expireAt": 1661170320,
     "payNFTList": [
@@ -104,5 +120,9 @@ exports[`AssetOrder - typedData: parseActionAssetOrder 1`] = `
     "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
     "takers": [],
   },
+  "brand": undefined,
+  "chainId": "1",
+  "contractId": "0x00000000006c3852cbef3e08e8df289169ede581",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
 }
 `;

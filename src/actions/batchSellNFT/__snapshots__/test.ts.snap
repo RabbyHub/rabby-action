@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BatchSellNFT: fetchDataBatchSellNFT 1`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0x0000000000000068f116a894984e2db1123eb395",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": false,
+  "sender": "0xcb1605ed17f6145db16e26e1d8adfe8f4b175377",
+  "unexpectedAddr": null,
+}
+`;
+
+exports[`BatchSellNFT: formatSecurityEngineBatchSellNFT 1`] = `
+{
+  "batchSellNFT": {
+    "chainId": "eth",
+    "from": "0xcb1605ed17f6145db16e26e1d8adfe8f4b175377",
+    "id": "0x0000000000000068f116a894984e2db1123eb395",
+    "receiveTokenHasFake": false,
+    "receiveTokenHasScam": false,
+    "receiver": "0xcb1605ed17f6145db16e26e1d8adfe8f4b175377",
+    "specificBuyer": undefined,
+  },
+}
+`;
+
+exports[`BatchSellNFT: parseActionBatchSellNFT 1`] = `
+{
+  "actionType": "sell_nft_list_order",
+  "batchSellNFT": {
+    "expire_at": 1727002657,
+    "pay_nft_list": [
+      {
+        "amount": 1,
+        "attributes": [],
+        "chain": "eth",
+        "collection": {
+          "chain": "eth",
+          "credit_score": null,
+          "description": null,
+          "floor_price": 0.045,
+          "id": "eth:0x83a79fb0a10a6fe6d4d46bff3cf0ffff75e9549e",
+          "is_core": true,
+          "is_scam": false,
+          "is_suspicious": false,
+          "is_verified": true,
+          "logo_url": "https://static.debank.com/image/nft_collection/logo_url/metaplaces-world/c5a6675dfd6e670c9a5bb3c53527733e.png",
+          "name": "Metaplaces World",
+        },
+        "collection_id": "eth:0x83a79fb0a10a6fe6d4d46bff3cf0ffff75e9549e",
+        "content": "https://static.debank.com/image/eth_nft/local_url/7390b0cd9b797b428c1461a547f4a8c5/5f72f558c3196fe087a8ac1b0d7c7859.png",
+        "content_type": "image_url",
+        "contract_id": "0x83a79fb0a10a6fe6d4d46bff3cf0ffff75e9549e",
+        "description": "Metaplaces World is a collection of Metaverse lands NFTs where you can build your Metaplaces houses, offices and commerces. There are various types of Metaplaces world land, each with their own environment. Combine multiple land NFTs to generate a larger plot of land and unlock bigger commercial buildings.",
+        "detail_url": "https://opensea.io/assets/0x83a79fb0a10a6fe6d4d46bff3cf0ffff75e9549e/393",
+        "id": "56213abc1200ffb1c59acda9eb7d770c",
+        "inner_id": "393",
+        "is_erc1155": false,
+        "is_erc721": true,
+        "name": "Metaplaces World",
+        "pay_token": null,
+        "symbol": "MPW",
+        "thumbnail_url": "https://static.debank.com/image/eth_nft/thumbnail_url/7390b0cd9b797b428c1461a547f4a8c5/5f72f558c3196fe087a8ac1b0d7c7859.png",
+        "total_supply": 1,
+      },
+      {
+        "amount": 1,
+        "attributes": [
+          {
+            "trait_type": "type",
+            "value": "Sand",
+          },
+          {
+            "trait_type": "x",
+            "value": "153",
+          },
+          {
+            "trait_type": "y",
+            "value": "62",
+          },
+        ],
+        "chain": "eth",
+        "collection": {
+          "chain": "eth",
+          "credit_score": null,
+          "description": null,
+          "floor_price": 0.045,
+          "id": "eth:0x83a79fb0a10a6fe6d4d46bff3cf0ffff75e9549e",
+          "is_core": true,
+          "is_scam": false,
+          "is_suspicious": false,
+          "is_verified": true,
+          "logo_url": "https://static.debank.com/image/nft_collection/logo_url/metaplaces-world/c5a6675dfd6e670c9a5bb3c53527733e.png",
+          "name": "Metaplaces World",
+        },
+        "collection_id": "eth:0x83a79fb0a10a6fe6d4d46bff3cf0ffff75e9549e",
+        "content": "https://static.debank.com/image/eth_nft/local_url/046a213f3f5442d0d7f57a3bb6cc0bdf/d3927e7a6938b2187fa6c9edc5efe84f.png",
+        "content_type": "image_url",
+        "contract_id": "0x83a79fb0a10a6fe6d4d46bff3cf0ffff75e9549e",
+        "description": "Metaplaces World is a collection of Metaverse lands NFTs where you can build your Metaplaces houses, offices and commerces. There are various types of Metaplaces world land, each with their own environment. Combine multiple land NFTs to generate a larger plot of land and unlock bigger commercial buildings.",
+        "detail_url": "https://opensea.io/assets/0x83a79fb0a10a6fe6d4d46bff3cf0ffff75e9549e/24",
+        "id": "f7c01b53d0949167da53827248ecd09f",
+        "inner_id": "24",
+        "is_erc1155": false,
+        "is_erc721": true,
+        "name": "Metaplaces World 24",
+        "pay_token": null,
+        "symbol": "MPW",
+        "thumbnail_url": "https://static.debank.com/image/eth_nft/thumbnail_url/046a213f3f5442d0d7f57a3bb6cc0bdf/d3927e7a6938b2187fa6c9edc5efe84f.png",
+        "total_supply": 1,
+      },
+    ],
+    "receive_token": {
+      "amount": 0.08145,
+      "chain": "eth",
+      "credit_score": 100000000,
+      "decimals": 18,
+      "display_symbol": null,
+      "id": "eth",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/coin/logo_url/eth/6443cdccced33e204d90cb723c632917.png",
+      "name": "ETH",
+      "optimized_symbol": "ETH",
+      "price": 2672.1,
+      "price_24h_change": 0.018695187981392587,
+      "protocol_id": "",
+      "raw_amount": "81450000000000000",
+      "symbol": "ETH",
+      "time_at": 1483200000,
+    },
+    "receiver": "0xcb1605ed17f6145db16e26e1d8adfe8f4b175377",
+    "takers": [],
+  },
+  "brand": undefined,
+  "chainId": 1,
+  "contractId": "0x0000000000000068f116a894984e2db1123eb395",
+  "sender": "0xcb1605ed17f6145db16e26e1d8adfe8f4b175377",
+}
+`;

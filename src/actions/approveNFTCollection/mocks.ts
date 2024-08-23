@@ -95,7 +95,7 @@ export const parseTxData = {
     data: {
       spender: '0x7a250d5630b4cf539739df2c5dacb4c659f2488d',
       collection: {
-        chain_id: 'eth',
+        ETH_CHAIN_ID: 'eth',
         id: '0x75d639e5e52b4ea5426f2fb46959b9c3099b729a',
         name: 'The Metascapes',
         description: null,

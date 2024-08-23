@@ -40,7 +40,7 @@ exports[`ApproveNFTCollection: parseActionApproveNFTCollection 1`] = `
       "avg_price_last_24h": 0.014917500000000002,
       "buy_holder_count": 511,
       "buy_holder_usd_value": 14098606.89417298,
-      "chain_id": "eth",
+      "ETH_CHAIN_ID": "eth",
       "credit_score": 206.063934578252,
       "credit_score_rank_at": 2653,
       "description": null,
