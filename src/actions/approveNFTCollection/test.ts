@@ -1,6 +1,8 @@
 import {
   apiProvider,
+  CHAIN_ID,
   formatProvider,
+  SENDER,
   walletProvider,
 } from '../../../__mocks__';
 import { ParsedTransactionActionData } from '../../types';
@@ -9,7 +11,7 @@ import { parseActionApproveNFTCollection } from './parseAction';
 import { fetchDataApproveNFTCollection } from './fetchData';
 import { formatSecurityEngineApproveNFTCollection } from './formatSecurityEngine';
 
-test.concurrent('ApproveNFTCollection', async () => {
+test('ApproveNFTCollection', async () => {
   const actionData = (await parseActionApproveNFTCollection({
     type: 'transaction',
     data: parseTxData['action'],
@@ -18,27 +20,27 @@ test.concurrent('ApproveNFTCollection', async () => {
     preExecVersion: preExecData.pre_exec_version,
     gasUsed: preExecData.gas.gas_used,
   })) as ParsedTransactionActionData;
-  expect(actionData).toMatchSnapshot();
+  expect(actionData).toMatchSnapshot('parseActionApproveNFTCollection');
 
   const requireData = await fetchDataApproveNFTCollection({
     type: 'transaction',
     actionData,
     contractCall: parseTxData.contract_call,
-    chainId: 'eth',
-    sender: txData.from,
+    chainId: CHAIN_ID,
+    sender: SENDER,
     walletProvider,
     tx: txData,
     apiProvider,
   });
-  expect(requireData).toMatchSnapshot();
+  expect(requireData).toMatchSnapshot('fetchDataApproveNFTCollection');
 
   const ctx = await formatSecurityEngineApproveNFTCollection({
     type: 'transaction',
     actionData,
     requireData,
-    chainId: 'eth',
+    chainId: CHAIN_ID,
     isTestnet: false,
     provider: formatProvider,
   });
-  expect(ctx).toMatchSnapshot();
+  expect(ctx).toMatchSnapshot('formatSecurityEngineApproveNFTCollection');
 });

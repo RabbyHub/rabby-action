@@ -1,6 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApproveNFTCollection 1`] = `
+exports[`ApproveNFTCollection: fetchDataApproveNFTCollection 1`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "tokenBalance": "0",
+}
+`;
+
+exports[`ApproveNFTCollection: formatSecurityEngineApproveNFTCollection 1`] = `
+{
+  "collectionApprove": {
+    "chainId": "eth",
+    "deployDays": 1539,
+    "hasInteracted": true,
+    "isDanger": false,
+    "isEOA": false,
+    "riskExposure": 20000000000,
+    "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+  },
+}
+`;
+
+exports[`ApproveNFTCollection: parseActionApproveNFTCollection 1`] = `
 {
   "approveNFTCollection": {
     "collection": {
@@ -32,38 +64,6 @@ exports[`ApproveNFTCollection 1`] = `
       "volume_24h": 0,
       "volume_last_24h": 0,
     },
-    "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
-  },
-}
-`;
-
-exports[`ApproveNFTCollection 2`] = `
-{
-  "bornAt": 1591388241,
-  "contract": null,
-  "hasInteraction": true,
-  "isDanger": false,
-  "isEOA": false,
-  "protocol": {
-    "id": "uniswap2",
-    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
-    "name": "Uniswap V2",
-  },
-  "rank": 65,
-  "riskExposure": 0,
-  "tokenBalance": "0",
-}
-`;
-
-exports[`ApproveNFTCollection 3`] = `
-{
-  "collectionApprove": {
-    "chainId": "eth",
-    "deployDays": 1539,
-    "hasInteracted": true,
-    "isDanger": false,
-    "isEOA": false,
-    "riskExposure": 0,
     "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
   },
 }

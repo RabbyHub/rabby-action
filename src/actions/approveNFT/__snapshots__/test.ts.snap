@@ -1,6 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApproveNFT 1`] = `
+exports[`ApproveNFT: fetchDataApproveNFT 1`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "tokenBalance": "0",
+}
+`;
+
+exports[`ApproveNFT: formatSecurityEngineApproveNFT 1`] = `
+{
+  "nftApprove": {
+    "chainId": "eth",
+    "deployDays": 1539,
+    "hasInteracted": true,
+    "isDanger": false,
+    "isEOA": false,
+    "riskExposure": 20000000000,
+    "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+  },
+}
+`;
+
+exports[`ApproveNFT: parseActionApproveNFT 1`] = `
 {
   "approveNFT": {
     "nft": {
@@ -48,38 +80,6 @@ https://metascapes.sloika.xyz/",
       "total_supply": 1,
       "usd_price": 151.69176000000002,
     },
-    "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
-  },
-}
-`;
-
-exports[`ApproveNFT 2`] = `
-{
-  "bornAt": 1591388241,
-  "contract": null,
-  "hasInteraction": true,
-  "isDanger": false,
-  "isEOA": false,
-  "protocol": {
-    "id": "uniswap2",
-    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
-    "name": "Uniswap V2",
-  },
-  "rank": 65,
-  "riskExposure": 0,
-  "tokenBalance": "0",
-}
-`;
-
-exports[`ApproveNFT 3`] = `
-{
-  "nftApprove": {
-    "chainId": "eth",
-    "deployDays": 1539,
-    "hasInteracted": true,
-    "isDanger": false,
-    "isEOA": false,
-    "riskExposure": 0,
     "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
   },
 }

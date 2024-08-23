@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AssetOrder - typedData: fetchDataAssetOrder 1`] = `{}`;
+
+exports[`AssetOrder - typedData: formatSecurityEngineAssetOrder 1`] = `
+{
+  "assetOrder": {
+    "chainId": "eth",
+    "from": undefined,
+    "hasReceiveAssets": true,
+    "id": undefined,
+    "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "specificBuyer": undefined,
+  },
+}
+`;
+
+exports[`AssetOrder - typedData: parseActionAssetOrder 1`] = `
+{
+  "assetOrder": {
+    "expireAt": 1661170320,
+    "payNFTList": [
+      {
+        "amount": 1,
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Blue",
+          },
+          {
+            "trait_type": "Type",
+            "value": "Yellow",
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Superhero Blue",
+          },
+          {
+            "trait_type": "Face",
+            "value": "Mole",
+          },
+          {
+            "trait_type": "Body",
+            "value": "Black Suit Turtle Neck",
+          },
+        ],
+        "chain": "eth",
+        "collection": {
+          "chain": "eth",
+          "credit_score": 0,
+          "description": null,
+          "floor_price": 0.0099,
+          "id": "eth:0x922dc160f2ab743312a6bb19dd5152c1d3ecca33",
+          "is_core": true,
+          "is_scam": false,
+          "is_suspicious": false,
+          "is_verified": true,
+          "logo_url": "https://static.debank.com/image/nft_collection/logo_url/crypto-duckies-v2/253d45dec8bdb8386542c6e64a83be09.png",
+          "name": "Crypto Duckies (on-chain)",
+        },
+        "collection_id": "eth:0x922dc160f2ab743312a6bb19dd5152c1d3ecca33",
+        "content": "https://static.debank.com/image/eth_nft/local_url/7c5af5024c052918572be745b49c0465/2809cbb2f39f6aab801977c51e371c67.png",
+        "content_type": "image_url",
+        "contract_id": "0x922dc160f2ab743312a6bb19dd5152c1d3ecca33",
+        "description": "",
+        "detail_url": "https://opensea.io/assets/0x922dc160f2ab743312a6bb19dd5152c1d3ecca33/176",
+        "id": "7c5af5024c052918572be745b49c0465",
+        "inner_id": "176",
+        "is_erc1155": false,
+        "is_erc721": true,
+        "name": "Duckie #176",
+        "pay_token": null,
+        "symbol": "DUCKIE",
+        "thumbnail_url": "https://static.debank.com/image/eth_nft/thumbnail_url/7c5af5024c052918572be745b49c0465/2809cbb2f39f6aab801977c51e371c67.png",
+        "total_supply": 1,
+      },
+    ],
+    "payTokenList": [],
+    "receiveNFTList": [],
+    "receiveTokenList": [
+      {
+        "amount": 0,
+        "chain": "eth",
+        "credit_score": 100000000,
+        "decimals": 18,
+        "display_symbol": null,
+        "id": "eth",
+        "is_core": true,
+        "is_scam": false,
+        "is_suspicious": false,
+        "is_verified": true,
+        "is_wallet": true,
+        "logo_url": "https://static.debank.com/image/coin/logo_url/eth/6443cdccced33e204d90cb723c632917.png",
+        "name": "ETH",
+        "optimized_symbol": "ETH",
+        "price": 2637.79,
+        "price_24h_change": 0.011791104888667183,
+        "protocol_id": "",
+        "raw_amount": "0",
+        "symbol": "ETH",
+        "time_at": 1483200000,
+      },
+    ],
+    "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "takers": [],
+  },
+}
+`;

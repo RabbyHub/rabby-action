@@ -9,7 +9,7 @@ export const apiProvider = {
     token_approval_exposure: 660231230.9361362,
     top_nft_approval_exposure: 0,
     spend_usd_value: 20000000000,
-    top_nft_spend_usd_value: 0,
+    top_nft_spend_usd_value: 20000000000,
     create_at: 1591388241.0,
     name: '',
     protocol: {

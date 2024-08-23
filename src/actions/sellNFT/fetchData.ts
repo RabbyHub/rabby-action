@@ -1,5 +1,5 @@
 import { FetchActionRequiredData } from '../../types';
-import { fetchDataAssetOrder } from '../assetOrder/fetchData';
+import { fetchDataCommon } from '../common/fetchData';
 
 export const fetchDataSellNFT: FetchActionRequiredData = async (options) => {
   if (options.type !== 'typed_data') {
@@ -9,7 +9,7 @@ export const fetchDataSellNFT: FetchActionRequiredData = async (options) => {
     return {};
   }
 
-  return fetchDataAssetOrder(options, {
+  return fetchDataCommon(options, {
     receiver: options.actionData.contractId,
   });
 };

@@ -1,0 +1,147 @@
+export const preExecData = {
+  abi: {
+    func: 'approve',
+    params: [
+      '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D',
+      100000000000000000000,
+    ],
+  },
+  abi_str:
+    '{\n    "func": "approve",\n    "params": [\n        "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",\n        100000000000000000000\n    ]\n}',
+  balance_change: {
+    success: true,
+    error: null,
+    send_token_list: [],
+    receive_token_list: [],
+    send_nft_list: [],
+    receive_nft_list: [],
+    usd_value_change: 0,
+  },
+  gas: {
+    success: true,
+    error: null,
+    gas_used: 46158,
+    gas_limit: 46540,
+    gas_ratio: 1.3,
+  },
+  is_gnosis: false,
+  native_token: {
+    id: 'eth',
+    chain: 'eth',
+    name: 'ETH',
+    symbol: 'ETH',
+    display_symbol: null,
+    optimized_symbol: 'ETH',
+    decimals: 18,
+    logo_url:
+      'https://static.debank.com/image/coin/logo_url/eth/6443cdccced33e204d90cb723c632917.png',
+    protocol_id: '',
+    price: 2640.38,
+    price_24h_change: 0.009809808278483855,
+    credit_score: 100000000.0,
+    is_verified: true,
+    is_scam: false,
+    is_suspicious: false,
+    is_core: true,
+    is_wallet: true,
+    time_at: 1483200000.0,
+    amount: 0.00336741278341931,
+  },
+  pre_exec_version: 'v2',
+  pre_exec: {
+    success: true,
+    error: null,
+  },
+  type_token_approval: {
+    spender: '0x7a250d5630b4cf539739df2c5dacb4c659f2488d',
+    spender_protocol_name: 'Uniswap V2',
+    spender_protocol_logo_url:
+      'https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png',
+    token_symbol: 'DAI',
+    token_amount: 100.0,
+    is_infinity: false,
+    is_nft: false,
+    nft: null,
+    token: {
+      id: '0x6b175474e89094c44da98b954eedeac495271d0f',
+      chain: 'eth',
+      name: 'Dai Stablecoin',
+      symbol: 'DAI',
+      display_symbol: '',
+      optimized_symbol: 'DAI',
+      decimals: 18,
+      logo_url:
+        'https://static.debank.com/image/eth_token/logo_url/0x6b175474e89094c44da98b954eedeac495271d0f/549c4205dbb199f1b8b03af783f35e71.png',
+      protocol_id: 'makerdao',
+      price: 0.9999,
+      price_24h_change: 0.0,
+      credit_score: 4768525.856018129,
+      is_verified: true,
+      is_scam: false,
+      is_suspicious: false,
+      is_core: true,
+      is_wallet: true,
+      time_at: 1573672677.0,
+      raw_amount: 100000000000000000000,
+      raw_amount_hex_str: '0x56bc75e2d63100000',
+      is_infinity: false,
+    },
+  },
+  trace_id: '64ef985fd2c84786a171fec68a08fe8f',
+} as any;
+
+export const parseTxData = {
+  action: {
+    type: 'approve_token',
+    data: {
+      spender: '0x7a250d5630b4cf539739df2c5dacb4c659f2488d',
+      token: {
+        id: '0x6b175474e89094c44da98b954eedeac495271d0f',
+        chain: 'eth',
+        name: 'Dai Stablecoin',
+        symbol: 'DAI',
+        display_symbol: '',
+        optimized_symbol: 'DAI',
+        decimals: 18,
+        logo_url:
+          'https://static.debank.com/image/eth_token/logo_url/0x6b175474e89094c44da98b954eedeac495271d0f/549c4205dbb199f1b8b03af783f35e71.png',
+        protocol_id: 'makerdao',
+        price: 0.9999,
+        price_24h_change: 0.0,
+        credit_score: 4768525.856018129,
+        is_verified: true,
+        is_scam: false,
+        is_suspicious: false,
+        is_core: true,
+        is_wallet: true,
+        time_at: 1573672677.0,
+        amount: 100.0,
+        raw_amount: '100000000000000000000',
+      },
+    },
+  },
+  contract_call: {
+    func: 'approve',
+    contract: {
+      id: '0x6b175474e89094c44da98b954eedeac495271d0f',
+      protocol: {
+        name: 'Maker',
+        logo_url:
+          'https://static.debank.com/image/project/logo_url/makerdao/3821328c7c6d5ac4fc87e2c2e4d1c684.png',
+      },
+    },
+  },
+  log_id: 85163324,
+} as any;
+
+export const txData = {
+  chainId: 1,
+  from: '0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85',
+  to: '0x6b175474e89094c44da98b954eedeac495271d0f',
+  value: '0x0',
+  data: '0x095ea7b30000000000000000000000007a250d5630b4cf539739df2c5dacb4c659f2488d0000000000000000000000000000000000000000000000056bc75e2d63100000',
+  gas: '',
+  maxFeePerGas: '0x47868c00',
+  maxPriorityFeePerGas: '0x47868c00',
+  nonce: '0x1691',
+};

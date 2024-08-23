@@ -6,13 +6,13 @@ import {
   walletProvider,
 } from '../../../__mocks__';
 import { ParsedTransactionActionData } from '../../types';
-import { fetchDataApproveNFT } from './fetchData';
-import { formatSecurityEngineApproveNFT } from './formatSecurityEngine';
 import { parseTxData, preExecData, txData } from './mocks';
-import { parseActionApproveNFT } from './parseAction';
+import { parseActionApproveToken } from './parseAction';
+import { fetchDataApproveToken } from './fetchData';
+import { formatSecurityEngineApproveToken } from './formatSecurityEngine';
 
-test('ApproveNFT', async () => {
-  const actionData = (await parseActionApproveNFT({
+test('ApproveToken', async () => {
+  const actionData = (await parseActionApproveToken({
     type: 'transaction',
     data: parseTxData['action'],
     balanceChange: preExecData.balance_change,
@@ -20,9 +20,9 @@ test('ApproveNFT', async () => {
     preExecVersion: preExecData.pre_exec_version,
     gasUsed: preExecData.gas.gas_used,
   })) as ParsedTransactionActionData;
-  expect(actionData).toMatchSnapshot('parseActionApproveNFT');
+  expect(actionData).toMatchSnapshot('parseActionApproveToken');
 
-  const requireData = await fetchDataApproveNFT({
+  const requireData = await fetchDataApproveToken({
     type: 'transaction',
     actionData,
     contractCall: parseTxData.contract_call,
@@ -32,9 +32,9 @@ test('ApproveNFT', async () => {
     tx: txData,
     apiProvider,
   });
-  expect(requireData).toMatchSnapshot('fetchDataApproveNFT');
+  expect(requireData).toMatchSnapshot('fetchDataApproveToken');
 
-  const ctx = await formatSecurityEngineApproveNFT({
+  const ctx = await formatSecurityEngineApproveToken({
     type: 'transaction',
     actionData,
     requireData,
@@ -42,5 +42,5 @@ test('ApproveNFT', async () => {
     isTestnet: false,
     provider: formatProvider,
   });
-  expect(ctx).toMatchSnapshot('formatSecurityEngineApproveNFT');
+  expect(ctx).toMatchSnapshot('formatSecurityEngineApproveToken');
 });
