@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BatchSellNFT: fetchDataBuyNFT 1`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0x0cab6977a9c70e04458b740476b498b214019641",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": false,
+  "sender": "0xc24a6988496b4d9b3c7ce42c5f865c2f634f184c",
+  "unexpectedAddr": null,
+}
+`;
+
+exports[`BatchSellNFT: formatSecurityEngineBuyNFT 1`] = `
+{
+  "buyNFT": {
+    "chainId": "linea",
+    "from": "0xc24a6988496b4d9b3c7ce42c5f865c2f634f184c",
+    "id": "0x0cab6977a9c70e04458b740476b498b214019641",
+    "receiveNFTIsFake": false,
+    "receiveNFTIsScam": false,
+    "receiver": "0xc24a6988496b4d9b3c7ce42c5f865c2f634f184c",
+  },
+}
+`;
+
+exports[`BatchSellNFT: parseActionBuyNFT 1`] = `
+{
+  "actionType": "buy_nft_order",
+  "brand": undefined,
+  "buyNFT": {
+    "expire_at": 4.523128485832664e+74,
+    "pay_token": {
+      "amount": 0.0183064,
+      "chain": "linea",
+      "credit_score": 8253462.108345555,
+      "decimals": 18,
+      "display_symbol": null,
+      "id": "0xe5d7c2a44ffddf6b295a15c148167daaaf5cf34f",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/linea_token/logo_url/0xe5d7c2a44ffddf6b295a15c148167daaaf5cf34f/61844453e63cf81301f845d7864236f6.png",
+      "name": "Wrapped Ether",
+      "optimized_symbol": "WETH",
+      "price": 2675.64,
+      "price_24h_change": 0.021644608507438115,
+      "protocol_id": "",
+      "raw_amount": "18306400000000000",
+      "symbol": "WETH",
+      "time_at": 1689349594,
+    },
+    "receive_nft": {
+      "amount": 4,
+      "attributes": [
+        {
+          "trait_type": "Tier",
+          "value": "4",
+        },
+      ],
+      "chain": "linea",
+      "collection": {
+        "chain": "linea",
+        "credit_score": 82225.96052432296,
+        "description": null,
+        "floor_price": 0,
+        "id": "linea:0x0872ec4426103482a50f26ffc32acefcec61b3c9",
+        "is_core": true,
+        "is_scam": false,
+        "is_suspicious": false,
+        "is_verified": true,
+        "logo_url": "https://static.debank.com/image/linea_nft/thumbnail_url/ed919ba151a0ca09b8d861f0b250d736/67be4a0b1fe20c7e7d9ff5c844fec95c.png",
+        "name": "Linea Voyage",
+      },
+      "collection_id": "linea:0x0872ec4426103482a50f26ffc32acefcec61b3c9",
+      "content": "https://static.debank.com/image/linea_nft/local_url/9fb8de84306e2d372edcf8f25f058d00/8ee5c720e5801d2b4b610d426934b8f0.png",
+      "content_type": "image_url",
+      "contract_id": "0x0872ec4426103482a50f26ffc32acefcec61b3c9",
+      "description": "The Delta Edition represents the inception of the network, the moment of instantiation of the testnet and activation of the community effort, sending waves of energy throughout the network, and setting into motion the potential to come.",
+      "detail_url": "https://opensea.io/assets/0x0872ec4426103482a50f26ffc32acefcec61b3c9/4",
+      "id": "9fb8de84306e2d372edcf8f25f058d00",
+      "inner_id": "4",
+      "is_erc1155": true,
+      "is_erc721": false,
+      "name": "Linea Voyage - Delta Edition",
+      "pay_token": {
+        "amount": 0.005,
+        "date_at": "2024-08-23",
+        "id": "linea",
+        "time_at": 1724391665,
+      },
+      "symbol": "VOYAGE",
+      "thumbnail_url": "https://static.debank.com/image/linea_nft/thumbnail_url/9fb8de84306e2d372edcf8f25f058d00/8ee5c720e5801d2b4b610d426934b8f0.png",
+      "total_supply": 1,
+      "usd_price": 13.3782,
+    },
+    "receiver": "0xc24a6988496b4d9b3c7ce42c5f865c2f634f184c",
+    "takers": [],
+  },
+  "chainId": 59144,
+  "contractId": "0x0cab6977a9c70e04458b740476b498b214019641",
+  "sender": "0xc24a6988496b4d9b3c7ce42c5f865c2f634f184c",
+}
+`;

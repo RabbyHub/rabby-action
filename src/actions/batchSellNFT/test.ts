@@ -12,9 +12,10 @@ import { formatSecurityEngineBatchSellNFT } from './formatSecurityEngine';
 import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
 
 /**
- * https://brain.debank.com/action-group/typed_data/32ae1e7b9e9e249e2faea61155fb20a0
- * userId: 0xcb1605ed17f6145db16e26e1d8adfe8f4b175377
+ * https://test-dapp-lyart.vercel.app/security
+ * address: 0xcb1605ed17f6145db16e26e1d8adfe8f4b175377
  * chainId: eth
+ * button: [Batch Sell NFT]
  */
 test('BatchSellNFT', async () => {
   const actionData = parseTypedDataAction(parseActionBatchSellNFT)({

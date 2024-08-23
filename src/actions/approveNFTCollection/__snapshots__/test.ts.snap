@@ -36,11 +36,11 @@ exports[`ApproveNFTCollection: parseActionApproveNFTCollection 1`] = `
 {
   "approveNFTCollection": {
     "collection": {
+      "ETH_CHAIN_ID": "eth",
       "avg_price_24h": 0.014914361573834049,
       "avg_price_last_24h": 0.014917500000000002,
       "buy_holder_count": 511,
       "buy_holder_usd_value": 14098606.89417298,
-      "ETH_CHAIN_ID": "eth",
       "credit_score": 206.063934578252,
       "credit_score_rank_at": 2653,
       "description": null,
