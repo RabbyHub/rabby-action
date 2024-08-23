@@ -10,5 +10,6 @@ export const fetchDataApproveNFTCollection: FetchActionRequiredData = async (
   if (!options.actionData.approveNFTCollection) {
     return {};
   }
+
   return fetchDataApproveNFT(options, options.actionData.approveNFTCollection);
 };

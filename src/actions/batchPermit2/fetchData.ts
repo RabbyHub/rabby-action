@@ -47,6 +47,13 @@ export const fetchDataBatchPermit2: FetchActionRequiredData = async (
         contractInfo.is_danger.auto || contractInfo.is_danger.edit;
       result.protocol = contractInfo.protocol;
     }
+
+    if (result.isEOA) {
+      queue.add(async () => {
+        const { desc } = await apiProvider.addrDesc(spender);
+        result.bornAt = desc.born_at;
+      });
+    }
   });
   queue.add(async () => {
     const list = await Promise.all(
@@ -54,12 +61,7 @@ export const fetchDataBatchPermit2: FetchActionRequiredData = async (
     );
     result.tokens = list;
   });
-  if (result.isEOA) {
-    queue.add(async () => {
-      const { desc } = await apiProvider.addrDesc(spender);
-      result.bornAt = desc.born_at;
-    });
-  }
+
   queue.add(async () => {
     const hasInteraction = await apiProvider.hasInteraction(
       sender,

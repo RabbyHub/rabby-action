@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApproveNFTCollection 1`] = `
+{
+  "approveNFTCollection": {
+    "collection": {
+      "avg_price_24h": 0.014914361573834049,
+      "avg_price_last_24h": 0.014917500000000002,
+      "buy_holder_count": 511,
+      "buy_holder_usd_value": 14098606.89417298,
+      "chain_id": "eth",
+      "credit_score": 206.063934578252,
+      "credit_score_rank_at": 2653,
+      "description": null,
+      "floor_price": 0.0242,
+      "floor_price_24h": 0,
+      "holder_count": 1328,
+      "id": "0x75d639e5e52b4ea5426f2fb46959b9c3099b729a",
+      "is_core": true,
+      "is_scam": false,
+      "is_verified": null,
+      "is_visible": true,
+      "logo_url": "https://static.debank.com/image/nft_collection/logo_url/the-metascapes/065c2cd129c3c0023c6cb3ea2051be4a.png",
+      "max_price_24h": 0.014914361573834049,
+      "max_price_last_24h": 0.014917500000000002,
+      "name": "The Metascapes",
+      "nft_count": 2555,
+      "rank_at": null,
+      "thirdparty": {},
+      "total_est_usd_value": 162518.21019654564,
+      "total_est_value": 0,
+      "volume_24h": 0,
+      "volume_last_24h": 0,
+    },
+    "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+  },
+}
+`;
+
+exports[`ApproveNFTCollection 2`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 0,
+  "tokenBalance": "0",
+}
+`;
+
+exports[`ApproveNFTCollection 3`] = `
+{
+  "collectionApprove": {
+    "chainId": "eth",
+    "deployDays": 1539,
+    "hasInteracted": true,
+    "isDanger": false,
+    "isEOA": false,
+    "riskExposure": 0,
+    "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+  },
+}
+`;

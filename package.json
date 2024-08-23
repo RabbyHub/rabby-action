@@ -20,8 +20,6 @@
     "@types/jest": "^29.0.3",
     "@types/lodash": "^4.14.185",
     "@types/node": "^18.7.18",
-    "@vespaiach/axios-fetch-adapter": "^0.3.1",
-    "axios-mock-adapter": "^1.21.2",
     "babel-jest": "^29.0.3",
     "bignumber.js": "^9.1.2",
     "husky": ">=6",

@@ -14,7 +14,7 @@ export const fetchDataAssetOrder: FetchActionRequiredData<{
   const queue = new PQueue();
   let action = likeAction;
 
-  if (options.type === 'transaction') {
+  if (options.type === 'transaction' && actionData.assetOrder) {
     action = {
       receiver: options.tx.to,
     };

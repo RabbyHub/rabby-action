@@ -7,7 +7,7 @@ export const fetchDataSwapTokenOrder: FetchActionRequiredData = async (
   if (options.type !== 'typed_data') {
     return {};
   }
-  if (!options.actionData.contractId) {
+  if (!options.actionData.contractId || !options.actionData.swapTokenOrder) {
     return {};
   }
 

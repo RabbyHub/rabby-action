@@ -49,6 +49,13 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
         contractInfo.is_danger.auto || contractInfo.is_danger.edit;
       result.protocol = contractInfo.protocol;
     }
+
+    if (result.isEOA) {
+      queue.add(async () => {
+        const { desc } = await apiProvider.addrDesc(spender);
+        result.bornAt = desc.born_at;
+      });
+    }
   });
   if (token) {
     queue.add(async () => {
@@ -56,12 +63,7 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
       result.token = t;
     });
   }
-  if (result.isEOA) {
-    queue.add(async () => {
-      const { desc } = await apiProvider.addrDesc(spender);
-      result.bornAt = desc.born_at;
-    });
-  }
+
   queue.add(async () => {
     const hasInteraction = await apiProvider.hasInteraction(
       sender,

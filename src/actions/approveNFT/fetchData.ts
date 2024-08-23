@@ -44,13 +44,15 @@ export const fetchDataApproveNFT: FetchActionRequiredData<{
         contractInfo.is_danger.auto || contractInfo.is_danger.edit;
       result.protocol = contractInfo.protocol;
     }
+
+    if (result.isEOA) {
+      queue.add(async () => {
+        const { desc } = await apiProvider.addrDesc(action.spender);
+        result.bornAt = desc.born_at;
+      });
+    }
   });
-  if (result.isEOA) {
-    queue.add(async () => {
-      const { desc } = await apiProvider.addrDesc(action.spender);
-      result.bornAt = desc.born_at;
-    });
-  }
+
   queue.add(async () => {
     const hasInteraction = await apiProvider.hasInteraction(
       sender,
