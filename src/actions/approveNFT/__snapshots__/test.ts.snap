@@ -18,6 +18,24 @@ exports[`ApproveNFT: fetchDataApproveNFT 1`] = `
 }
 `;
 
+exports[`ApproveNFT: fetchDataApproveNFT 2`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "tokenBalance": "0",
+}
+`;
+
 exports[`ApproveNFT: formatSecurityEngineApproveNFT 1`] = `
 {
   "nftApprove": {
@@ -32,7 +50,74 @@ exports[`ApproveNFT: formatSecurityEngineApproveNFT 1`] = `
 }
 `;
 
+exports[`ApproveNFT: formatSecurityEngineApproveNFT 2`] = `
+{
+  "nftApprove": {
+    "chainId": "eth",
+    "deployDays": 1539,
+    "hasInteracted": true,
+    "isDanger": false,
+    "isEOA": false,
+    "riskExposure": 20000000000,
+    "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+  },
+}
+`;
+
 exports[`ApproveNFT: parseActionApproveNFT 1`] = `
+{
+  "approveNFT": {
+    "nft": {
+      "attributes": [
+        {
+          "trait_type": "Type",
+          "value": "Image",
+        },
+      ],
+      "chain": "eth",
+      "collection": {
+        "chain": "eth",
+        "credit_score": 216.306447552488,
+        "description": null,
+        "floor_price": 0.0243,
+        "id": "eth:0x75d639e5e52b4ea5426f2fb46959b9c3099b729a",
+        "is_core": true,
+        "is_scam": false,
+        "is_suspicious": false,
+        "is_verified": true,
+        "logo_url": "https://static.debank.com/image/nft_collection/logo_url/the-metascapes/065c2cd129c3c0023c6cb3ea2051be4a.png",
+        "name": "The Metascapes",
+      },
+      "collection_id": "eth:0x75d639e5e52b4ea5426f2fb46959b9c3099b729a",
+      "content": "https://static.debank.com/image/eth_nft/local_url/12ce1dbcf984dd9174065edc9531a09b/47202001ef73e7586c53412c3bc72629.png",
+      "content_type": "image_url",
+      "contract_id": "0x75d639e5e52b4ea5426f2fb46959b9c3099b729a",
+      "description": "2555 hand-picked AI landscape images of a unique collaboration between Cath Simard, Ryan Newburn, Iurie Belegurschi and Artificial Intelligence, bridging the natural and the supernatural.
+
+https://metascapes.sloika.xyz/",
+      "detail_url": "https://opensea.io/assets/0x75d639e5e52b4ea5426f2fb46959b9c3099b729a/745",
+      "id": "12ce1dbcf984dd9174065edc9531a09b",
+      "inner_id": "745",
+      "is_erc1155": false,
+      "is_erc721": true,
+      "name": "Metascapes #745",
+      "pay_token": {
+        "amount": 0.099,
+        "date_at": "2023-03-09",
+        "id": "eth",
+        "time_at": 1678369547,
+      },
+      "symbol": "MTSCPS",
+      "thumbnail_url": "https://static.debank.com/image/eth_nft/thumbnail_url/12ce1dbcf984dd9174065edc9531a09b/e5a971f66038f0159ac918b0faacd49e.png",
+      "total_supply": 1,
+      "usd_price": 151.69176000000002,
+    },
+    "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+  },
+}
+`;
+
+exports[`ApproveNFT: parseActionApproveNFT 2`] = `
 {
   "approveNFT": {
     "nft": {

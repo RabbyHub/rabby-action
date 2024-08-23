@@ -10,13 +10,25 @@ import { parseTxData, preExecData, txData } from './mocks';
 import { parseActionApproveNFTCollection } from './parseAction';
 import { fetchDataApproveNFTCollection } from './fetchData';
 import { formatSecurityEngineApproveNFTCollection } from './formatSecurityEngine';
+import {
+  parseAction,
+  fetchActionRequiredData,
+  formatSecurityEngineContext,
+} from '../..';
 
 /**
  *https://etherscan.io/address/0x75d639e5e52b4ea5426f2fb46959b9c3099b729a#writeContract#F11
  * - setApprovalForAll('0x7a250d5630b4cf539739df2c5dacb4c659f2488d', true)
  */
-test('ApproveNFTCollection', async () => {
-  const actionData = parseActionApproveNFTCollection({
+test.each([
+  [
+    parseActionApproveNFTCollection,
+    fetchDataApproveNFTCollection,
+    formatSecurityEngineApproveNFTCollection,
+  ],
+  [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
+])('ApproveNFTCollection', async (_parseAction, _fetchData, _format) => {
+  const actionData = _parseAction({
     type: 'transaction',
     data: parseTxData['action'],
     balanceChange: preExecData.balance_change,
@@ -26,7 +38,7 @@ test('ApproveNFTCollection', async () => {
   }) as ParsedTransactionActionData;
   expect(actionData).toMatchSnapshot('parseActionApproveNFTCollection');
 
-  const requireData = await fetchDataApproveNFTCollection({
+  const requireData = await _fetchData({
     type: 'transaction',
     actionData,
     contractCall: parseTxData.contract_call,
@@ -38,7 +50,7 @@ test('ApproveNFTCollection', async () => {
   });
   expect(requireData).toMatchSnapshot('fetchDataApproveNFTCollection');
 
-  const ctx = await formatSecurityEngineApproveNFTCollection({
+  const ctx = await _format({
     type: 'transaction',
     actionData,
     requireData,

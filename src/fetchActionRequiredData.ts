@@ -79,12 +79,5 @@ export const fetchActionRequiredData: FetchActionRequiredData = async (
     fetchDataRevokePermit(options),
   ]);
 
-  if (Object.keys(result).length > 1) {
-    console.error(
-      'fetchActionRequiredData: more than one action data found',
-      Object.keys(result)
-    );
-  }
-
   return result.reduce((acc, val) => ({ ...acc, ...val }), {});
 };

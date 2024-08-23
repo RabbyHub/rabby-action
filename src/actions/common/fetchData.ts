@@ -14,11 +14,7 @@ export const fetchDataCommon: FetchActionRequiredData<{
   const queue = new PQueue();
   let action = likeAction;
 
-  if (
-    options.type === 'typed_data' &&
-    options.actionData.common &&
-    options.actionData.contractId
-  ) {
+  if (options.type === 'typed_data' && options.actionData.contractId) {
     action = {
       receiver: options.actionData.contractId,
     };

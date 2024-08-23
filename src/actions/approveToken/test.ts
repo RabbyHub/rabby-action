@@ -10,13 +10,25 @@ import { parseTxData, preExecData, txData } from './mocks';
 import { parseActionApproveToken } from './parseAction';
 import { fetchDataApproveToken } from './fetchData';
 import { formatSecurityEngineApproveToken } from './formatSecurityEngine';
+import {
+  parseAction,
+  fetchActionRequiredData,
+  formatSecurityEngineContext,
+} from '../..';
 
 /**
  * https://extension-tests.revoke.cash/
  * [approve()] button
  */
-test('ApproveToken', async () => {
-  const actionData = parseActionApproveToken({
+test.each([
+  [
+    parseActionApproveToken,
+    fetchDataApproveToken,
+    formatSecurityEngineApproveToken,
+  ],
+  [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
+])('ApproveToken', async (_parseAction, _fetchData, _format) => {
+  const actionData = _parseAction({
     type: 'transaction',
     data: parseTxData['action'],
     balanceChange: preExecData.balance_change,
@@ -26,7 +38,7 @@ test('ApproveToken', async () => {
   }) as ParsedTransactionActionData;
   expect(actionData).toMatchSnapshot('parseActionApproveToken');
 
-  const requireData = await fetchDataApproveToken({
+  const requireData = await _fetchData({
     type: 'transaction',
     actionData,
     contractCall: parseTxData.contract_call,
@@ -38,7 +50,7 @@ test('ApproveToken', async () => {
   });
   expect(requireData).toMatchSnapshot('fetchDataApproveToken');
 
-  const ctx = await formatSecurityEngineApproveToken({
+  const ctx = await _format({
     type: 'transaction',
     actionData,
     requireData,

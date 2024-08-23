@@ -120,7 +120,20 @@ export function parseAction(options: ParseActionParameters): ParsedActionData {
 
   const action = result.reduce((acc, val) => ({ ...acc, ...val }), {});
 
-  if (Object.keys(action).length === 0) {
+  // filter out typedData or text keys
+  const actionKeys = Object.keys(action).filter(
+    (key) =>
+      !['sender', 'actionType', 'brand', 'contractId', 'chainId'].includes(key)
+  );
+
+  if (actionKeys.length > 1) {
+    console.error(
+      'parseAction: more than one action found',
+      Object.keys(action)
+    );
+  }
+
+  if (actionKeys.length === 0) {
     if (options.type === 'typed_data') {
       return parseTypedDataAction(parseActionContractCall)(options);
     } else if (options.type === 'transaction') {

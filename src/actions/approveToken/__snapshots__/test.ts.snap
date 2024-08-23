@@ -40,6 +40,46 @@ exports[`ApproveToken: fetchDataApproveToken 1`] = `
 }
 `;
 
+exports[`ApproveToken: fetchDataApproveToken 2`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "token": {
+    "amount": 7.625238,
+    "chain": "eth",
+    "credit_score": 18127653.217581443,
+    "decimals": 6,
+    "display_symbol": null,
+    "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "is_core": true,
+    "is_scam": false,
+    "is_suspicious": false,
+    "is_verified": true,
+    "is_wallet": true,
+    "logo_url": "https://static.debank.com/image/eth_token/logo_url/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/fffcd27b9efff5a86ab942084c05924d.png",
+    "name": "USD Coin",
+    "optimized_symbol": "USDC",
+    "price": 0.9998000399920016,
+    "price_24h_change": 0.00009998000399924235,
+    "protocol_id": "",
+    "raw_amount": 7625238,
+    "raw_amount_hex_str": "0x745a16",
+    "symbol": "USDC",
+    "time_at": 1533324504,
+  },
+}
+`;
+
 exports[`ApproveToken: formatSecurityEngineApproveToken 1`] = `
 {
   "tokenApprove": {
@@ -54,7 +94,51 @@ exports[`ApproveToken: formatSecurityEngineApproveToken 1`] = `
 }
 `;
 
+exports[`ApproveToken: formatSecurityEngineApproveToken 2`] = `
+{
+  "tokenApprove": {
+    "chainId": "eth",
+    "deployDays": 1539,
+    "hasInteracted": true,
+    "isDanger": false,
+    "isEOA": false,
+    "riskExposure": 20000000000,
+    "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+  },
+}
+`;
+
 exports[`ApproveToken: parseActionApproveToken 1`] = `
+{
+  "approveToken": {
+    "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+    "token": {
+      "amount": 100,
+      "chain": "eth",
+      "credit_score": 4768525.856018129,
+      "decimals": 18,
+      "display_symbol": "",
+      "id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/eth_token/logo_url/0x6b175474e89094c44da98b954eedeac495271d0f/549c4205dbb199f1b8b03af783f35e71.png",
+      "name": "Dai Stablecoin",
+      "optimized_symbol": "DAI",
+      "price": 0.9999,
+      "price_24h_change": 0,
+      "protocol_id": "makerdao",
+      "raw_amount": "100000000000000000000",
+      "symbol": "DAI",
+      "time_at": 1573672677,
+    },
+  },
+}
+`;
+
+exports[`ApproveToken: parseActionApproveToken 2`] = `
 {
   "approveToken": {
     "spender": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",

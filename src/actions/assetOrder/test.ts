@@ -11,13 +11,25 @@ import { parseActionAssetOrder } from './parseAction';
 import { fetchDataAssetOrder } from './fetchData';
 import { formatSecurityEngineAssetOrder } from './formatSecurityEngine';
 import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
+import {
+  parseAction,
+  fetchActionRequiredData,
+  formatSecurityEngineContext,
+} from '../..';
 
 /**
  * https://extension-tests.revoke.cash/
  * [Seaport v1] button
  */
-test('AssetOrder -> TypedData', async () => {
-  const actionData = parseTypedDataAction(parseActionAssetOrder)({
+test.each([
+  [
+    parseTypedDataAction(parseActionAssetOrder),
+    fetchDataAssetOrder,
+    formatSecurityEngineAssetOrder,
+  ],
+  [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
+])('AssetOrder -> TypedData', async (_parseAction, _fetchData, _format) => {
+  const actionData = _parseAction({
     type: 'typed_data',
     data: parseTxData['action'],
     typedData: txData,
@@ -25,7 +37,7 @@ test('AssetOrder -> TypedData', async () => {
   });
   expect(actionData).toMatchSnapshot('parseActionAssetOrder');
 
-  const requireData = await fetchDataAssetOrder({
+  const requireData = await _fetchData({
     type: 'typed_data',
     actionData,
     chainId: ETH_CHAIN_ID,
@@ -35,7 +47,7 @@ test('AssetOrder -> TypedData', async () => {
   });
   expect(requireData).toMatchSnapshot('fetchDataAssetOrder');
 
-  const ctx = await formatSecurityEngineAssetOrder({
+  const ctx = await _format({
     type: 'typed_data',
     actionData,
     requireData,
