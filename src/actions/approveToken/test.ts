@@ -11,6 +11,10 @@ import { parseActionApproveToken } from './parseAction';
 import { fetchDataApproveToken } from './fetchData';
 import { formatSecurityEngineApproveToken } from './formatSecurityEngine';
 
+/**
+ * https://extension-tests.revoke.cash/
+ * [approve()] button
+ */
 test('ApproveToken', async () => {
   const actionData = (await parseActionApproveToken({
     type: 'transaction',

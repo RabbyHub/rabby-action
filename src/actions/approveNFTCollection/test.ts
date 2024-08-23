@@ -11,6 +11,10 @@ import { parseActionApproveNFTCollection } from './parseAction';
 import { fetchDataApproveNFTCollection } from './fetchData';
 import { formatSecurityEngineApproveNFTCollection } from './formatSecurityEngine';
 
+/**
+ *https://etherscan.io/address/0x75d639e5e52b4ea5426f2fb46959b9c3099b729a#writeContract#F11
+ * - setApprovalForAll('0x7a250d5630b4cf539739df2c5dacb4c659f2488d', true)
+ */
 test('ApproveNFTCollection', async () => {
   const actionData = (await parseActionApproveNFTCollection({
     type: 'transaction',

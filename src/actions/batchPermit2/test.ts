@@ -8,24 +8,24 @@ import {
 } from '../../../__mocks__';
 import { ParsedTypedDataActionData } from '../../types';
 import { parseTxData, txData } from './mocks';
-import { parseActionAssetOrder } from './parseAction';
-import { fetchDataAssetOrder } from './fetchData';
-import { formatSecurityEngineAssetOrder } from './formatSecurityEngine';
+import { parseActionBatchPermit2 } from './parseAction';
+import { fetchDataBatchPermit2 } from './fetchData';
+import { formatSecurityEngineBatchPermit2 } from './formatSecurityEngine';
 
 /**
  * https://extension-tests.revoke.cash/
- * [Seaport v1] button
+ * [Permit2 Batch] button
  */
-test('AssetOrder - typedData', async () => {
-  const actionData = (await parseActionAssetOrder({
+test('BatchPermit2', async () => {
+  const actionData = (await parseActionBatchPermit2({
     type: 'typed_data',
     data: parseTxData['action'],
     typedData: txData,
     sender: SENDER,
   })) as ParsedTypedDataActionData;
-  expect(actionData).toMatchSnapshot('parseActionAssetOrder');
+  expect(actionData).toMatchSnapshot('parseActionBatchPermit2');
 
-  const requireData = await fetchDataAssetOrder({
+  const requireData = await fetchDataBatchPermit2({
     type: 'typed_data',
     actionData,
     chainId: CHAIN_ID,
@@ -33,9 +33,9 @@ test('AssetOrder - typedData', async () => {
     apiProvider,
     sender: SENDER,
   });
-  expect(requireData).toMatchSnapshot('fetchDataAssetOrder');
+  expect(requireData).toMatchSnapshot('fetchDataBatchPermit2');
 
-  const ctx = await formatSecurityEngineAssetOrder({
+  const ctx = await formatSecurityEngineBatchPermit2({
     type: 'typed_data',
     actionData,
     requireData,
@@ -44,7 +44,5 @@ test('AssetOrder - typedData', async () => {
     provider: formatProvider,
     origin: ORIGIN,
   });
-  expect(ctx).toMatchSnapshot('formatSecurityEngineAssetOrder');
+  expect(ctx).toMatchSnapshot('formatSecurityEngineBatchPermit2');
 });
-
-test.todo('AssetOrder - transaction');

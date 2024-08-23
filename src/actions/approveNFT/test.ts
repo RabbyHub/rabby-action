@@ -11,6 +11,10 @@ import { formatSecurityEngineApproveNFT } from './formatSecurityEngine';
 import { parseTxData, preExecData, txData } from './mocks';
 import { parseActionApproveNFT } from './parseAction';
 
+/**
+ * https://etherscan.io/address/0x75d639e5e52b4ea5426f2fb46959b9c3099b729a#writeContract#F2
+ * - approve('0x7a250d5630b4cf539739df2c5dacb4c659f2488d', 745)
+ */
 test('ApproveNFT', async () => {
   const actionData = (await parseActionApproveNFT({
     type: 'transaction',
