@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PushMultiSig: fetchDataPushMultiSig 1`] = `
+{
+  "contract": {},
+  "id": "0x20823bb02947c741a5cc2f1ccfd8293c4a8d08b3",
+}
+`;
+
+exports[`PushMultiSig: fetchDataPushMultiSig 2`] = `
+{
+  "contract": {},
+  "id": "0x20823bb02947c741a5cc2f1ccfd8293c4a8d08b3",
+}
+`;
+
+exports[`PushMultiSig: formatSecurityEnginePushMultiSig 1`] = `{}`;
+
+exports[`PushMultiSig: formatSecurityEnginePushMultiSig 2`] = `{}`;
+
+exports[`PushMultiSig: parseActionPushMultiSig 1`] = `
+{
+  "pushMultiSig": {
+    "multisig_id": "0x20823bb02947c741a5cc2f1ccfd8293c4a8d08b3",
+  },
+}
+`;
+
+exports[`PushMultiSig: parseActionPushMultiSig 2`] = `
+{
+  "pushMultiSig": {
+    "multisig_id": "0x20823bb02947c741a5cc2f1ccfd8293c4a8d08b3",
+  },
+}
+`;

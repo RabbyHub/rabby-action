@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoboSafeCreate: fetchDataCoboSafeCreate 1`] = `{}`;
+
+exports[`CoboSafeCreate: fetchDataCoboSafeCreate 2`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0x20823bb02947c741a5cc2f1ccfd8293c4a8d08b3",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": false,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "unexpectedAddr": null,
+}
+`;
+
+exports[`CoboSafeCreate: formatSecurityEngineCoboSafeCreate 1`] = `{}`;
+
+exports[`CoboSafeCreate: formatSecurityEngineCoboSafeCreate 2`] = `{}`;
+
+exports[`CoboSafeCreate: parseActionCoboSafeCreate 1`] = `
+{
+  "actionType": "create_cobo_safe",
+  "brand": {
+    "logo_url": "https://static.debank.com/image/project/logo_url/cobo/9dfd569ee11a8fbf7f981a41f012ed64.png",
+    "name": "Cobo Argus",
+  },
+  "chainId": "56",
+  "coboSafeCreate": {
+    "brand": {
+      "logo_url": "https://static.debank.com/image/project/logo_url/cobo/9dfd569ee11a8fbf7f981a41f012ed64.png",
+      "name": "Cobo Argus",
+    },
+    "desc": "You'll create a new Cobo Safe",
+    "multisig_id": "0x20823bb02947c741a5cc2f1ccfd8293c4a8d08b3",
+  },
+  "contractId": "0x20823bb02947c741a5cc2f1ccfd8293c4a8d08b3",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;
+
+exports[`CoboSafeCreate: parseActionCoboSafeCreate 2`] = `
+{
+  "actionType": "create_cobo_safe",
+  "brand": {
+    "logo_url": "https://static.debank.com/image/project/logo_url/cobo/9dfd569ee11a8fbf7f981a41f012ed64.png",
+    "name": "Cobo Argus",
+  },
+  "chainId": "56",
+  "coboSafeCreate": {
+    "brand": {
+      "logo_url": "https://static.debank.com/image/project/logo_url/cobo/9dfd569ee11a8fbf7f981a41f012ed64.png",
+      "name": "Cobo Argus",
+    },
+    "desc": "You'll create a new Cobo Safe",
+    "multisig_id": "0x20823bb02947c741a5cc2f1ccfd8293c4a8d08b3",
+  },
+  "contractId": "0x20823bb02947c741a5cc2f1ccfd8293c4a8d08b3",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;
