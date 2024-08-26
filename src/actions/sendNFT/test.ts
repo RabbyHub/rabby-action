@@ -6,10 +6,10 @@ import {
   walletProvider,
 } from '../../../__mocks__';
 import { ParsedTransactionActionData } from '../../types';
-import { fetchDataSend } from './fetchData';
-import { formatSecurityEngineSend } from './formatSecurityEngine';
+import { fetchDataSendNFT } from './fetchData';
+import { formatSecurityEngineSendNFT } from './formatSecurityEngine';
 import { parseTxData, preExecData, txData } from './mocks';
-import { parseActionSend } from './parseAction';
+import { parseActionSendNFT } from './parseAction';
 import {
   parseAction,
   fetchActionRequiredData,
@@ -17,14 +17,12 @@ import {
 } from '../..';
 
 /**
- * https://metamask.github.io/test-dapp/#sendButton
- * Send Eth
- * - [Send Legacy Transaction] button
+ * Rabby Send NFT
  */
 test.each([
-  [parseActionSend, fetchDataSend, formatSecurityEngineSend],
+  [parseActionSendNFT, fetchDataSendNFT, formatSecurityEngineSendNFT],
   [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
-])('Send', async (_parseAction, _fetchData, _format) => {
+])('SendNFT', async (_parseAction, _fetchData, _format) => {
   const actionData = _parseAction({
     type: 'transaction',
     data: parseTxData['action'],
@@ -33,7 +31,7 @@ test.each([
     preExecVersion: preExecData.pre_exec_version,
     gasUsed: preExecData.gas.gas_used,
   }) as ParsedTransactionActionData;
-  expect(actionData).toMatchSnapshot('parseActionSend');
+  expect(actionData).toMatchSnapshot('parseActionSendNFT');
 
   const requireData = await _fetchData({
     type: 'transaction',
@@ -46,7 +44,7 @@ test.each([
     apiProvider,
   });
 
-  expect(requireData).toMatchSnapshot('fetchDataSend');
+  expect(requireData).toMatchSnapshot('fetchDataSendNFT');
 
   const ctx = await _format({
     type: 'transaction',
@@ -56,5 +54,5 @@ test.each([
     isTestnet: false,
     provider: formatProvider,
   });
-  expect(ctx).toMatchSnapshot('formatSecurityEngineSend');
+  expect(ctx).toMatchSnapshot('formatSecurityEngineSendNFT');
 });

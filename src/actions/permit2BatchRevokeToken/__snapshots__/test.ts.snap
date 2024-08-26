@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Permit2BatchRevokeToken: fetchDataPermit2BatchRevokeToken 1`] = `
+{
+  "0xb555edf5dcf85f42ceef1f3630a52a108e55a654": {
+    "bornAt": 1591388241,
+    "contract": null,
+    "hasInteraction": true,
+    "isDanger": false,
+    "isEOA": false,
+    "protocol": {
+      "id": "uniswap2",
+      "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+      "name": "Uniswap V2",
+    },
+    "rank": 65,
+    "riskExposure": 20000000000,
+    "token": {
+      "amount": 0,
+      "raw_amount_hex_str": "0x0",
+    },
+  },
+}
+`;
+
+exports[`Permit2BatchRevokeToken: fetchDataPermit2BatchRevokeToken 2`] = `
+{
+  "0xb555edf5dcf85f42ceef1f3630a52a108e55a654": {
+    "bornAt": 1591388241,
+    "contract": null,
+    "hasInteraction": true,
+    "isDanger": false,
+    "isEOA": false,
+    "protocol": {
+      "id": "uniswap2",
+      "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+      "name": "Uniswap V2",
+    },
+    "rank": 65,
+    "riskExposure": 20000000000,
+    "token": {
+      "amount": 0,
+      "raw_amount_hex_str": "0x0",
+    },
+  },
+}
+`;
+
+exports[`Permit2BatchRevokeToken: formatSecurityEnginePermit2BatchRevokeToken 1`] = `{}`;
+
+exports[`Permit2BatchRevokeToken: formatSecurityEnginePermit2BatchRevokeToken 2`] = `{}`;
+
+exports[`Permit2BatchRevokeToken: parseActionPermit2BatchRevokeToken 1`] = `
+{
+  "permit2BatchRevokeToken": {
+    "permit2_id": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+    "revoke_list": [
+      {
+        "spender": "0xb555edf5dcf85f42ceef1f3630a52a108e55a654",
+        "token": {
+          "chain": "op",
+          "credit_score": 298224.0352079521,
+          "decimals": 18,
+          "display_symbol": null,
+          "id": "0x3c8b650257cfb5f272f799f5e2b4e65093a11a05",
+          "is_core": true,
+          "is_scam": false,
+          "is_suspicious": false,
+          "is_verified": true,
+          "is_wallet": true,
+          "logo_url": "https://static.debank.com/image/project/logo_url/op_velodrome/91c9c0f782ba8b2faf88e29b31e724fc.png",
+          "name": "Velodrome",
+          "optimized_symbol": "VELO",
+          "price": 0.10609585476131557,
+          "price_24h_change": -0.003991533267935655,
+          "protocol_id": "op_velodrome",
+          "symbol": "VELO",
+          "time_at": 1654113683,
+        },
+      },
+      {
+        "spender": "0xb555edf5dcf85f42ceef1f3630a52a108e55a654",
+        "token": {
+          "chain": "op",
+          "credit_score": 5436111.140508605,
+          "decimals": 18,
+          "display_symbol": null,
+          "id": "0x4200000000000000000000000000000000000042",
+          "is_core": true,
+          "is_scam": false,
+          "is_suspicious": false,
+          "is_verified": true,
+          "is_wallet": true,
+          "logo_url": "https://static.debank.com/image/op_token/logo_url/0x4200000000000000000000000000000000000042/029a56df18f88f4123120fdcb6bea40b.png",
+          "name": "Optimism",
+          "optimized_symbol": "OP",
+          "price": 1.5451,
+          "price_24h_change": -0.012336998210176486,
+          "protocol_id": "op_optimism",
+          "symbol": "OP",
+          "time_at": null,
+        },
+      },
+    ],
+  },
+}
+`;
+
+exports[`Permit2BatchRevokeToken: parseActionPermit2BatchRevokeToken 2`] = `
+{
+  "permit2BatchRevokeToken": {
+    "permit2_id": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+    "revoke_list": [
+      {
+        "spender": "0xb555edf5dcf85f42ceef1f3630a52a108e55a654",
+        "token": {
+          "chain": "op",
+          "credit_score": 298224.0352079521,
+          "decimals": 18,
+          "display_symbol": null,
+          "id": "0x3c8b650257cfb5f272f799f5e2b4e65093a11a05",
+          "is_core": true,
+          "is_scam": false,
+          "is_suspicious": false,
+          "is_verified": true,
+          "is_wallet": true,
+          "logo_url": "https://static.debank.com/image/project/logo_url/op_velodrome/91c9c0f782ba8b2faf88e29b31e724fc.png",
+          "name": "Velodrome",
+          "optimized_symbol": "VELO",
+          "price": 0.10609585476131557,
+          "price_24h_change": -0.003991533267935655,
+          "protocol_id": "op_velodrome",
+          "symbol": "VELO",
+          "time_at": 1654113683,
+        },
+      },
+      {
+        "spender": "0xb555edf5dcf85f42ceef1f3630a52a108e55a654",
+        "token": {
+          "chain": "op",
+          "credit_score": 5436111.140508605,
+          "decimals": 18,
+          "display_symbol": null,
+          "id": "0x4200000000000000000000000000000000000042",
+          "is_core": true,
+          "is_scam": false,
+          "is_suspicious": false,
+          "is_verified": true,
+          "is_wallet": true,
+          "logo_url": "https://static.debank.com/image/op_token/logo_url/0x4200000000000000000000000000000000000042/029a56df18f88f4123120fdcb6bea40b.png",
+          "name": "Optimism",
+          "optimized_symbol": "OP",
+          "price": 1.5451,
+          "price_24h_change": -0.012336998210176486,
+          "protocol_id": "op_optimism",
+          "symbol": "OP",
+          "time_at": null,
+        },
+      },
+    ],
+  },
+}
+`;

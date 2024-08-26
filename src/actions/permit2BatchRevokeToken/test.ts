@@ -6,10 +6,10 @@ import {
   walletProvider,
 } from '../../../__mocks__';
 import { ParsedTransactionActionData } from '../../types';
-import { fetchDataSend } from './fetchData';
-import { formatSecurityEngineSend } from './formatSecurityEngine';
 import { parseTxData, preExecData, txData } from './mocks';
-import { parseActionSend } from './parseAction';
+import { parseActionPermit2BatchRevokeToken } from './parseAction';
+import { fetchDataPermit2BatchRevokeToken } from './fetchData';
+import { formatSecurityEnginePermit2BatchRevokeToken } from './formatSecurityEngine';
 import {
   parseAction,
   fetchActionRequiredData,
@@ -17,14 +17,17 @@ import {
 } from '../..';
 
 /**
- * https://metamask.github.io/test-dapp/#sendButton
- * Send Eth
- * - [Send Legacy Transaction] button
+ * Rabby Batch Revoke Permit2
+ * - OP Chain permit2
  */
 test.each([
-  [parseActionSend, fetchDataSend, formatSecurityEngineSend],
+  [
+    parseActionPermit2BatchRevokeToken,
+    fetchDataPermit2BatchRevokeToken,
+    formatSecurityEnginePermit2BatchRevokeToken,
+  ],
   [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
-])('Send', async (_parseAction, _fetchData, _format) => {
+])('Permit2BatchRevokeToken', async (_parseAction, _fetchData, _format) => {
   const actionData = _parseAction({
     type: 'transaction',
     data: parseTxData['action'],
@@ -33,7 +36,7 @@ test.each([
     preExecVersion: preExecData.pre_exec_version,
     gasUsed: preExecData.gas.gas_used,
   }) as ParsedTransactionActionData;
-  expect(actionData).toMatchSnapshot('parseActionSend');
+  expect(actionData).toMatchSnapshot('parseActionPermit2BatchRevokeToken');
 
   const requireData = await _fetchData({
     type: 'transaction',
@@ -45,8 +48,7 @@ test.each([
     tx: txData,
     apiProvider,
   });
-
-  expect(requireData).toMatchSnapshot('fetchDataSend');
+  expect(requireData).toMatchSnapshot('fetchDataPermit2BatchRevokeToken');
 
   const ctx = await _format({
     type: 'transaction',
@@ -56,5 +58,5 @@ test.each([
     isTestnet: false,
     provider: formatProvider,
   });
-  expect(ctx).toMatchSnapshot('formatSecurityEngineSend');
+  expect(ctx).toMatchSnapshot('formatSecurityEnginePermit2BatchRevokeToken');
 });

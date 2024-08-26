@@ -7,9 +7,9 @@ import {
   ORIGIN,
 } from '../../../__mocks__';
 import { parseTxData, txData } from './mocks';
-import { parseActionBatchPermit2 } from './parseAction';
-import { fetchDataBatchPermit2 } from './fetchData';
-import { formatSecurityEngineBatchPermit2 } from './formatSecurityEngine';
+import { parseActionPermit } from './parseAction';
+import { fetchDataPermit } from './fetchData';
+import { formatSecurityEnginePermit } from './formatSecurityEngine';
 import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
 import {
   parseAction,
@@ -18,25 +18,24 @@ import {
 } from '../..';
 
 /**
-/**
  * https://extension-tests.revoke.cash/
- * [Permit2 Batch] button
+ * [Permit] button
  */
 test.each([
   [
-    parseTypedDataAction(parseActionBatchPermit2),
-    fetchDataBatchPermit2,
-    formatSecurityEngineBatchPermit2,
+    parseTypedDataAction(parseActionPermit),
+    fetchDataPermit,
+    formatSecurityEnginePermit,
   ],
   [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
-])('BatchPermit2', async (_parseAction, _fetchData, _format) => {
+])('Permit', async (_parseAction, _fetchData, _format) => {
   const actionData = _parseAction({
     type: 'typed_data',
     data: parseTxData['action'],
     typedData: txData,
     sender: SENDER,
   });
-  expect(actionData).toMatchSnapshot('parseActionBatchPermit2');
+  expect(actionData).toMatchSnapshot('parseActionPermit');
 
   const requireData = await _fetchData({
     type: 'typed_data',
@@ -46,7 +45,7 @@ test.each([
     apiProvider,
     sender: SENDER,
   });
-  expect(requireData).toMatchSnapshot('fetchDataBatchPermit2');
+  expect(requireData).toMatchSnapshot('fetchDataPermit');
 
   const ctx = await _format({
     type: 'typed_data',
@@ -57,5 +56,5 @@ test.each([
     provider: formatProvider,
     origin: ORIGIN,
   });
-  expect(ctx).toMatchSnapshot('formatSecurityEngineBatchPermit2');
+  expect(ctx).toMatchSnapshot('formatSecurityEnginePermit');
 });

@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RevokePermit2: fetchDataRevokePermit2 1`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "token": {
+    "amount": 7.625238,
+    "chain": "eth",
+    "credit_score": 18127653.217581443,
+    "decimals": 6,
+    "display_symbol": null,
+    "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "is_core": true,
+    "is_scam": false,
+    "is_suspicious": false,
+    "is_verified": true,
+    "is_wallet": true,
+    "logo_url": "https://static.debank.com/image/eth_token/logo_url/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/fffcd27b9efff5a86ab942084c05924d.png",
+    "name": "USD Coin",
+    "optimized_symbol": "USDC",
+    "price": 0.9998000399920016,
+    "price_24h_change": 0.00009998000399924235,
+    "protocol_id": "",
+    "raw_amount": 7625238,
+    "raw_amount_hex_str": "0x745a16",
+    "symbol": "USDC",
+    "time_at": 1533324504,
+  },
+}
+`;
+
+exports[`RevokePermit2: fetchDataRevokePermit2 2`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "token": {
+    "amount": 7.625238,
+    "chain": "eth",
+    "credit_score": 18127653.217581443,
+    "decimals": 6,
+    "display_symbol": null,
+    "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "is_core": true,
+    "is_scam": false,
+    "is_suspicious": false,
+    "is_verified": true,
+    "is_wallet": true,
+    "logo_url": "https://static.debank.com/image/eth_token/logo_url/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/fffcd27b9efff5a86ab942084c05924d.png",
+    "name": "USD Coin",
+    "optimized_symbol": "USDC",
+    "price": 0.9998000399920016,
+    "price_24h_change": 0.00009998000399924235,
+    "protocol_id": "",
+    "raw_amount": 7625238,
+    "raw_amount_hex_str": "0x745a16",
+    "symbol": "USDC",
+    "time_at": 1533324504,
+  },
+}
+`;
+
+exports[`RevokePermit2: formatSecurityEngineRevokePermit2 1`] = `{}`;
+
+exports[`RevokePermit2: formatSecurityEngineRevokePermit2 2`] = `{}`;
+
+exports[`RevokePermit2: parseActionRevokePermit2 1`] = `
+{
+  "revokePermit2": {
+    "spender": "0xcb1355ff08ab38bbce60111f1bb2b784be25d7e8",
+    "token": {
+      "chain": "op",
+      "credit_score": 39233.563306539145,
+      "decimals": 18,
+      "display_symbol": null,
+      "id": "0x3ed9acaac7bd974eb83a8ea6432a239e3c829d5d",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/op_token/logo_url/0x3ed9acaac7bd974eb83a8ea6432a239e3c829d5d/8ffb8993b60549af7892249c5c71718b.png",
+      "name": "LERNITAS",
+      "optimized_symbol": "2192",
+      "permit2_allowance_amount": 1.157920892373162e+59,
+      "permit2_allowance_raw_amount": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
+      "price": 0.0003226293045306369,
+      "price_24h_change": -0.0014572830105502455,
+      "protocol_id": "",
+      "symbol": "2192",
+      "time_at": 1710476809,
+    },
+  },
+}
+`;
+
+exports[`RevokePermit2: parseActionRevokePermit2 2`] = `
+{
+  "revokePermit2": {
+    "spender": "0xcb1355ff08ab38bbce60111f1bb2b784be25d7e8",
+    "token": {
+      "chain": "op",
+      "credit_score": 39233.563306539145,
+      "decimals": 18,
+      "display_symbol": null,
+      "id": "0x3ed9acaac7bd974eb83a8ea6432a239e3c829d5d",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/op_token/logo_url/0x3ed9acaac7bd974eb83a8ea6432a239e3c829d5d/8ffb8993b60549af7892249c5c71718b.png",
+      "name": "LERNITAS",
+      "optimized_symbol": "2192",
+      "permit2_allowance_amount": 1.157920892373162e+59,
+      "permit2_allowance_raw_amount": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
+      "price": 0.0003226293045306369,
+      "price_24h_change": -0.0014572830105502455,
+      "protocol_id": "",
+      "symbol": "2192",
+      "time_at": 1710476809,
+    },
+  },
+}
+`;

@@ -1,15 +1,15 @@
 import {
   apiProvider,
-  formatProvider,
-  walletProvider,
-  SENDER,
   ETH_CHAIN_ID,
+  formatProvider,
   ORIGIN,
+  SENDER,
+  walletProvider,
 } from '../../../__mocks__';
+import { fetchDataSignMultiSig } from './fetchData';
+import { formatSecurityEngineSignMultiSig } from './formatSecurityEngine';
 import { parseTxData, txData } from './mocks';
-import { parseActionBatchPermit2 } from './parseAction';
-import { fetchDataBatchPermit2 } from './fetchData';
-import { formatSecurityEngineBatchPermit2 } from './formatSecurityEngine';
+import { parseActionSignMultiSig } from './parseAction';
 import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
 import {
   parseAction,
@@ -18,25 +18,26 @@ import {
 } from '../..';
 
 /**
-/**
- * https://extension-tests.revoke.cash/
- * [Permit2 Batch] button
+ * https://brain.debank.com/action-group/typed_data/fd954b3088f7b41fb0e521f65d8f76f0
+ * id: 6634098
+ * chainId: base
+ * contract_id: 0xb5d05de17c00aed6c465b6bbba01d5edae59e19c
  */
 test.each([
   [
-    parseTypedDataAction(parseActionBatchPermit2),
-    fetchDataBatchPermit2,
-    formatSecurityEngineBatchPermit2,
+    parseTypedDataAction(parseActionSignMultiSig),
+    fetchDataSignMultiSig,
+    formatSecurityEngineSignMultiSig,
   ],
   [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
-])('BatchPermit2', async (_parseAction, _fetchData, _format) => {
+])('ApproveToken', async (_parseAction, _fetchData, _format) => {
   const actionData = _parseAction({
     type: 'typed_data',
     data: parseTxData['action'],
     typedData: txData,
     sender: SENDER,
   });
-  expect(actionData).toMatchSnapshot('parseActionBatchPermit2');
+  expect(actionData).toMatchSnapshot('parseActionSignMultiSig');
 
   const requireData = await _fetchData({
     type: 'typed_data',
@@ -46,7 +47,8 @@ test.each([
     apiProvider,
     sender: SENDER,
   });
-  expect(requireData).toMatchSnapshot('fetchDataBatchPermit2');
+
+  expect(requireData).toMatchSnapshot('fetchDataSignMultiSig');
 
   const ctx = await _format({
     type: 'typed_data',
@@ -57,5 +59,5 @@ test.each([
     provider: formatProvider,
     origin: ORIGIN,
   });
-  expect(ctx).toMatchSnapshot('formatSecurityEngineBatchPermit2');
+  expect(ctx).toMatchSnapshot('formatSecurityEngineSignMultiSig');
 });

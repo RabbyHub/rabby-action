@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RevokeNFTCollection: fetchDataRevokeNFTCollection 1`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "tokenBalance": "0",
+}
+`;
+
+exports[`RevokeNFTCollection: fetchDataRevokeNFTCollection 2`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "tokenBalance": "0",
+}
+`;
+
+exports[`RevokeNFTCollection: formatSecurityEngineRevokeNFTCollection 1`] = `{}`;
+
+exports[`RevokeNFTCollection: formatSecurityEngineRevokeNFTCollection 2`] = `{}`;
+
+exports[`RevokeNFTCollection: parseActionRevokeNFTCollection 1`] = `
+{
+  "revokeNFTCollection": {
+    "collection": {
+      "avg_price_24h": 0.0004,
+      "avg_price_last_24h": 0.0004,
+      "buy_holder_count": 4,
+      "buy_holder_usd_value": 6697.055379018883,
+      "chain_id": "linea",
+      "credit_score": 0,
+      "credit_score_rank_at": 871,
+      "description": null,
+      "floor_price": 0,
+      "floor_price_24h": 0,
+      "holder_count": 66894,
+      "id": "0x510581cefd1a4c651aa6727957f283c665647485",
+      "is_core": true,
+      "is_scam": false,
+      "is_verified": null,
+      "is_visible": true,
+      "logo_url": "https://static.debank.com/image/linea_nft/thumbnail_url/8534979902d1ebc247f9be4e6ce46447/13a997924aa9fe2c3f08dc04891538e4.png",
+      "max_price_24h": 0.0004,
+      "max_price_last_24h": 0.0004,
+      "name": "Linea-Space-Falcon Identity Pass",
+      "nft_count": 532225,
+      "rank_at": null,
+      "thirdparty": {},
+      "total_est_usd_value": 0,
+      "total_est_value": null,
+      "volume_24h": 0,
+      "volume_last_24h": 0,
+    },
+    "spender": "0xd9041353a0a6492486f764cfe45ae8a39ee300f1",
+  },
+}
+`;
+
+exports[`RevokeNFTCollection: parseActionRevokeNFTCollection 2`] = `
+{
+  "revokeNFTCollection": {
+    "collection": {
+      "avg_price_24h": 0.0004,
+      "avg_price_last_24h": 0.0004,
+      "buy_holder_count": 4,
+      "buy_holder_usd_value": 6697.055379018883,
+      "chain_id": "linea",
+      "credit_score": 0,
+      "credit_score_rank_at": 871,
+      "description": null,
+      "floor_price": 0,
+      "floor_price_24h": 0,
+      "holder_count": 66894,
+      "id": "0x510581cefd1a4c651aa6727957f283c665647485",
+      "is_core": true,
+      "is_scam": false,
+      "is_verified": null,
+      "is_visible": true,
+      "logo_url": "https://static.debank.com/image/linea_nft/thumbnail_url/8534979902d1ebc247f9be4e6ce46447/13a997924aa9fe2c3f08dc04891538e4.png",
+      "max_price_24h": 0.0004,
+      "max_price_last_24h": 0.0004,
+      "name": "Linea-Space-Falcon Identity Pass",
+      "nft_count": 532225,
+      "rank_at": null,
+      "thirdparty": {},
+      "total_est_usd_value": 0,
+      "total_est_value": null,
+      "volume_24h": 0,
+      "volume_last_24h": 0,
+    },
+    "spender": "0xd9041353a0a6492486f764cfe45ae8a39ee300f1",
+  },
+}
+`;

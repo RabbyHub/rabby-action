@@ -6,10 +6,10 @@ import {
   ETH_CHAIN_ID,
   ORIGIN,
 } from '../../../__mocks__';
-import { parseTxData, txData } from './mocks';
-import { parseActionBatchPermit2 } from './parseAction';
-import { fetchDataBatchPermit2 } from './fetchData';
-import { formatSecurityEngineBatchPermit2 } from './formatSecurityEngine';
+import { parseTxDataTypedData, txDataTypedData } from './mocks';
+import { parseActionCommon } from './parseAction';
+import { fetchDataCommon } from './fetchData';
+import { formatSecurityEngineCommon } from './formatSecurityEngine';
 import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
 import {
   parseAction,
@@ -18,25 +18,25 @@ import {
 } from '../..';
 
 /**
-/**
- * https://extension-tests.revoke.cash/
- * [Permit2 Batch] button
+ * https://metamask.github.io/test-dapp/#signTypedDataV4
+ * Sign Typed Data V4
+ * [Sign] button
  */
 test.each([
   [
-    parseTypedDataAction(parseActionBatchPermit2),
-    fetchDataBatchPermit2,
-    formatSecurityEngineBatchPermit2,
+    parseTypedDataAction(parseActionCommon),
+    fetchDataCommon,
+    formatSecurityEngineCommon,
   ],
   [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
-])('BatchPermit2', async (_parseAction, _fetchData, _format) => {
+])('Common -> TypedData', async (_parseAction, _fetchData, _format) => {
   const actionData = _parseAction({
     type: 'typed_data',
-    data: parseTxData['action'],
-    typedData: txData,
+    data: parseTxDataTypedData['action'],
+    typedData: txDataTypedData,
     sender: SENDER,
   });
-  expect(actionData).toMatchSnapshot('parseActionBatchPermit2');
+  expect(actionData).toMatchSnapshot('parseActionCommon');
 
   const requireData = await _fetchData({
     type: 'typed_data',
@@ -46,7 +46,7 @@ test.each([
     apiProvider,
     sender: SENDER,
   });
-  expect(requireData).toMatchSnapshot('fetchDataBatchPermit2');
+  expect(requireData).toMatchSnapshot('fetchDataCommon');
 
   const ctx = await _format({
     type: 'typed_data',
@@ -57,5 +57,5 @@ test.each([
     provider: formatProvider,
     origin: ORIGIN,
   });
-  expect(ctx).toMatchSnapshot('formatSecurityEngineBatchPermit2');
+  expect(ctx).toMatchSnapshot('formatSecurityEngineCommon');
 });

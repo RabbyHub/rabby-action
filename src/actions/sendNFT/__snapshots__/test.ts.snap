@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SendNFT: fetchDataSendNFT 1`] = `
+{
+  "cex": null,
+  "contract": null,
+  "eoa": {
+    "bornAt": 1564655163,
+    "id": "0x52dec422aa4bae0fb6f2b41db023dffa9f4a1353",
+  },
+  "hasReceiverMnemonicInWallet": false,
+  "hasReceiverPrivateKeyInWallet": true,
+  "hasTransfer": true,
+  "isTokenContract": false,
+  "name": null,
+  "onTransferWhitelist": false,
+  "protocol": null,
+  "receiverIsSpoofing": true,
+  "usd_value": 4418.154405584272,
+  "usedChains": [],
+  "whitelistEnable": false,
+}
+`;
+
+exports[`SendNFT: fetchDataSendNFT 2`] = `
+{
+  "cex": null,
+  "contract": null,
+  "eoa": {
+    "bornAt": 1564655163,
+    "id": "0x52dec422aa4bae0fb6f2b41db023dffa9f4a1353",
+  },
+  "hasReceiverMnemonicInWallet": false,
+  "hasReceiverPrivateKeyInWallet": true,
+  "hasTransfer": true,
+  "isTokenContract": false,
+  "name": null,
+  "onTransferWhitelist": false,
+  "protocol": null,
+  "receiverIsSpoofing": true,
+  "usd_value": 4418.154405584272,
+  "usedChains": [],
+  "whitelistEnable": false,
+}
+`;
+
+exports[`SendNFT: formatSecurityEngineSendNFT 1`] = `
+{
+  "sendNFT": {
+    "cex": null,
+    "chainId": "eth",
+    "contract": null,
+    "hasReceiverMnemonicInWallet": false,
+    "hasReceiverPrivateKeyInWallet": true,
+    "hasTransfer": true,
+    "onTransferWhitelist": false,
+    "receiverIsSpoofing": true,
+    "to": "0x52dec422aa4bae0fb6f2b41db023dffa9f4a1353",
+    "usedChainList": [],
+  },
+}
+`;
+
+exports[`SendNFT: formatSecurityEngineSendNFT 2`] = `
+{
+  "sendNFT": {
+    "cex": null,
+    "chainId": "eth",
+    "contract": null,
+    "hasReceiverMnemonicInWallet": false,
+    "hasReceiverPrivateKeyInWallet": true,
+    "hasTransfer": true,
+    "onTransferWhitelist": false,
+    "receiverIsSpoofing": true,
+    "to": "0x52dec422aa4bae0fb6f2b41db023dffa9f4a1353",
+    "usedChainList": [],
+  },
+}
+`;
+
+exports[`SendNFT: parseActionSendNFT 1`] = `
+{
+  "sendNFT": {
+    "nft": {
+      "amount": 1,
+      "attributes": [
+        {
+          "trait_type": "Type",
+          "value": "Quest",
+        },
+        {
+          "trait_type": "Title",
+          "value": "Mission 200K: Arbitrum",
+        },
+        {
+          "trait_type": "Community",
+          "value": "Layer3",
+        },
+        {
+          "trait_type": "Tag",
+          "value": "DeFi",
+        },
+        {
+          "trait_type": "Difficulty",
+          "value": "BEGINNER",
+        },
+        {
+          "trait_type": "Wallet Provider",
+          "value": "Rabby Wallet",
+        },
+      ],
+      "chain": "arb",
+      "collection": {
+        "chain": "arb",
+        "credit_score": 1643474.735188378,
+        "description": null,
+        "floor_price": 0,
+        "id": "arb:0x1195cf65f83b3a5768f3c496d3a05ad6412c64b7",
+        "is_core": true,
+        "is_scam": false,
+        "is_suspicious": false,
+        "is_verified": true,
+        "logo_url": "https://static.debank.com/image/arb_nft/thumbnail_url/24b44272ad6bf55323dca1add5f520f6/7b78944a6e25d3d2eded3eb6425802a1.png",
+        "name": "Layer3 CUBE",
+      },
+      "collection_id": "arb:0x1195cf65f83b3a5768f3c496d3a05ad6412c64b7",
+      "content": "https://static.debank.com/image/arb_nft/local_url/7b31129c599fee1f53b8f439c0391072/f2830449700b7dc22ac04f0caf54b1f8.png",
+      "content_type": "image_url",
+      "contract_id": "0x1195cf65f83b3a5768f3c496d3a05ad6412c64b7",
+      "description": "",
+      "detail_url": "https://opensea.io/assets/0x1195cf65f83b3a5768f3c496d3a05ad6412c64b7/440299",
+      "id": "7b31129c599fee1f53b8f439c0391072",
+      "inner_id": "440299",
+      "is_erc1155": false,
+      "is_erc721": true,
+      "name": "Mission 200K: Arbitrum",
+      "pay_token": null,
+      "symbol": "CUBE",
+      "thumbnail_url": "https://static.debank.com/image/arb_nft/thumbnail_url/7b31129c599fee1f53b8f439c0391072/f2830449700b7dc22ac04f0caf54b1f8.png",
+      "total_supply": 1,
+    },
+    "to": "0x52dec422aa4bae0fb6f2b41db023dffa9f4a1353",
+  },
+}
+`;
+
+exports[`SendNFT: parseActionSendNFT 2`] = `
+{
+  "sendNFT": {
+    "nft": {
+      "amount": 1,
+      "attributes": [
+        {
+          "trait_type": "Type",
+          "value": "Quest",
+        },
+        {
+          "trait_type": "Title",
+          "value": "Mission 200K: Arbitrum",
+        },
+        {
+          "trait_type": "Community",
+          "value": "Layer3",
+        },
+        {
+          "trait_type": "Tag",
+          "value": "DeFi",
+        },
+        {
+          "trait_type": "Difficulty",
+          "value": "BEGINNER",
+        },
+        {
+          "trait_type": "Wallet Provider",
+          "value": "Rabby Wallet",
+        },
+      ],
+      "chain": "arb",
+      "collection": {
+        "chain": "arb",
+        "credit_score": 1643474.735188378,
+        "description": null,
+        "floor_price": 0,
+        "id": "arb:0x1195cf65f83b3a5768f3c496d3a05ad6412c64b7",
+        "is_core": true,
+        "is_scam": false,
+        "is_suspicious": false,
+        "is_verified": true,
+        "logo_url": "https://static.debank.com/image/arb_nft/thumbnail_url/24b44272ad6bf55323dca1add5f520f6/7b78944a6e25d3d2eded3eb6425802a1.png",
+        "name": "Layer3 CUBE",
+      },
+      "collection_id": "arb:0x1195cf65f83b3a5768f3c496d3a05ad6412c64b7",
+      "content": "https://static.debank.com/image/arb_nft/local_url/7b31129c599fee1f53b8f439c0391072/f2830449700b7dc22ac04f0caf54b1f8.png",
+      "content_type": "image_url",
+      "contract_id": "0x1195cf65f83b3a5768f3c496d3a05ad6412c64b7",
+      "description": "",
+      "detail_url": "https://opensea.io/assets/0x1195cf65f83b3a5768f3c496d3a05ad6412c64b7/440299",
+      "id": "7b31129c599fee1f53b8f439c0391072",
+      "inner_id": "440299",
+      "is_erc1155": false,
+      "is_erc721": true,
+      "name": "Mission 200K: Arbitrum",
+      "pay_token": null,
+      "symbol": "CUBE",
+      "thumbnail_url": "https://static.debank.com/image/arb_nft/thumbnail_url/7b31129c599fee1f53b8f439c0391072/f2830449700b7dc22ac04f0caf54b1f8.png",
+      "total_supply": 1,
+    },
+    "to": "0x52dec422aa4bae0fb6f2b41db023dffa9f4a1353",
+  },
+}
+`;

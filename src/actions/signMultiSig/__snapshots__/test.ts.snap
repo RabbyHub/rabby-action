@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApproveToken: fetchDataSignMultiSig 1`] = `
+{
+  "contract": {},
+  "id": "0xb5d05de17c00aed6c465b6bbba01d5edae59e19c",
+}
+`;
+
+exports[`ApproveToken: fetchDataSignMultiSig 2`] = `
+{
+  "bornAt": 1591388241,
+  "contract": {},
+  "hasInteraction": true,
+  "id": "0xb5d05de17c00aed6c465b6bbba01d5edae59e19c",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": false,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "unexpectedAddr": null,
+}
+`;
+
+exports[`ApproveToken: formatSecurityEngineSignMultiSig 1`] = `{}`;
+
+exports[`ApproveToken: formatSecurityEngineSignMultiSig 2`] = `{}`;
+
+exports[`ApproveToken: parseActionSignMultiSig 1`] = `
+{
+  "actionType": "sign_multisig",
+  "brand": undefined,
+  "chainId": 8453,
+  "contractId": "0xb5d05de17c00aed6c465b6bbba01d5edae59e19c",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "signMultiSig": {
+    "multisig_id": "0xb5d05de17c00aed6c465b6bbba01d5edae59e19c",
+  },
+}
+`;
+
+exports[`ApproveToken: parseActionSignMultiSig 2`] = `
+{
+  "actionType": "sign_multisig",
+  "brand": undefined,
+  "chainId": 8453,
+  "contractId": "0xb5d05de17c00aed6c465b6bbba01d5edae59e19c",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "signMultiSig": {
+    "multisig_id": "0xb5d05de17c00aed6c465b6bbba01d5edae59e19c",
+  },
+}
+`;

@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Common -> TypedData: fetchDataCommon 1`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0xcccccccccccccccccccccccccccccccccccccccc",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": false,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "unexpectedAddr": null,
+}
+`;
+
+exports[`Common -> TypedData: fetchDataCommon 2`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0xcccccccccccccccccccccccccccccccccccccccc",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": false,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "unexpectedAddr": null,
+}
+`;
+
+exports[`Common -> TypedData: formatSecurityEngineCommon 1`] = `{}`;
+
+exports[`Common -> TypedData: formatSecurityEngineCommon 2`] = `
+{
+  "contractCall": {
+    "chainId": "eth",
+    "id": "0xcccccccccccccccccccccccccccccccccccccccc",
+  },
+}
+`;
+
+exports[`Common -> TypedData: parseActionCommon 1`] = `
+{
+  "actionType": null,
+  "brand": undefined,
+  "chainId": 1,
+  "contractId": "0xcccccccccccccccccccccccccccccccccccccccc",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;
+
+exports[`Common -> TypedData: parseActionCommon 2`] = `
+{
+  "actionType": null,
+  "brand": undefined,
+  "chainId": 1,
+  "contractCall": {},
+  "contractId": "0xcccccccccccccccccccccccccccccccccccccccc",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;

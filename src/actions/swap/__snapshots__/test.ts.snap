@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Swap: fetchDataSwap 1`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0x6352a56caadc4f1e25cd6c75970fa768a3304e64",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": true,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;
+
+exports[`Swap: fetchDataSwap 2`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0x6352a56caadc4f1e25cd6c75970fa768a3304e64",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": true,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;
+
+exports[`Swap: formatSecurityEngineSwap 1`] = `
+{
+  "swap": {
+    "chainId": "eth",
+    "contractAddress": "0x6352a56caadc4f1e25cd6c75970fa768a3304e64",
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "id": "0x6352a56caadc4f1e25cd6c75970fa768a3304e64",
+    "receiveTokenIsFake": false,
+    "receiveTokenIsScam": false,
+    "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "receiverInWallet": true,
+    "slippageTolerance": 0.5,
+    "usdValuePercentage": -0.0063510049707952015,
+  },
+}
+`;
+
+exports[`Swap: formatSecurityEngineSwap 2`] = `
+{
+  "swap": {
+    "chainId": "eth",
+    "contractAddress": "0x6352a56caadc4f1e25cd6c75970fa768a3304e64",
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "id": "0x6352a56caadc4f1e25cd6c75970fa768a3304e64",
+    "receiveTokenIsFake": false,
+    "receiveTokenIsScam": false,
+    "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "receiverInWallet": true,
+    "slippageTolerance": 0.5,
+    "usdValuePercentage": -0.0063510049707952015,
+  },
+}
+`;
+
+exports[`Swap: parseActionSwap 1`] = `
+{
+  "swap": {
+    "balanceChange": {
+      "success": true,
+      "support": true,
+    },
+    "minReceive": {
+      "amount": 0.00005,
+      "chain": "matic",
+      "credit_score": 4530369.670714375,
+      "decimals": 6,
+      "display_symbol": null,
+      "id": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/eth_token/logo_url/0xdac17f958d2ee523a2206206994597c13d831ec7/464c0de678334b8fe87327e527bc476d.png",
+      "min_amount": 0.00005,
+      "min_raw_amount": "50",
+      "name": "(PoS) Tether USD",
+      "optimized_symbol": "USDT",
+      "price": 1.00038,
+      "price_24h_change": 0.000009996301368559145,
+      "protocol_id": "",
+      "symbol": "USDT",
+      "time_at": 1599512847,
+    },
+    "payToken": {
+      "amount": 0.000192647154008608,
+      "chain": "matic",
+      "credit_score": 100000000,
+      "decimals": 18,
+      "display_symbol": null,
+      "id": "matic",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/matic_token/logo_url/matic/6f5a6b6f0732a7a235131bd7804d357c.png",
+      "name": "MATIC",
+      "optimized_symbol": "MATIC",
+      "price": 0.5226,
+      "price_24h_change": -0.08716157205240184,
+      "protocol_id": "",
+      "raw_amount": "192647154008608",
+      "symbol": "MATIC",
+      "time_at": null,
+    },
+    "receiveToken": {
+      "amount": 0.0001,
+      "chain": "matic",
+      "credit_score": 4530369.670714375,
+      "decimals": 6,
+      "display_symbol": null,
+      "id": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/eth_token/logo_url/0xdac17f958d2ee523a2206206994597c13d831ec7/464c0de678334b8fe87327e527bc476d.png",
+      "min_amount": 0.00005,
+      "min_raw_amount": "50",
+      "name": "(PoS) Tether USD",
+      "optimized_symbol": "USDT",
+      "price": 1.00038,
+      "price_24h_change": 0.000009996301368559145,
+      "protocol_id": "",
+      "symbol": "USDT",
+      "time_at": 1599512847,
+    },
+    "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "slippageTolerance": 0.5,
+    "usdValueDiff": "-0.0000006394026848985408",
+    "usdValuePercentage": -0.0063510049707952015,
+  },
+}
+`;
+
+exports[`Swap: parseActionSwap 2`] = `
+{
+  "swap": {
+    "balanceChange": {
+      "success": true,
+      "support": true,
+    },
+    "minReceive": {
+      "amount": 0.00005,
+      "chain": "matic",
+      "credit_score": 4530369.670714375,
+      "decimals": 6,
+      "display_symbol": null,
+      "id": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/eth_token/logo_url/0xdac17f958d2ee523a2206206994597c13d831ec7/464c0de678334b8fe87327e527bc476d.png",
+      "min_amount": 0.00005,
+      "min_raw_amount": "50",
+      "name": "(PoS) Tether USD",
+      "optimized_symbol": "USDT",
+      "price": 1.00038,
+      "price_24h_change": 0.000009996301368559145,
+      "protocol_id": "",
+      "symbol": "USDT",
+      "time_at": 1599512847,
+    },
+    "payToken": {
+      "amount": 0.000192647154008608,
+      "chain": "matic",
+      "credit_score": 100000000,
+      "decimals": 18,
+      "display_symbol": null,
+      "id": "matic",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/matic_token/logo_url/matic/6f5a6b6f0732a7a235131bd7804d357c.png",
+      "name": "MATIC",
+      "optimized_symbol": "MATIC",
+      "price": 0.5226,
+      "price_24h_change": -0.08716157205240184,
+      "protocol_id": "",
+      "raw_amount": "192647154008608",
+      "symbol": "MATIC",
+      "time_at": null,
+    },
+    "receiveToken": {
+      "amount": 0.0001,
+      "chain": "matic",
+      "credit_score": 4530369.670714375,
+      "decimals": 6,
+      "display_symbol": null,
+      "id": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/eth_token/logo_url/0xdac17f958d2ee523a2206206994597c13d831ec7/464c0de678334b8fe87327e527bc476d.png",
+      "min_amount": 0.00005,
+      "min_raw_amount": "50",
+      "name": "(PoS) Tether USD",
+      "optimized_symbol": "USDT",
+      "price": 1.00038,
+      "price_24h_change": 0.000009996301368559145,
+      "protocol_id": "",
+      "symbol": "USDT",
+      "time_at": 1599512847,
+    },
+    "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "slippageTolerance": 0.5,
+    "usdValueDiff": "-0.0000006394026848985408",
+    "usdValuePercentage": -0.0063510049707952015,
+  },
+}
+`;

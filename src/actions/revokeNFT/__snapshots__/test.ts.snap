@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RevokeNFT: fetchDataRevokeNFT 1`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "tokenBalance": "0",
+}
+`;
+
+exports[`RevokeNFT: fetchDataRevokeNFT 2`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "tokenBalance": "0",
+}
+`;
+
+exports[`RevokeNFT: formatSecurityEngineRevokeNFT 1`] = `{}`;
+
+exports[`RevokeNFT: formatSecurityEngineRevokeNFT 2`] = `{}`;
+
+exports[`RevokeNFT: parseActionRevokeNFT 1`] = `
+{
+  "revokeNFT": {
+    "nft": {
+      "attributes": [],
+      "chain": "bsc",
+      "collection": {
+        "chain": "bsc",
+        "credit_score": 743486.6457284187,
+        "description": null,
+        "floor_price": 0,
+        "id": "bsc:0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+        "is_core": false,
+        "is_scam": false,
+        "is_suspicious": false,
+        "is_verified": true,
+        "logo_url": "",
+        "name": "Pancake V3 Positions NFT-V1",
+      },
+      "collection_id": "bsc:0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+      "content": "",
+      "content_type": null,
+      "contract_id": "0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+      "description": null,
+      "detail_url": "https://opensea.io/assets/0x46a15b0b27311cedf172ab29e4f4766fbe7f4364/967011",
+      "id": "ee42db89591137175614c8e00ce012e0",
+      "inner_id": "967011",
+      "is_erc1155": false,
+      "is_erc721": true,
+      "name": "#967011",
+      "pay_token": null,
+      "symbol": "PCS-V3-POS",
+      "thumbnail_url": "",
+      "total_supply": 1,
+    },
+    "spender": "0x000000eed287174a06550eabe6a00074255cab34",
+  },
+}
+`;
+
+exports[`RevokeNFT: parseActionRevokeNFT 2`] = `
+{
+  "revokeNFT": {
+    "nft": {
+      "attributes": [],
+      "chain": "bsc",
+      "collection": {
+        "chain": "bsc",
+        "credit_score": 743486.6457284187,
+        "description": null,
+        "floor_price": 0,
+        "id": "bsc:0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+        "is_core": false,
+        "is_scam": false,
+        "is_suspicious": false,
+        "is_verified": true,
+        "logo_url": "",
+        "name": "Pancake V3 Positions NFT-V1",
+      },
+      "collection_id": "bsc:0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+      "content": "",
+      "content_type": null,
+      "contract_id": "0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+      "description": null,
+      "detail_url": "https://opensea.io/assets/0x46a15b0b27311cedf172ab29e4f4766fbe7f4364/967011",
+      "id": "ee42db89591137175614c8e00ce012e0",
+      "inner_id": "967011",
+      "is_erc1155": false,
+      "is_erc721": true,
+      "name": "#967011",
+      "pay_token": null,
+      "symbol": "PCS-V3-POS",
+      "thumbnail_url": "",
+      "total_supply": 1,
+    },
+    "spender": "0x000000eed287174a06550eabe6a00074255cab34",
+  },
+}
+`;

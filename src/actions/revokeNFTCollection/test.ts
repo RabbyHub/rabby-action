@@ -6,10 +6,10 @@ import {
   walletProvider,
 } from '../../../__mocks__';
 import { ParsedTransactionActionData } from '../../types';
-import { fetchDataSend } from './fetchData';
-import { formatSecurityEngineSend } from './formatSecurityEngine';
+import { fetchDataRevokeNFTCollection } from './fetchData';
+import { formatSecurityEngineRevokeNFTCollection } from './formatSecurityEngine';
 import { parseTxData, preExecData, txData } from './mocks';
-import { parseActionSend } from './parseAction';
+import { parseActionRevokeNFTCollection } from './parseAction';
 import {
   parseAction,
   fetchActionRequiredData,
@@ -17,14 +17,16 @@ import {
 } from '../..';
 
 /**
- * https://metamask.github.io/test-dapp/#sendButton
- * Send Eth
- * - [Send Legacy Transaction] button
+ * Rabby Revoke NFT Collection
  */
 test.each([
-  [parseActionSend, fetchDataSend, formatSecurityEngineSend],
+  [
+    parseActionRevokeNFTCollection,
+    fetchDataRevokeNFTCollection,
+    formatSecurityEngineRevokeNFTCollection,
+  ],
   [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
-])('Send', async (_parseAction, _fetchData, _format) => {
+])('RevokeNFTCollection', async (_parseAction, _fetchData, _format) => {
   const actionData = _parseAction({
     type: 'transaction',
     data: parseTxData['action'],
@@ -33,7 +35,7 @@ test.each([
     preExecVersion: preExecData.pre_exec_version,
     gasUsed: preExecData.gas.gas_used,
   }) as ParsedTransactionActionData;
-  expect(actionData).toMatchSnapshot('parseActionSend');
+  expect(actionData).toMatchSnapshot('parseActionRevokeNFTCollection');
 
   const requireData = await _fetchData({
     type: 'transaction',
@@ -46,7 +48,7 @@ test.each([
     apiProvider,
   });
 
-  expect(requireData).toMatchSnapshot('fetchDataSend');
+  expect(requireData).toMatchSnapshot('fetchDataRevokeNFTCollection');
 
   const ctx = await _format({
     type: 'transaction',
@@ -56,5 +58,5 @@ test.each([
     isTestnet: false,
     provider: formatProvider,
   });
-  expect(ctx).toMatchSnapshot('formatSecurityEngineSend');
+  expect(ctx).toMatchSnapshot('formatSecurityEngineRevokeNFTCollection');
 });

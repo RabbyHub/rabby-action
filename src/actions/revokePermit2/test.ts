@@ -6,10 +6,10 @@ import {
   walletProvider,
 } from '../../../__mocks__';
 import { ParsedTransactionActionData } from '../../types';
-import { fetchDataSend } from './fetchData';
-import { formatSecurityEngineSend } from './formatSecurityEngine';
+import { fetchDataRevokePermit2 } from './fetchData';
+import { formatSecurityEngineRevokePermit2 } from './formatSecurityEngine';
 import { parseTxData, preExecData, txData } from './mocks';
-import { parseActionSend } from './parseAction';
+import { parseActionRevokePermit2 } from './parseAction';
 import {
   parseAction,
   fetchActionRequiredData,
@@ -17,14 +17,16 @@ import {
 } from '../..';
 
 /**
- * https://metamask.github.io/test-dapp/#sendButton
- * Send Eth
- * - [Send Legacy Transaction] button
+ * Rabby Revoke Permit2
  */
 test.each([
-  [parseActionSend, fetchDataSend, formatSecurityEngineSend],
+  [
+    parseActionRevokePermit2,
+    fetchDataRevokePermit2,
+    formatSecurityEngineRevokePermit2,
+  ],
   [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
-])('Send', async (_parseAction, _fetchData, _format) => {
+])('RevokePermit2', async (_parseAction, _fetchData, _format) => {
   const actionData = _parseAction({
     type: 'transaction',
     data: parseTxData['action'],
@@ -33,7 +35,7 @@ test.each([
     preExecVersion: preExecData.pre_exec_version,
     gasUsed: preExecData.gas.gas_used,
   }) as ParsedTransactionActionData;
-  expect(actionData).toMatchSnapshot('parseActionSend');
+  expect(actionData).toMatchSnapshot('parseActionRevokePermit2');
 
   const requireData = await _fetchData({
     type: 'transaction',
@@ -46,7 +48,7 @@ test.each([
     apiProvider,
   });
 
-  expect(requireData).toMatchSnapshot('fetchDataSend');
+  expect(requireData).toMatchSnapshot('fetchDataRevokePermit2');
 
   const ctx = await _format({
     type: 'transaction',
@@ -56,5 +58,5 @@ test.each([
     isTestnet: false,
     provider: formatProvider,
   });
-  expect(ctx).toMatchSnapshot('formatSecurityEngineSend');
+  expect(ctx).toMatchSnapshot('formatSecurityEngineRevokePermit2');
 });

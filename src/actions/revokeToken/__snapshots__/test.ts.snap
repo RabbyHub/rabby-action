@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RevokeToken: fetchDataRevokeToken 1`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "token": {
+    "amount": 7.625238,
+    "chain": "eth",
+    "credit_score": 18127653.217581443,
+    "decimals": 6,
+    "display_symbol": null,
+    "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "is_core": true,
+    "is_scam": false,
+    "is_suspicious": false,
+    "is_verified": true,
+    "is_wallet": true,
+    "logo_url": "https://static.debank.com/image/eth_token/logo_url/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/fffcd27b9efff5a86ab942084c05924d.png",
+    "name": "USD Coin",
+    "optimized_symbol": "USDC",
+    "price": 0.9998000399920016,
+    "price_24h_change": 0.00009998000399924235,
+    "protocol_id": "",
+    "raw_amount": 7625238,
+    "raw_amount_hex_str": "0x745a16",
+    "symbol": "USDC",
+    "time_at": 1533324504,
+  },
+}
+`;
+
+exports[`RevokeToken: fetchDataRevokeToken 2`] = `
+{
+  "bornAt": 1591388241,
+  "contract": null,
+  "hasInteraction": true,
+  "isDanger": false,
+  "isEOA": false,
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "riskExposure": 20000000000,
+  "token": {
+    "amount": 7.625238,
+    "chain": "eth",
+    "credit_score": 18127653.217581443,
+    "decimals": 6,
+    "display_symbol": null,
+    "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "is_core": true,
+    "is_scam": false,
+    "is_suspicious": false,
+    "is_verified": true,
+    "is_wallet": true,
+    "logo_url": "https://static.debank.com/image/eth_token/logo_url/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/fffcd27b9efff5a86ab942084c05924d.png",
+    "name": "USD Coin",
+    "optimized_symbol": "USDC",
+    "price": 0.9998000399920016,
+    "price_24h_change": 0.00009998000399924235,
+    "protocol_id": "",
+    "raw_amount": 7625238,
+    "raw_amount_hex_str": "0x745a16",
+    "symbol": "USDC",
+    "time_at": 1533324504,
+  },
+}
+`;
+
+exports[`RevokeToken: formatSecurityEngineRevokeToken 1`] = `
+{
+  "revokeApprove": {
+    "chainId": "eth",
+    "gasUsed": 37606,
+  },
+}
+`;
+
+exports[`RevokeToken: formatSecurityEngineRevokeToken 2`] = `
+{
+  "revokeApprove": {
+    "chainId": "eth",
+    "gasUsed": 37606,
+  },
+}
+`;
+
+exports[`RevokeToken: parseActionRevokeToken 1`] = `
+{
+  "revokeToken": {
+    "gasUsed": 37606,
+    "spender": "0x816f722424b49cf1275cc86da9840fbd5a6167e9",
+    "token": {
+      "amount": 0,
+      "chain": "arb",
+      "credit_score": 13584005.874952497,
+      "decimals": 6,
+      "display_symbol": null,
+      "id": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/arb_token/logo_url/0xaf88d065e77c8cc2239327c5edb3a432268e5831/fffcd27b9efff5a86ab942084c05924d.png",
+      "name": "USD Coin",
+      "optimized_symbol": "USDC",
+      "price": 0.9996001599360256,
+      "price_24h_change": 0,
+      "protocol_id": "",
+      "raw_amount": "0",
+      "symbol": "USDC",
+      "time_at": 1667248932,
+    },
+  },
+}
+`;
+
+exports[`RevokeToken: parseActionRevokeToken 2`] = `
+{
+  "revokeToken": {
+    "gasUsed": 37606,
+    "spender": "0x816f722424b49cf1275cc86da9840fbd5a6167e9",
+    "token": {
+      "amount": 0,
+      "chain": "arb",
+      "credit_score": 13584005.874952497,
+      "decimals": 6,
+      "display_symbol": null,
+      "id": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/arb_token/logo_url/0xaf88d065e77c8cc2239327c5edb3a432268e5831/fffcd27b9efff5a86ab942084c05924d.png",
+      "name": "USD Coin",
+      "optimized_symbol": "USDC",
+      "price": 0.9996001599360256,
+      "price_24h_change": 0,
+      "protocol_id": "",
+      "raw_amount": "0",
+      "symbol": "USDC",
+      "time_at": 1667248932,
+    },
+  },
+}
+`;

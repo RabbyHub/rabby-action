@@ -22,6 +22,28 @@ exports[`Send: fetchDataSend 1`] = `
 }
 `;
 
+exports[`Send: fetchDataSend 2`] = `
+{
+  "cex": null,
+  "contract": null,
+  "eoa": {
+    "bornAt": 1564655163,
+    "id": "0x0c54fccd2e384b4bb6f2e405bf5cbc15a017aafb",
+  },
+  "hasReceiverMnemonicInWallet": false,
+  "hasReceiverPrivateKeyInWallet": true,
+  "hasTransfer": true,
+  "isTokenContract": false,
+  "name": null,
+  "onTransferWhitelist": false,
+  "protocol": null,
+  "receiverIsSpoofing": true,
+  "usd_value": 4418.154405584272,
+  "usedChains": [],
+  "whitelistEnable": false,
+}
+`;
+
 exports[`Send: formatSecurityEngineSend 1`] = `
 {
   "send": {
@@ -40,7 +62,55 @@ exports[`Send: formatSecurityEngineSend 1`] = `
 }
 `;
 
+exports[`Send: formatSecurityEngineSend 2`] = `
+{
+  "send": {
+    "cex": null,
+    "chainId": "eth",
+    "contract": null,
+    "hasReceiverMnemonicInWallet": false,
+    "hasReceiverPrivateKeyInWallet": true,
+    "hasTransfer": true,
+    "isTokenContract": false,
+    "onTransferWhitelist": false,
+    "receiverIsSpoofing": true,
+    "to": "0x0c54fccd2e384b4bb6f2e405bf5cbc15a017aafb",
+    "usedChainList": [],
+  },
+}
+`;
+
 exports[`Send: parseActionSend 1`] = `
+{
+  "send": {
+    "to": "0x0c54fccd2e384b4bb6f2e405bf5cbc15a017aafb",
+    "token": {
+      "amount": 0,
+      "chain": "op",
+      "credit_score": 100000000,
+      "decimals": 18,
+      "display_symbol": null,
+      "id": "op",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/coin/logo_url/eth/6443cdccced33e204d90cb723c632917.png",
+      "name": "ETH",
+      "optimized_symbol": "ETH",
+      "price": 2673,
+      "price_24h_change": 0.014151838221345444,
+      "protocol_id": "",
+      "raw_amount": "0",
+      "symbol": "ETH",
+      "time_at": null,
+    },
+  },
+}
+`;
+
+exports[`Send: parseActionSend 2`] = `
 {
   "send": {
     "to": "0x0c54fccd2e384b4bb6f2e405bf5cbc15a017aafb",
