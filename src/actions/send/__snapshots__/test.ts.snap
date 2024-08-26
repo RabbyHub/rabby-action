@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Send: fetchDataSend 1`] = `
+exports[`Send -> Transaction: fetchDataSend 1`] = `
 {
   "cex": null,
   "contract": null,
@@ -22,7 +22,7 @@ exports[`Send: fetchDataSend 1`] = `
 }
 `;
 
-exports[`Send: fetchDataSend 2`] = `
+exports[`Send -> Transaction: fetchDataSend 2`] = `
 {
   "cex": null,
   "contract": null,
@@ -44,7 +44,7 @@ exports[`Send: fetchDataSend 2`] = `
 }
 `;
 
-exports[`Send: formatSecurityEngineSend 1`] = `
+exports[`Send -> Transaction: formatSecurityEngineSend 1`] = `
 {
   "send": {
     "cex": null,
@@ -62,7 +62,7 @@ exports[`Send: formatSecurityEngineSend 1`] = `
 }
 `;
 
-exports[`Send: formatSecurityEngineSend 2`] = `
+exports[`Send -> Transaction: formatSecurityEngineSend 2`] = `
 {
   "send": {
     "cex": null,
@@ -80,7 +80,7 @@ exports[`Send: formatSecurityEngineSend 2`] = `
 }
 `;
 
-exports[`Send: parseActionSend 1`] = `
+exports[`Send -> Transaction: parseActionSend 1`] = `
 {
   "send": {
     "to": "0x0c54fccd2e384b4bb6f2e405bf5cbc15a017aafb",
@@ -110,7 +110,7 @@ exports[`Send: parseActionSend 1`] = `
 }
 `;
 
-exports[`Send: parseActionSend 2`] = `
+exports[`Send -> Transaction: parseActionSend 2`] = `
 {
   "send": {
     "to": "0x0c54fccd2e384b4bb6f2e405bf5cbc15a017aafb",
