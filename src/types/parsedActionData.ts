@@ -80,7 +80,7 @@ export type ParsedTransactionActionData = {
   revokeToken?: {
     spender: string;
     token: TokenItem;
-    gasUsed: number;
+    gasUsed?: number;
   };
   revokePermit2?: RevokePermit2Action;
   wrapToken?: {
@@ -97,7 +97,7 @@ export type ParsedTransactionActionData = {
   };
   deployContract?: Record<string, never>;
   cancelTx?: {
-    nonce: string;
+    nonce?: string;
   };
   pushMultiSig?: PushMultiSigAction;
   permit2BatchRevokeToken?: {

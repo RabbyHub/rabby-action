@@ -1,8 +1,6 @@
 import { ParseAction } from '../../types';
 
-export const parseActionDeployContract: ParseAction<'transaction'> = (
-  options
-) => {
+export const parseActionDeployContract: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'deploy_contract') {

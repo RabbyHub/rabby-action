@@ -2,9 +2,6 @@ import { FetchActionRequiredData } from '../../types';
 import { fetchDataSend } from '../send/fetchData';
 
 export const fetchDataSendNFT: FetchActionRequiredData = async (options) => {
-  if (options.type !== 'transaction') {
-    return {};
-  }
   const sendNFT = options.actionData.sendNFT;
 
   if (!sendNFT) {

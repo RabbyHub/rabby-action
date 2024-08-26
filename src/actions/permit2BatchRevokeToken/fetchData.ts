@@ -8,9 +8,6 @@ import { fetchDataApproveToken } from '../approveToken/fetchData';
 export const fetchDataPermit2BatchRevokeToken: FetchActionRequiredData = async (
   options
 ) => {
-  if (options.type !== 'transaction') {
-    return {};
-  }
   const { actionData } = options;
   const action = actionData.permit2BatchRevokeToken;
 

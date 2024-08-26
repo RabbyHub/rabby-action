@@ -2,9 +2,6 @@ import { FormatSecurityEngineContext, SwapRequireData } from '../../types';
 
 export const formatSecurityEngineCrossSwapToken: FormatSecurityEngineContext =
   async (options) => {
-    if (options.type !== 'transaction') {
-      return {};
-    }
     const { actionData, requireData, chainId, provider } = options;
 
     if (!actionData.crossSwapToken) {

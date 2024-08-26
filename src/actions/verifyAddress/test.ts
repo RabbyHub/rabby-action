@@ -1,4 +1,4 @@
-import { SENDER, ORIGIN } from '../../../__mocks__';
+import { SENDER, ORIGIN, formatProvider } from '../../../__mocks__';
 import { parseTxData, text } from './mocks';
 import { parseActionVerifyAddress } from './parseAction';
 import { formatSecurityEngineVerifyAddress } from './formatSecurityEngine';
@@ -29,6 +29,10 @@ test.each([
     type: 'text',
     actionData,
     origin: ORIGIN,
+    provider: formatProvider,
+    isTestnet: false,
+    chainId: 'eth',
+    requireData: null,
   });
   expect(ctx).toMatchSnapshot('formatSecurityEngineVerifyAddress');
 });

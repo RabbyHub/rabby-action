@@ -2,7 +2,7 @@ import { UnWrapTokenAction } from '@rabby-wallet/rabby-api/dist/types';
 import { ParseAction } from '../../types';
 import { calcSlippageTolerance } from '../../utils/calcSlippageTolerance';
 
-export const parseActionUnwrapToken: ParseAction<'transaction'> = (options) => {
+export const parseActionUnwrapToken: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'unwrap_token') {

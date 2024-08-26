@@ -4,9 +4,6 @@ import { FormatSecurityEngineContext } from '../../types';
 export const formatSecurityEngineSend: FormatSecurityEngineContext = async (
   options
 ) => {
-  if (options.type !== 'transaction' && options.type !== 'typed_data') {
-    return {};
-  }
   const { actionData, requireData, chainId, provider } = options;
 
   if (!actionData.send || !chainId) {

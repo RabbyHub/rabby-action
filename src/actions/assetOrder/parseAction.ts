@@ -1,9 +1,7 @@
 import { SwapOrderAction } from '@rabby-wallet/rabby-api/dist/types';
 import { ParseAction } from '../../types';
 
-export const parseActionAssetOrder: ParseAction<
-  'transaction' | 'typed_data'
-> = (options) => {
+export const parseActionAssetOrder: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'swap_order') {

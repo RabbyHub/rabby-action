@@ -5,9 +5,6 @@ import {
 
 export const formatSecurityEngineApproveNFT: FormatSecurityEngineContext =
   async (options) => {
-    if (options.type !== 'transaction' && options.type !== 'typed_data') {
-      return {};
-    }
     const { actionData, requireData, chainId, provider } = options;
 
     if (!actionData.approveNFT || !chainId) {

@@ -3,9 +3,6 @@ import { FetchActionRequiredData, PushMultiSigRequireData } from '../../types';
 export const fetchDataPushMultiSig: FetchActionRequiredData = async (
   options
 ) => {
-  if (options.type !== 'transaction') {
-    return {};
-  }
   const { apiProvider, actionData } = options;
 
   if (!actionData.pushMultiSig) {

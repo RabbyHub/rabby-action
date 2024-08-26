@@ -3,9 +3,6 @@ import { FormatSecurityEngineContext } from '../../types';
 
 export const formatSecurityEngineUnwrapToken: FormatSecurityEngineContext =
   async (options) => {
-    if (options.type !== 'transaction') {
-      return {};
-    }
     const { actionData, requireData, chainId, provider } = options;
 
     if (!actionData.unWrapToken || !chainId) {

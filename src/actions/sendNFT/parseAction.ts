@@ -1,7 +1,7 @@
 import { SendNFTAction } from '@rabby-wallet/rabby-api/dist/types';
 import { ParseAction } from '../../types';
 
-export const parseActionSendNFT: ParseAction<'transaction'> = (options) => {
+export const parseActionSendNFT: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'send_nft') {

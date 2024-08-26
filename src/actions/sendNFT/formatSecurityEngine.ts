@@ -4,9 +4,6 @@ import { FormatSecurityEngineContext } from '../../types';
 export const formatSecurityEngineSendNFT: FormatSecurityEngineContext = async (
   options
 ) => {
-  if (options.type !== 'transaction') {
-    return {};
-  }
   const { actionData, requireData, chainId, provider } = options;
 
   if (!actionData.sendNFT || !chainId) {

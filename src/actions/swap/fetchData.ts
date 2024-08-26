@@ -2,10 +2,11 @@ import PQueue from 'p-queue';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
 import { FetchActionRequiredData, SwapRequireData } from '../../types';
 
+// TODO: text
 export const fetchDataSwap: FetchActionRequiredData<{
   receiver: string;
 }> = async (options, likeSwapAction) => {
-  if (options.type !== 'transaction') {
+  if (options.type === 'text') {
     return {};
   }
   const queue = new PQueue();
@@ -18,7 +19,15 @@ export const fetchDataSwap: FetchActionRequiredData<{
   const { receiver } = swapAction;
 
   const receiverInWallet = await walletProvider.hasAddress(receiver);
-  const id = options.tx.to;
+  const id =
+    options.type === 'transaction'
+      ? options.tx.to
+      : options.actionData.contractId;
+
+  if (!id) {
+    return {};
+  }
+
   const result: SwapRequireData = {
     id,
     protocol: null,

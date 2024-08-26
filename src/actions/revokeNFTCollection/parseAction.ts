@@ -1,9 +1,7 @@
 import { RevokeNFTCollectionAction } from '@rabby-wallet/rabby-api/dist/types';
 import { ParseAction } from '../../types';
 
-export const parseActionRevokeNFTCollection: ParseAction<'transaction'> = (
-  options
-) => {
+export const parseActionRevokeNFTCollection: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'revoke_collection') {

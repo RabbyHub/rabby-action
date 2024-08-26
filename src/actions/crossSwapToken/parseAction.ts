@@ -3,9 +3,7 @@ import { CrossSwapAction } from '@rabby-wallet/rabby-api/dist/types';
 import { ParseAction } from '../../types';
 import { calcUSDValueChange } from '../../utils/calcUSDValueChange';
 
-export const parseActionCrossSwapToken: ParseAction<'transaction'> = (
-  options
-) => {
+export const parseActionCrossSwapToken: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'cross_swap_token') {

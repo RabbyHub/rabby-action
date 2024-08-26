@@ -3,7 +3,7 @@ import { CrossTokenAction } from '@rabby-wallet/rabby-api/dist/types';
 import { ParseAction } from '../../types';
 import { calcUSDValueChange } from '../../utils/calcUSDValueChange';
 
-export const parseActionCrossToken: ParseAction<'transaction'> = (options) => {
+export const parseActionCrossToken: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'cross_token') {
