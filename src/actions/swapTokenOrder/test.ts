@@ -7,9 +7,9 @@ import {
   ORIGIN,
 } from '../../../__mocks__';
 import { parseTxData, txData } from './mocks';
-import { parseActionCoboSafeModificationRole } from './parseAction';
-import { fetchDataCoboSafeModificationRole } from './fetchData';
-import { formatSecurityEngineCoboSafeModificationRole } from './formatSecurityEngine';
+import { parseActionSwapTokenOrder } from './parseAction';
+import { fetchDataSwapTokenOrder } from './fetchData';
+import { formatSecurityEngineSwapTokenOrder } from './formatSecurityEngine';
 import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
 import {
   parseAction,
@@ -19,25 +19,24 @@ import {
 
 /**
 /**
- * https://argus.cobo.com/#/home
- * Modification Queue
- * [Proceed to multisg] button
+ * https://bebop.xyz/trade?network=arbitrum+one&sell=ARB&buy=USDC.e
+ * ARB -> USDC.e
  */
 test.each([
   [
-    parseTypedDataAction(parseActionCoboSafeModificationRole),
-    fetchDataCoboSafeModificationRole,
-    formatSecurityEngineCoboSafeModificationRole,
+    parseTypedDataAction(parseActionSwapTokenOrder),
+    fetchDataSwapTokenOrder,
+    formatSecurityEngineSwapTokenOrder,
   ],
   [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
-])('CoboSafeModificationRole', async (_parseAction, _fetchData, _format) => {
+])('SwapTokenOrder', async (_parseAction, _fetchData, _format) => {
   const actionData = _parseAction({
     type: 'typed_data',
     data: parseTxData['action'],
     typedData: txData,
     sender: SENDER,
   });
-  expect(actionData).toMatchSnapshot('parseActionCoboSafeModificationRole');
+  expect(actionData).toMatchSnapshot('parseActionSwapTokenOrder');
 
   const requireData = await _fetchData({
     type: 'typed_data',
@@ -47,7 +46,7 @@ test.each([
     apiProvider,
     sender: SENDER,
   });
-  expect(requireData).toMatchSnapshot('fetchDataCoboSafeModificationRole');
+  expect(requireData).toMatchSnapshot('fetchDataSwapTokenOrder');
 
   const ctx = await _format({
     type: 'typed_data',
@@ -58,5 +57,5 @@ test.each([
     provider: formatProvider,
     origin: ORIGIN,
   });
-  expect(ctx).toMatchSnapshot('formatSecurityEngineCoboSafeModificationRole');
+  expect(ctx).toMatchSnapshot('formatSecurityEngineSwapTokenOrder');
 });

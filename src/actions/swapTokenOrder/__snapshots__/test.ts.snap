@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwapTokenOrder: fetchDataSwapTokenOrder 1`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0xbbbbbbb520d69a9775e85b458c58c648259fad5f",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": false,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "unexpectedAddr": null,
+}
+`;
+
+exports[`SwapTokenOrder: fetchDataSwapTokenOrder 2`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0xbbbbbbb520d69a9775e85b458c58c648259fad5f",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": false,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "unexpectedAddr": null,
+}
+`;
+
+exports[`SwapTokenOrder: formatSecurityEngineSwapTokenOrder 1`] = `
+{
+  "swapTokenOrder": {
+    "chainId": "eth",
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "id": "0xbbbbbbb520d69a9775e85b458c58c648259fad5f",
+    "receiveTokenIsFake": false,
+    "receiveTokenIsScam": false,
+    "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "receiverInWallet": true,
+    "usdValuePercentage": -0.10818210411787353,
+  },
+}
+`;
+
+exports[`SwapTokenOrder: formatSecurityEngineSwapTokenOrder 2`] = `
+{
+  "swapTokenOrder": {
+    "chainId": "eth",
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "id": "0xbbbbbbb520d69a9775e85b458c58c648259fad5f",
+    "receiveTokenIsFake": false,
+    "receiveTokenIsScam": false,
+    "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "receiverInWallet": true,
+    "usdValuePercentage": -0.10818210411787353,
+  },
+}
+`;
+
+exports[`SwapTokenOrder: parseActionSwapTokenOrder 1`] = `
+{
+  "actionType": "swap_token_order",
+  "brand": undefined,
+  "chainId": 42161,
+  "contractId": "0xbbbbbbb520d69a9775e85b458c58c648259fad5f",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "swapTokenOrder": {
+    "expireAt": 1724650677,
+    "payToken": {
+      "amount": 0.09469771869076055,
+      "chain": "arb",
+      "credit_score": 8236236.111377676,
+      "decimals": 18,
+      "display_symbol": null,
+      "id": "0x912ce59144191c1204e64559fe8253a0e49e6548",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/arb_token/logo_url/0x912ce59144191c1204e64559fe8253a0e49e6548/7623afc27299327fdb0b090fd67e8ff4.png",
+      "name": "Arbitrum",
+      "optimized_symbol": "ARB",
+      "price": 0.6011,
+      "price_24h_change": -0.010046113306982863,
+      "protocol_id": "arb_arbitrum",
+      "raw_amount": "94697718690760550",
+      "symbol": "ARB",
+      "time_at": 1678968508,
+    },
+    "receiveToken": {
+      "amount": 0.05078,
+      "chain": "arb",
+      "credit_score": 7004316.5478356965,
+      "decimals": 6,
+      "display_symbol": "USDC(Bridged)",
+      "id": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/avax_token/logo_url/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664/c1503ade9d53497fe93ca9f2723c56a1.png",
+      "name": "USD Coin (Arb1)",
+      "optimized_symbol": "USDC(Bridged)",
+      "price": 0.9997000899730081,
+      "price_24h_change": 0.00009997000899729147,
+      "protocol_id": "arb_tracer",
+      "raw_amount": "50780",
+      "symbol": "USDC",
+      "time_at": 1623868379,
+    },
+    "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "usdValueDiff": "-0.006158028136186815287",
+    "usdValuePercentage": -0.10818210411787353,
+  },
+}
+`;
+
+exports[`SwapTokenOrder: parseActionSwapTokenOrder 2`] = `
+{
+  "actionType": "swap_token_order",
+  "brand": undefined,
+  "chainId": 42161,
+  "contractId": "0xbbbbbbb520d69a9775e85b458c58c648259fad5f",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "swapTokenOrder": {
+    "expireAt": 1724650677,
+    "payToken": {
+      "amount": 0.09469771869076055,
+      "chain": "arb",
+      "credit_score": 8236236.111377676,
+      "decimals": 18,
+      "display_symbol": null,
+      "id": "0x912ce59144191c1204e64559fe8253a0e49e6548",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/arb_token/logo_url/0x912ce59144191c1204e64559fe8253a0e49e6548/7623afc27299327fdb0b090fd67e8ff4.png",
+      "name": "Arbitrum",
+      "optimized_symbol": "ARB",
+      "price": 0.6011,
+      "price_24h_change": -0.010046113306982863,
+      "protocol_id": "arb_arbitrum",
+      "raw_amount": "94697718690760550",
+      "symbol": "ARB",
+      "time_at": 1678968508,
+    },
+    "receiveToken": {
+      "amount": 0.05078,
+      "chain": "arb",
+      "credit_score": 7004316.5478356965,
+      "decimals": 6,
+      "display_symbol": "USDC(Bridged)",
+      "id": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/avax_token/logo_url/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664/c1503ade9d53497fe93ca9f2723c56a1.png",
+      "name": "USD Coin (Arb1)",
+      "optimized_symbol": "USDC(Bridged)",
+      "price": 0.9997000899730081,
+      "price_24h_change": 0.00009997000899729147,
+      "protocol_id": "arb_tracer",
+      "raw_amount": "50780",
+      "symbol": "USDC",
+      "time_at": 1623868379,
+    },
+    "receiver": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "usdValueDiff": "-0.006158028136186815287",
+    "usdValuePercentage": -0.10818210411787353,
+  },
+}
+`;
