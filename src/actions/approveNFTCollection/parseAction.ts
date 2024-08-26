@@ -1,9 +1,7 @@
 import { ApproveNFTCollectionAction } from '@rabby-wallet/rabby-api/dist/types';
 import { ParseAction } from '../../types';
 
-export const parseActionApproveNFTCollection: ParseAction<'transaction'> = (
-  options
-) => {
+export const parseActionApproveNFTCollection: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'approve_collection') {

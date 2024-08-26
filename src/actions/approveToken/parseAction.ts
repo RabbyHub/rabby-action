@@ -1,9 +1,7 @@
 import { ApproveAction } from '@rabby-wallet/rabby-api/dist/types';
 import { ParseAction } from '../../types';
 
-export const parseActionApproveToken: ParseAction<'transaction'> = (
-  options
-) => {
+export const parseActionApproveToken: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'approve_token') {

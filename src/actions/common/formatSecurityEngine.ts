@@ -6,10 +6,6 @@ import {
 export const formatSecurityEngineCommon: FormatSecurityEngineContext = async (
   options
 ) => {
-  if (options.type === 'text') {
-    return {};
-  }
-
   if (!options.actionData.common) {
     return {};
   }

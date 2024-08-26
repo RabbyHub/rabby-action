@@ -1,7 +1,7 @@
 import { RevokeTokenApproveAction } from '@rabby-wallet/rabby-api/dist/types';
 import { ParseAction } from '../../types';
 
-export const parseActionRevokeToken: ParseAction<'transaction'> = (options) => {
+export const parseActionRevokeToken: ParseAction = (options) => {
   const { data, gasUsed } = options;
 
   if (data?.type !== 'revoke_token') {

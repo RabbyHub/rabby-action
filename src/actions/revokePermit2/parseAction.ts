@@ -1,9 +1,7 @@
 import { RevokePermit2Action } from '@rabby-wallet/rabby-api/dist/types';
 import { ParseAction } from '../../types';
 
-export const parseActionRevokePermit2: ParseAction<'transaction'> = (
-  options
-) => {
+export const parseActionRevokePermit2: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'permit2_revoke_token') {

@@ -39,7 +39,7 @@ import { formatSecurityEngineVerifyAddress } from './actions/verifyAddress/forma
 export const formatSecurityEngineContext: FormatSecurityEngineContext = async (
   options
 ) => {
-  if (options.type !== 'text' && options.isTestnet) {
+  if (options.isTestnet) {
     return {};
   }
 

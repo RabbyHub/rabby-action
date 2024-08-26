@@ -84,10 +84,29 @@ export function parseAction(options: ParseActionParameters): ParsedActionData {
 
   if (options.type === 'typed_data') {
     result.push(
+      // tx actions
       parseTypedDataAction(parseActionCommon)(options),
       parseTypedDataAction(parseActionAssetOrder)(options),
       parseTypedDataAction(parseActionSend)(options),
       parseTypedDataAction(parseActionApproveNFT)(options),
+      parseTypedDataAction(parseActionApproveNFTCollection)(options),
+      parseTypedDataAction(parseActionApproveToken)(options),
+      parseTypedDataAction(parseActionCancelTx)(options),
+      parseTypedDataAction(parseActionCrossSwapToken)(options),
+      parseTypedDataAction(parseActionCrossToken)(options),
+      parseTypedDataAction(parseActionDeployContract)(options),
+      parseTypedDataAction(parseActionPushMultiSig)(options),
+      parseTypedDataAction(parseActionRevokeNFT)(options),
+      parseTypedDataAction(parseActionRevokeNFTCollection)(options),
+      parseTypedDataAction(parseActionRevokePermit2)(options),
+      parseTypedDataAction(parseActionRevokeToken)(options),
+      parseTypedDataAction(parseActionSendNFT)(options),
+      parseTypedDataAction(parseActionSwap)(options),
+      parseTypedDataAction(parseActionUnwrapToken)(options),
+      parseTypedDataAction(parseActionWrapToken)(options),
+      parseTypedDataAction(parseActionPermit2BatchRevokeToken)(options),
+
+      // typed data actions
       parseTypedDataAction(parseActionCreateKey)(options),
       parseTypedDataAction(parseActionVerifyAddress)(options),
       parseTypedDataAction(parseActionSellNFT)(options),
@@ -112,7 +131,29 @@ export function parseAction(options: ParseActionParameters): ParsedActionData {
 
   if (options.type === 'text') {
     result.push(
+      // tx actions
       parseTextAction(parseActionCommon)(options),
+      parseTextAction(parseActionAssetOrder)(options),
+      parseTextAction(parseActionSend)(options),
+      parseTextAction(parseActionApproveNFT)(options),
+      parseTextAction(parseActionApproveNFTCollection)(options),
+      parseTextAction(parseActionApproveToken)(options),
+      parseTextAction(parseActionCancelTx)(options),
+      parseTextAction(parseActionCrossSwapToken)(options),
+      parseTextAction(parseActionCrossToken)(options),
+      parseTextAction(parseActionDeployContract)(options),
+      parseTextAction(parseActionPushMultiSig)(options),
+      parseTextAction(parseActionRevokeNFT)(options),
+      parseTextAction(parseActionRevokeNFTCollection)(options),
+      parseTextAction(parseActionRevokePermit2)(options),
+      parseTextAction(parseActionRevokeToken)(options),
+      parseTextAction(parseActionSendNFT)(options),
+      parseTextAction(parseActionSwap)(options),
+      parseTextAction(parseActionUnwrapToken)(options),
+      parseTextAction(parseActionWrapToken)(options),
+      parseTextAction(parseActionPermit2BatchRevokeToken)(options),
+
+      // text actions
       parseTextAction(parseActionCreateKey)(options),
       parseTextAction(parseActionVerifyAddress)(options)
     );
@@ -138,6 +179,8 @@ export function parseAction(options: ParseActionParameters): ParsedActionData {
       return parseTypedDataAction(parseActionContractCall)(options);
     } else if (options.type === 'transaction') {
       return parseActionContractCall(options);
+    } else if (options.type === 'text') {
+      return parseTextAction(parseActionContractCall)(options);
     }
     return {};
   }

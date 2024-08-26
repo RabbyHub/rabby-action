@@ -5,31 +5,36 @@ import { WalletProvider } from './walletProvider';
 import { ActionRequireData } from './actionRequireData';
 
 type BaseFetchActionRequiredDataParameters<
-  T extends 'typed_data' | 'transaction' | undefined
+  T extends 'typed_data' | 'transaction' | 'text' | undefined
 > = {
   actionData: ParsedActionData<T>;
   sender: string;
   walletProvider: WalletProvider;
   apiProvider: OpenApiService;
+  chainId: string;
 };
 
 export type FetchTransactionRequiredDataParameters =
   BaseFetchActionRequiredDataParameters<'transaction'> & {
     type: 'transaction';
     contractCall?: ParseTxResponse['contract_call'] | null;
-    chainId: string;
     tx: Tx;
   };
 
 export type FetchTypedDataRequiredDataParameters =
   BaseFetchActionRequiredDataParameters<'typed_data'> & {
     type: 'typed_data';
-    chainId?: string;
+  };
+
+export type FetchTextRequiredDataParameters =
+  BaseFetchActionRequiredDataParameters<'text'> & {
+    type: 'text';
   };
 
 export type FetchActionRequiredDataParameters =
   | FetchTransactionRequiredDataParameters
-  | FetchTypedDataRequiredDataParameters;
+  | FetchTypedDataRequiredDataParameters
+  | FetchTextRequiredDataParameters;
 
 export type FetchActionRequiredData<T = undefined> = (
   options: FetchActionRequiredDataParameters,

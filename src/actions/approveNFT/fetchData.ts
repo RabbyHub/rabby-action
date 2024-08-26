@@ -5,9 +5,6 @@ import { waitQueueFinished } from '../../utils/waitQueueFinished';
 export const fetchDataApproveNFT: FetchActionRequiredData<{
   spender: string;
 }> = async (options, likeAction) => {
-  if (options.type !== 'transaction') {
-    return {};
-  }
   const queue = new PQueue();
   const { sender, apiProvider, chainId, actionData } = options;
   const action = likeAction || actionData.approveNFT;

@@ -1,6 +1,7 @@
 import { FetchActionRequiredData } from '../../types';
 import { fetchDataCommon } from '../common/fetchData';
 
+// TODO: text action not supported
 export const fetchDataAssetOrder: FetchActionRequiredData = async (options) => {
   let action;
 

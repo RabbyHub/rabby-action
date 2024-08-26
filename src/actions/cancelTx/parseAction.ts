@@ -1,6 +1,6 @@
 import { ParseAction } from '../../types';
 
-export const parseActionCancelTx: ParseAction<'transaction'> = (options) => {
+export const parseActionCancelTx: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'cancel_tx') {
@@ -9,7 +9,7 @@ export const parseActionCancelTx: ParseAction<'transaction'> = (options) => {
 
   return {
     cancelTx: {
-      nonce: options.tx.nonce,
+      nonce: options.type === 'transaction' ? options.tx.nonce : undefined,
     },
   };
 };

@@ -1,8 +1,6 @@
 import { ParseAction } from '../../types';
 
-export const parseActionPermit2BatchRevokeToken: ParseAction<'transaction'> = (
-  options
-) => {
+export const parseActionPermit2BatchRevokeToken: ParseAction = (options) => {
   const { data } = options;
 
   if (data?.type !== 'permit2_batch_revoke_token') {
