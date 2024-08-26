@@ -9,8 +9,7 @@ export const fetchDataSwap: FetchActionRequiredData<{
     return {};
   }
   const queue = new PQueue();
-  const { actionData, walletProvider, tx, sender, apiProvider, chainId } =
-    options;
+  const { actionData, walletProvider, sender, apiProvider, chainId } = options;
   const swapAction = likeSwapAction || actionData.swap;
   if (!swapAction) {
     return {};
@@ -19,7 +18,7 @@ export const fetchDataSwap: FetchActionRequiredData<{
   const { receiver } = swapAction;
 
   const receiverInWallet = await walletProvider.hasAddress(receiver);
-  const id = tx.to;
+  const id = options.tx.to;
   const result: SwapRequireData = {
     id,
     protocol: null,

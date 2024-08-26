@@ -28,9 +28,10 @@ test.each([
     type: 'transaction',
     data: parseTxData['action'],
     balanceChange: preExecData.balance_change,
-    tx: txData,
+    sender: txData.from,
     preExecVersion: preExecData.pre_exec_version,
     gasUsed: preExecData.gas.gas_used,
+    tx: txData,
   }) as ParsedTransactionActionData;
   expect(actionData).toMatchSnapshot('parseActionApproveNFT');
 

@@ -126,7 +126,7 @@ export type ParsedTransactionActionData = {
   };
 };
 
-export type ParsedTypedDataActionData = {
+export type ParsedTypedDataActionData = ParsedTransactionActionData & {
   chainId?: string;
   brand?: {
     logo_url: string;
@@ -179,7 +179,7 @@ export type ParsedTypedDataActionData = {
   };
 };
 
-export type ParsedTextActionData = {
+export type ParsedTextActionData = ParsedTransactionActionData & {
   sender: string;
   createKey?: CreateKeyAction;
   verifyAddress?: VerifyAddressAction;

@@ -5,8 +5,8 @@ import { calcSlippageTolerance } from '../../utils/calcSlippageTolerance';
 import { calcUSDValueChange } from '../../utils/calcUSDValueChange';
 import { isSameAddress } from '../../utils/isSameAddress';
 
-export const parseActionSwap: ParseAction<'transaction'> = (options) => {
-  const { data, balanceChange, preExecVersion, tx } = options;
+export const parseActionSwap: ParseAction = (options) => {
+  const { data, balanceChange, preExecVersion, sender } = options;
 
   if (data?.type !== 'swap_token') {
     return {};
@@ -17,9 +17,9 @@ export const parseActionSwap: ParseAction<'transaction'> = (options) => {
     receive_token: receiveToken,
     receiver,
   } = data.data as SwapAction;
-  const balanceChangeSuccess = balanceChange.success;
+  const balanceChangeSuccess = balanceChange?.success;
   const supportBalanceChange = preExecVersion !== 'v0';
-  const actualReceiveToken = balanceChange.receive_token_list.find((token) =>
+  const actualReceiveToken = balanceChange?.receive_token_list.find((token) =>
     isSameAddress(token.id, receiveToken.id)
   );
   const receiveTokenAmount = actualReceiveToken ? actualReceiveToken.amount : 0;
@@ -34,7 +34,7 @@ export const parseActionSwap: ParseAction<'transaction'> = (options) => {
     receiveToken.price
   );
   const payTokenUsdValue = new BigNumber(payToken.amount).times(payToken.price);
-  const hasReceiver = !isSameAddress(receiver, tx.from);
+  const hasReceiver = !isSameAddress(receiver, sender);
   const usdValueDiff =
     hasReceiver || !balanceChangeSuccess || !supportBalanceChange
       ? null
@@ -63,8 +63,8 @@ export const parseActionSwap: ParseAction<'transaction'> = (options) => {
       usdValueDiff,
       usdValuePercentage,
       balanceChange: {
-        success: balanceChangeSuccess,
-        support: supportBalanceChange,
+        success: !!balanceChangeSuccess,
+        support: !!supportBalanceChange,
       },
     },
   };

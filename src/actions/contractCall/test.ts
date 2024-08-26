@@ -84,9 +84,10 @@ test.each([
     type: 'transaction',
     data: parseTxDataTransaction['action'],
     balanceChange: preExecDataTransaction.balance_change,
-    tx: txDataTransaction,
+    sender: txDataTransaction.from,
     preExecVersion: preExecDataTransaction.pre_exec_version,
     gasUsed: preExecDataTransaction.gas.gas_used,
+    tx: txDataTransaction,
   }) as ParsedTransactionActionData;
   expect(actionData).toMatchSnapshot('parseActionContractCall');
 

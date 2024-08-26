@@ -1,17 +1,19 @@
 import {
   ParseTxResponse,
   ExplainTxResponse,
-  Tx,
   ParseTypedDataResponse,
   ParseTextResponse,
+  Tx,
 } from '@rabby-wallet/rabby-api/dist/types';
 import { ParsedActionData } from './parsedActionData';
 
 export type ParseTransactionActionParameters = {
   type: 'transaction';
   data: ParseTxResponse['action'];
-  balanceChange: ExplainTxResponse['balance_change'];
+  sender: string;
+
   tx: Tx;
+  balanceChange: ExplainTxResponse['balance_change'];
   preExecVersion: 'v0' | 'v1' | 'v2';
   gasUsed: number;
 };
@@ -21,6 +23,10 @@ export type ParseTypedDataActionParameters = {
   data: ParseTypedDataResponse['action'];
   typedData: null | Record<string, any>;
   sender: string;
+
+  balanceChange?: ExplainTxResponse['balance_change'];
+  preExecVersion?: 'v0' | 'v1' | 'v2';
+  gasUsed?: number;
 };
 
 export type ParseTextActionParameters = {
@@ -28,6 +34,10 @@ export type ParseTextActionParameters = {
   data: ParseTextResponse['action'];
   text: string;
   sender: string;
+
+  balanceChange?: ExplainTxResponse['balance_change'];
+  preExecVersion?: 'v0' | 'v1' | 'v2';
+  gasUsed?: number;
 };
 
 export type ParseActionParameters =

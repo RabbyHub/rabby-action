@@ -8,7 +8,7 @@ export const parseActionCommon: ParseAction = (options) => {
 
   const from =
     options.type === 'transaction'
-      ? options.tx.from
+      ? options.sender
       : options.type === 'text'
       ? undefined
       : options.sender;

@@ -1,7 +1,7 @@
 import { ParseAction } from '../../types';
 
 export const parseActionCancelTx: ParseAction<'transaction'> = (options) => {
-  const { tx, data } = options;
+  const { data } = options;
 
   if (data?.type !== 'cancel_tx') {
     return {};
@@ -9,7 +9,7 @@ export const parseActionCancelTx: ParseAction<'transaction'> = (options) => {
 
   return {
     cancelTx: {
-      nonce: tx.nonce,
+      nonce: options.tx.nonce,
     },
   };
 };
