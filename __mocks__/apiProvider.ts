@@ -1,3 +1,5 @@
+import { OpenApiService } from '@rabby-wallet/rabby-api';
+
 export const apiProvider = {
   getContractInfo: jest.fn().mockReturnValue({
     id: '0x7a250d5630b4cf539739df2c5dacb4c659f2488d',
@@ -149,4 +151,4 @@ export const apiProvider = {
   isTokenContract: jest.fn().mockReturnValue({ is_token: true }),
   addrUsedChainList: jest.fn().mockReturnValue([]),
   checkSpoofing: jest.fn().mockReturnValue({ is_spoofing: true }),
-};
+} as unknown as OpenApiService;
