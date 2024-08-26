@@ -10,6 +10,11 @@ import { parseActionBatchSellNFT } from './parseAction';
 import { fetchDataBatchSellNFT } from './fetchData';
 import { formatSecurityEngineBatchSellNFT } from './formatSecurityEngine';
 import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
+import {
+  parseAction,
+  fetchActionRequiredData,
+  formatSecurityEngineContext,
+} from '../..';
 
 /**
  * https://test-dapp-lyart.vercel.app/security
@@ -17,8 +22,15 @@ import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
  * chainId: eth
  * button: [Batch Sell NFT]
  */
-test('BatchSellNFT', async () => {
-  const actionData = parseTypedDataAction(parseActionBatchSellNFT)({
+test.each([
+  [
+    parseTypedDataAction(parseActionBatchSellNFT),
+    fetchDataBatchSellNFT,
+    formatSecurityEngineBatchSellNFT,
+  ],
+  [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
+])('BatchSellNFT', async (_parseAction, _fetchData, _format) => {
+  const actionData = _parseAction({
     type: 'typed_data',
     data: parseTxData['action'],
     typedData: txData,
@@ -26,7 +38,7 @@ test('BatchSellNFT', async () => {
   });
   expect(actionData).toMatchSnapshot('parseActionBatchSellNFT');
 
-  const requireData = await fetchDataBatchSellNFT({
+  const requireData = await _fetchData({
     type: 'typed_data',
     actionData,
     chainId: ETH_CHAIN_ID,
@@ -36,7 +48,7 @@ test('BatchSellNFT', async () => {
   });
   expect(requireData).toMatchSnapshot('fetchDataBatchSellNFT');
 
-  const ctx = await formatSecurityEngineBatchSellNFT({
+  const ctx = await _format({
     type: 'typed_data',
     actionData,
     requireData,

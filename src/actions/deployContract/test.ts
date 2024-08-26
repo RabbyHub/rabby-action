@@ -7,9 +7,9 @@ import {
 } from '../../../__mocks__';
 import { ParsedTransactionActionData } from '../../types';
 import { parseTxData, preExecData, txData } from './mocks';
-import { parseActionCancelTx } from './parseAction';
-import { fetchDataCancelTx } from './fetchData';
-import { formatSecurityEngineCancelTx } from './formatSecurityEngine';
+import { parseActionDeployContract } from './parseAction';
+import { fetchDataDeployContract } from './fetchData';
+import { formatSecurityEngineDeployContract } from './formatSecurityEngine';
 import {
   parseAction,
   fetchActionRequiredData,
@@ -17,12 +17,17 @@ import {
 } from '../..';
 
 /**
- * SENDER send 0 ETH to SENDER
+ * https://metamask.github.io/test-dapp/#deployButton
+ * - [Deploy] button
  */
 test.each([
-  [parseActionCancelTx, fetchDataCancelTx, formatSecurityEngineCancelTx],
+  [
+    parseActionDeployContract,
+    fetchDataDeployContract,
+    formatSecurityEngineDeployContract,
+  ],
   [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
-])('CancelTx', async (_parseAction, _fetchData, _format) => {
+])('DeployContract', async (_parseAction, _fetchData, _format) => {
   const actionData = _parseAction({
     type: 'transaction',
     data: parseTxData['action'],
@@ -31,7 +36,7 @@ test.each([
     preExecVersion: preExecData.pre_exec_version,
     gasUsed: preExecData.gas.gas_used,
   }) as ParsedTransactionActionData;
-  expect(actionData).toMatchSnapshot('parseActionCancelTx');
+  expect(actionData).toMatchSnapshot('parseActionDeployContract');
 
   const requireData = await _fetchData({
     type: 'transaction',
@@ -43,7 +48,7 @@ test.each([
     tx: txData,
     apiProvider,
   });
-  expect(requireData).toMatchSnapshot('fetchDataCancelTx');
+  expect(requireData).toMatchSnapshot('fetchDataDeployContract');
 
   const ctx = await _format({
     type: 'transaction',
@@ -53,5 +58,5 @@ test.each([
     isTestnet: false,
     provider: formatProvider,
   });
-  expect(ctx).toMatchSnapshot('formatSecurityEngineCancelTx');
+  expect(ctx).toMatchSnapshot('formatSecurityEngineDeployContract');
 });

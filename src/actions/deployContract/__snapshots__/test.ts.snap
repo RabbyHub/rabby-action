@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeployContract: fetchDataDeployContract 1`] = `{}`;
+
+exports[`DeployContract: fetchDataDeployContract 2`] = `{}`;
+
+exports[`DeployContract: formatSecurityEngineDeployContract 1`] = `{}`;
+
+exports[`DeployContract: formatSecurityEngineDeployContract 2`] = `{}`;
+
+exports[`DeployContract: parseActionDeployContract 1`] = `
+{
+  "deployContract": {},
+}
+`;
+
+exports[`DeployContract: parseActionDeployContract 2`] = `
+{
+  "deployContract": {},
+}
+`;

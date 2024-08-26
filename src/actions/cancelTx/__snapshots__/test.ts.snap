@@ -1,14 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApproveToken: fetchDataCancelTx 1`] = `
+exports[`CancelTx: fetchDataCancelTx 1`] = `
 {
   "pendingTxs": [],
 }
 `;
 
-exports[`ApproveToken: formatSecurityEngineCancelTx 1`] = `{}`;
+exports[`CancelTx: fetchDataCancelTx 2`] = `
+{
+  "pendingTxs": [],
+}
+`;
 
-exports[`ApproveToken: parseActionCancelTx 1`] = `
+exports[`CancelTx: formatSecurityEngineCancelTx 1`] = `{}`;
+
+exports[`CancelTx: formatSecurityEngineCancelTx 2`] = `{}`;
+
+exports[`CancelTx: parseActionCancelTx 1`] = `
+{
+  "cancelTx": {
+    "nonce": "0x1691",
+  },
+}
+`;
+
+exports[`CancelTx: parseActionCancelTx 2`] = `
 {
   "cancelTx": {
     "nonce": "0x1691",

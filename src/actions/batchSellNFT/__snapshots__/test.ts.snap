@@ -17,6 +17,23 @@ exports[`BatchSellNFT: fetchDataBatchSellNFT 1`] = `
 }
 `;
 
+exports[`BatchSellNFT: fetchDataBatchSellNFT 2`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": false,
+  "sender": "0xcb1605ed17f6145db16e26e1d8adfe8f4b175377",
+  "unexpectedAddr": null,
+}
+`;
+
 exports[`BatchSellNFT: formatSecurityEngineBatchSellNFT 1`] = `
 {
   "batchSellNFT": {
@@ -31,7 +48,216 @@ exports[`BatchSellNFT: formatSecurityEngineBatchSellNFT 1`] = `
 }
 `;
 
+exports[`BatchSellNFT: formatSecurityEngineBatchSellNFT 2`] = `
+{
+  "batchSellNFT": {
+    "chainId": "eth",
+    "from": "0xcb1605ed17f6145db16e26e1d8adfe8f4b175377",
+    "id": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+    "receiveTokenHasFake": true,
+    "receiveTokenHasScam": false,
+    "receiver": "0xf08c90c7f470b640a21dd9b3744eca3d1d16a044",
+    "specificBuyer": undefined,
+  },
+}
+`;
+
 exports[`BatchSellNFT: parseActionBatchSellNFT 1`] = `
+{
+  "actionType": "sell_nft_list_order",
+  "batchSellNFT": {
+    "expire_at": 1690962184,
+    "pay_nft_list": [
+      {
+        "amount": 1,
+        "attributes": [
+          {
+            "display_type": null,
+            "trait_type": "Background",
+            "value": "Yellow",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Fur",
+            "value": "Blue",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Item",
+            "value": "Drumsticks",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Outfit",
+            "value": "None",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Shoes",
+            "value": "Red Suedes",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Head",
+            "value": "Earbuds",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Face",
+            "value": "Cool",
+          },
+        ],
+        "chain": "eth",
+        "collection": {
+          "chain": "eth",
+          "credit_score": 790.9852183013668,
+          "description": null,
+          "floor_price": 0.0079,
+          "id": "eth:0x283c0bba69ebd4643cfce761b34b0206e75b2091",
+          "is_core": true,
+          "is_scam": false,
+          "is_suspicious": false,
+          "is_verified": true,
+          "logo_url": "https://static.debank.com/image/nft_collection/logo_url/super-puma/7ce746a868adec939a7d5fd424825655.png",
+          "name": "Super PUMA",
+        },
+        "collection_id": "eth:0x283c0bba69ebd4643cfce761b34b0206e75b2091",
+        "content": "https://static.debank.com/image/eth_nft/local_url/c0645c0291405057c74674afda94ff2d/f4271ef8cdf77ce05dd69758fafa2232.png",
+        "content_type": "image_url",
+        "contract_id": "0x283c0bba69ebd4643cfce761b34b0206e75b2091",
+        "description": "Super PUMA is a collection of 10,000 PFPs representing variants from other timelines and universes that have made their way to the present after the events set in motion by Evil PUMA. 
+
+Super PUMA was originally a comic book originating in the 1970s. The character has been given a digital makeover that will see Super PUMA's story reinvigorated, highlighting historic moments in sport, but also pushing into new storytelling territory made possible by web3. Visit https://BlackStation.PUMA.com/SuperPUMA for more information. 
+
+The Super PUMA collection is complementary to PUMA's other ongoing NFT project the Nitro Collection, which will continue to be PUMA's vehicle to release new innovative shoe designs. 
+
+Nitro Collection: https://opensea.io/collection/nitrocollectionpuma 
+
+TOS: https://blackstation.puma.com/terms-of-sale.pdf 
+",
+        "detail_url": "https://opensea.io/assets/0x283c0bba69ebd4643cfce761b34b0206e75b2091/7293",
+        "id": "c0645c0291405057c74674afda94ff2d",
+        "inner_id": "7293",
+        "is_erc1155": false,
+        "is_erc721": true,
+        "name": "#7293",
+        "pay_token": null,
+        "symbol": "SPRPUMA",
+        "thumbnail_url": "https://static.debank.com/image/eth_nft/thumbnail_url/c0645c0291405057c74674afda94ff2d/f4271ef8cdf77ce05dd69758fafa2232.png",
+        "total_supply": 1,
+      },
+      {
+        "amount": 1,
+        "attributes": [
+          {
+            "display_type": null,
+            "trait_type": "Background",
+            "value": "Pink",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Fur",
+            "value": "Tie-dye",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Item",
+            "value": "Cobra driver",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Outfit",
+            "value": "Shorts",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Shoes",
+            "value": "NFRNO",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Head",
+            "value": "Earbuds",
+          },
+          {
+            "display_type": null,
+            "trait_type": "Face",
+            "value": "Cool",
+          },
+        ],
+        "chain": "eth",
+        "collection": {
+          "chain": "eth",
+          "credit_score": 790.9852183013668,
+          "description": null,
+          "floor_price": 0.0079,
+          "id": "eth:0x283c0bba69ebd4643cfce761b34b0206e75b2091",
+          "is_core": true,
+          "is_scam": false,
+          "is_suspicious": false,
+          "is_verified": true,
+          "logo_url": "https://static.debank.com/image/nft_collection/logo_url/super-puma/7ce746a868adec939a7d5fd424825655.png",
+          "name": "Super PUMA",
+        },
+        "collection_id": "eth:0x283c0bba69ebd4643cfce761b34b0206e75b2091",
+        "content": "https://static.debank.com/image/eth_nft/local_url/89ab90f922c61c933c76dd4887606c07/9d5f9071e99df1e8b391457a875ba1aa.png",
+        "content_type": "image_url",
+        "contract_id": "0x283c0bba69ebd4643cfce761b34b0206e75b2091",
+        "description": "Super PUMA is a collection of 10,000 PFPs representing variants from other timelines and universes that have made their way to the present after the events set in motion by Evil PUMA. 
+
+Super PUMA was originally a comic book originating in the 1970s. The character has been given a digital makeover that will see Super PUMA's story reinvigorated, highlighting historic moments in sport, but also pushing into new storytelling territory made possible by web3. Visit https://BlackStation.PUMA.com/SuperPUMA for more information. 
+
+The Super PUMA collection is complementary to PUMA's other ongoing NFT project the Nitro Collection, which will continue to be PUMA's vehicle to release new innovative shoe designs. 
+
+Nitro Collection: https://opensea.io/collection/nitrocollectionpuma 
+
+TOS: https://blackstation.puma.com/terms-of-sale.pdf 
+",
+        "detail_url": "https://opensea.io/assets/0x283c0bba69ebd4643cfce761b34b0206e75b2091/4884",
+        "id": "89ab90f922c61c933c76dd4887606c07",
+        "inner_id": "4884",
+        "is_erc1155": false,
+        "is_erc721": true,
+        "name": "#4884",
+        "pay_token": null,
+        "symbol": "SPRPUMA",
+        "thumbnail_url": "https://static.debank.com/image/eth_nft/thumbnail_url/89ab90f922c61c933c76dd4887606c07/9d5f9071e99df1e8b391457a875ba1aa.png",
+        "total_supply": 1,
+      },
+    ],
+    "receive_token": {
+      "amount": 0,
+      "chain": "eth",
+      "credit_score": 4268.682697297744,
+      "decimals": 18,
+      "display_symbol": null,
+      "id": "0xfe1ef2b469846d1832b25095ff51b004f090e0c6",
+      "is_core": false,
+      "is_scam": true,
+      "is_suspicious": false,
+      "is_verified": false,
+      "is_wallet": false,
+      "logo_url": "https://static.debank.com/image/eth_token/logo_url/0xfe1ef2b469846d1832b25095ff51b004f090e0c6/6d16ba4370ad7b736d32338204a4fef3.png",
+      "name": "Pepe Coin",
+      "optimized_symbol": "PEPE",
+      "price": 3.5794827932828884e-10,
+      "price_24h_change": null,
+      "protocol_id": "",
+      "raw_amount": "0",
+      "symbol": "PEPE",
+      "time_at": 1684097147,
+    },
+    "receiver": "0xf08c90c7f470b640a21dd9b3744eca3d1d16a044",
+    "takers": [],
+  },
+  "brand": undefined,
+  "chainId": "1",
+  "contractId": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+  "sender": "0xcb1605ed17f6145db16e26e1d8adfe8f4b175377",
+}
+`;
+
+exports[`BatchSellNFT: parseActionBatchSellNFT 2`] = `
 {
   "actionType": "sell_nft_list_order",
   "batchSellNFT": {

@@ -9,6 +9,11 @@ import { parseActionBuyNFT } from './parseAction';
 import { fetchDataBuyNFT } from './fetchData';
 import { formatSecurityEngineBuyNFT } from './formatSecurityEngine';
 import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
+import {
+  parseAction,
+  fetchActionRequiredData,
+  formatSecurityEngineContext,
+} from '../..';
 
 /**
  * https://brain.debank.com/action-group/typed_data/60794fa3db7217cf322612886ae58159
@@ -16,8 +21,15 @@ import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
  * chainId: linea
  * id: 6434975
  */
-test('BatchSellNFT', async () => {
-  const actionData = parseTypedDataAction(parseActionBuyNFT)({
+test.each([
+  [
+    parseTypedDataAction(parseActionBuyNFT),
+    fetchDataBuyNFT,
+    formatSecurityEngineBuyNFT,
+  ],
+  [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
+])('BuyNFT', async (_parseAction, _fetchData, _format) => {
+  const actionData = _parseAction({
     type: 'typed_data',
     data: parseTxData['action'],
     typedData: txData,
@@ -25,7 +37,7 @@ test('BatchSellNFT', async () => {
   });
   expect(actionData).toMatchSnapshot('parseActionBuyNFT');
 
-  const requireData = await fetchDataBuyNFT({
+  const requireData = await _fetchData({
     type: 'typed_data',
     actionData,
     chainId: 'linea',
@@ -35,7 +47,7 @@ test('BatchSellNFT', async () => {
   });
   expect(requireData).toMatchSnapshot('fetchDataBuyNFT');
 
-  const ctx = await formatSecurityEngineBuyNFT({
+  const ctx = await _format({
     type: 'typed_data',
     actionData,
     requireData,
