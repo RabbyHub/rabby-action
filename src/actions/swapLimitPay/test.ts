@@ -7,9 +7,9 @@ import {
 } from '../../../__mocks__';
 import { ParsedTransactionActionData } from '../../types';
 import { parseTxData, preExecData, txData } from './mocks';
-import { parseActionMultiSwap } from './parseAction';
-import { fetchDataMultiSwap } from './fetchData';
-import { formatSecurityEngineMultiSwap } from './formatSecurityEngine';
+import { parseActionSwapLimitPay } from './parseAction';
+import { fetchDataSwapLimitPay } from './fetchData';
+import { formatSecurityEngineSwapLimitPay } from './formatSecurityEngine';
 import {
   parseAction,
   fetchActionRequiredData,
@@ -21,7 +21,11 @@ import {
  * multi from token
  */
 test.each([
-  [parseActionMultiSwap, fetchDataMultiSwap, formatSecurityEngineMultiSwap],
+  [
+    parseActionSwapLimitPay,
+    fetchDataSwapLimitPay,
+    formatSecurityEngineSwapLimitPay,
+  ],
   [parseAction, fetchActionRequiredData, formatSecurityEngineContext],
 ])('MultiSwap', async (_parseAction, _fetchData, _format) => {
   const actionData = _parseAction({
