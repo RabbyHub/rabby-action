@@ -35,11 +35,17 @@ import { fetchDataSellNFT } from './actions/sellNFT/fetchData';
 import { fetchDataSignMultiSig } from './actions/signMultiSig/fetchData';
 import { fetchDataSwapTokenOrder } from './actions/swapTokenOrder/fetchData';
 import { fetchDataVerifyAddress } from './actions/verifyAddress/fetchData';
+import { fetchDataTransferOwner } from './actions/transferOwner/fetchData';
+import { fetchDataMultiSwap } from './actions/multiSwap/fetchData';
+import { fetchDataSwapLimitPay } from './actions/swapLimitPay/fetchData';
 
 export const fetchActionRequiredData: FetchActionRequiredData = async (
   options
 ) => {
   const result = await Promise.all([
+    fetchDataTransferOwner(options),
+    fetchDataMultiSwap(options),
+    fetchDataSwapLimitPay(options),
     fetchDataApproveNFT(options),
     fetchDataApproveNFTCollection(options),
     fetchDataApproveToken(options),

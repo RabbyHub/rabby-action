@@ -24,6 +24,7 @@ import {
   ApproveNFTCollectionAction,
   RevokeNFTCollectionAction,
   RevokePermit2Action,
+  MaxPayTokenItem,
 } from '@rabby-wallet/rabby-api/dist/types';
 import { ActionType } from './parseAction';
 
@@ -45,6 +46,21 @@ interface BatchPermit2ActionData extends BatchPermit2Action {
 }
 
 export type ParsedTransactionActionData = {
+  swapLimitPay?: {
+    payToken: MaxPayTokenItem;
+    receiveToken: TokenItem;
+    receiver: string;
+  };
+  multiSwap?: {
+    payTokenList: TokenItem[];
+    receiveTokenList: ReceiveTokenItem[];
+    receiver: string;
+  };
+  transferOwner?: {
+    description: string;
+    from: string;
+    to: string;
+  };
   swap?: {
     payToken: TokenItem;
     receiveToken: ReceiveTokenItem;

@@ -154,6 +154,10 @@ export interface ReceiverData {
   rank?: number;
 }
 
+export interface TransferOwnerRequireData {
+  receiver: ReceiverData | null;
+}
+
 export interface ContractRequireData {
   id: string;
   protocol: {
