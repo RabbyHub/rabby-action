@@ -15,6 +15,7 @@ import {
   fetchActionRequiredData,
   formatSecurityEngineContext,
 } from '../..';
+import { parseTypedDataAction } from '../../utils/parseTypedDataAction';
 
 /**
  * https://brain.debank.com/action-group/tx/0x13af4035
@@ -24,7 +25,7 @@ import {
  */
 test.each([
   [
-    parseActionTransferOwner,
+    parseTypedDataAction(parseActionTransferOwner),
     fetchDataTransferOwner,
     formatSecurityEngineTransferOwner,
   ],
@@ -39,25 +40,24 @@ test.each([
   expect(actionData).toMatchSnapshot('parseActionTransferOwner');
 
   const requireData = await _fetchData({
-    type: 'transaction',
-    actionData,
-    contractCall: parseTxData.contract_call,
+    type: 'typed_data',
     chainId: ETH_CHAIN_ID,
     sender: SENDER,
     walletProvider,
-    tx: txData,
     apiProvider,
+    actionData,
   });
 
   expect(requireData).toMatchSnapshot('fetchDataTransferOwner');
 
   const ctx = await _format({
-    type: 'transaction',
+    type: 'typed_data',
     actionData,
     requireData,
     chainId: ETH_CHAIN_ID,
     isTestnet: false,
     provider: formatProvider,
+    origin: ORIGIN,
   });
   expect(ctx).toMatchSnapshot('formatSecurityEngineTransferOwner');
 });

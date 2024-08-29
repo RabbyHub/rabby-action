@@ -1,5 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Common -> TypedData -> with action: fetchDataCommon 1`] = `{}`;
+
+exports[`Common -> TypedData -> with action: fetchDataCommon 2`] = `null`;
+
+exports[`Common -> TypedData -> with action: formatSecurityEngineCommon 1`] = `
+{
+  "common": {
+    "desc": "Authorization",
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "is_asset_changed": false,
+    "is_involving_privacy": true,
+    "receiverInWallet": undefined,
+    "title": "Authorization",
+    "type": null,
+  },
+}
+`;
+
+exports[`Common -> TypedData -> with action: formatSecurityEngineCommon 2`] = `
+{
+  "common": {
+    "desc": "Authorization",
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "is_asset_changed": false,
+    "is_involving_privacy": true,
+    "receiverInWallet": undefined,
+    "title": "Authorization",
+    "type": null,
+  },
+}
+`;
+
+exports[`Common -> TypedData -> with action: parseActionCommon 1`] = `
+{
+  "actionType": null,
+  "brand": undefined,
+  "chainId": "137",
+  "common": {
+    "desc": "Authorization",
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "is_asset_changed": false,
+    "is_involving_privacy": true,
+    "title": "Authorization",
+    "type": null,
+  },
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;
+
+exports[`Common -> TypedData -> with action: parseActionCommon 2`] = `
+{
+  "actionType": null,
+  "brand": undefined,
+  "chainId": "137",
+  "common": {
+    "desc": "Authorization",
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "is_asset_changed": false,
+    "is_involving_privacy": true,
+    "title": "Authorization",
+    "type": null,
+  },
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;
+
 exports[`Common -> TypedData: fetchDataCommon 1`] = `
 {
   "bornAt": 1591388241,

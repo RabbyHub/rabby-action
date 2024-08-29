@@ -111,6 +111,9 @@ export function parseAction(options: ParseActionParameters): ParsedActionData {
       parseTypedDataAction(parseActionUnwrapToken)(options),
       parseTypedDataAction(parseActionWrapToken)(options),
       parseTypedDataAction(parseActionPermit2BatchRevokeToken)(options),
+      parseTypedDataAction(parseActionTransferOwner)(options),
+      parseTypedDataAction(parseActionSwapLimitPay)(options),
+      parseTypedDataAction(parseActionMultiSwap)(options),
 
       // typed data actions
       parseTypedDataAction(parseActionCreateKey)(options),
