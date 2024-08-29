@@ -11,7 +11,7 @@ export const formatSecurityEngineRevokeToken: FormatSecurityEngineContext =
     const { gasUsed } = actionData.revokeToken;
     return {
       revokeApprove: {
-        gasUsed,
+        gasUsed: gasUsed || 0,
         chainId,
       },
     };

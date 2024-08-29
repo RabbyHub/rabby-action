@@ -35,6 +35,9 @@ import { formatSecurityEngineSellNFT } from './actions/sellNFT/formatSecurityEng
 import { formatSecurityEngineSignMultiSig } from './actions/signMultiSig/formatSecurityEngine';
 import { formatSecurityEngineSwapTokenOrder } from './actions/swapTokenOrder/formatSecurityEngine';
 import { formatSecurityEngineVerifyAddress } from './actions/verifyAddress/formatSecurityEngine';
+import { formatSecurityEngineTransferOwner } from './actions/transferOwner/formatSecurityEngine';
+import { formatSecurityEngineMultiSwap } from './actions/multiSwap/formatSecurityEngine';
+import { formatSecurityEngineSwapLimitPay } from './actions/swapLimitPay/formatSecurityEngine';
 
 export const formatSecurityEngineContext: FormatSecurityEngineContext = async (
   options
@@ -44,6 +47,9 @@ export const formatSecurityEngineContext: FormatSecurityEngineContext = async (
   }
 
   const result = await Promise.all([
+    formatSecurityEngineTransferOwner(options),
+    formatSecurityEngineMultiSwap(options),
+    formatSecurityEngineSwapLimitPay(options),
     formatSecurityEngineApproveNFT(options),
     formatSecurityEngineApproveNFTCollection(options),
     formatSecurityEngineApproveToken(options),

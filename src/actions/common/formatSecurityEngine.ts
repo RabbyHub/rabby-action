@@ -1,7 +1,4 @@
-import {
-  ContractCallRequireData,
-  FormatSecurityEngineContext,
-} from '../../types';
+import { ContractRequireData, FormatSecurityEngineContext } from '../../types';
 
 export const formatSecurityEngineCommon: FormatSecurityEngineContext = async (
   options
@@ -13,8 +10,8 @@ export const formatSecurityEngineCommon: FormatSecurityEngineContext = async (
   return {
     common: {
       ...options.actionData.common,
-      receiverInWallet: (options.requireData as ContractCallRequireData)
-        .receiverInWallet,
+      receiverInWallet: (options.requireData as ContractRequireData)
+        ?.receiverInWallet,
     },
   };
 };

@@ -132,3 +132,63 @@ export const txDataTypedData = {
     no_risk: 'no_risk',
   },
 };
+
+export const parseTxDataTypedDataWithAction = {
+  action: {
+    type: null,
+    title: 'Authorization',
+    desc: 'Authorization',
+    is_asset_changed: false,
+    is_involving_privacy: true,
+  },
+  log_id: 6597175,
+} as any;
+
+export const txDataTypedDataWithAction = {
+  types: {
+    ClobAuth: [
+      {
+        name: 'address',
+        type: 'address',
+      },
+      {
+        name: 'timestamp',
+        type: 'string',
+      },
+      {
+        name: 'nonce',
+        type: 'uint256',
+      },
+      {
+        name: 'message',
+        type: 'string',
+      },
+    ],
+    EIP712Domain: [
+      {
+        name: 'name',
+        type: 'string',
+      },
+      {
+        name: 'version',
+        type: 'string',
+      },
+      {
+        name: 'chainId',
+        type: 'uint256',
+      },
+    ],
+  },
+  primaryType: 'ClobAuth',
+  domain: {
+    name: 'ClobAuthDomain',
+    version: '1',
+    chainId: '137',
+  },
+  message: {
+    address: '0x341a1fbd51825e5a107db54ccb3166deba145479',
+    timestamp: '1724848671',
+    nonce: '0',
+    message: 'This message attests that I control the given wallet',
+  },
+} as any;

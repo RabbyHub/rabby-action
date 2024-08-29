@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultiSwap: fetchDataMultiSwap 1`] = `{}`;
+
+exports[`MultiSwap: fetchDataMultiSwap 2`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0x6a000f20005980200259b80c5102003040001068",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": true,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;
+
+exports[`MultiSwap: formatSecurityEngineMultiSwap 1`] = `{}`;
+
+exports[`MultiSwap: formatSecurityEngineMultiSwap 2`] = `
+{
+  "swap": {
+    "chainId": "eth",
+    "contractAddress": "0x6a000f20005980200259b80c5102003040001068",
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "id": "0x6a000f20005980200259b80c5102003040001068",
+    "receiveTokenIsFake": false,
+    "receiveTokenIsScam": false,
+    "receiver": "0x341a1fbd51825e5a107db54ccb3166deba145479",
+    "receiverInWallet": true,
+    "slippageTolerance": 1.311e-17,
+    "usdValuePercentage": -0.005868558288551638,
+  },
+}
+`;
+
+exports[`MultiSwap: parseActionMultiSwap 1`] = `{}`;
+
+exports[`MultiSwap: parseActionMultiSwap 2`] = `
+{
+  "swap": {
+    "balanceChange": {
+      "success": true,
+      "support": true,
+    },
+    "minReceive": {
+      "amount": 100,
+      "chain": "eth",
+      "credit_score": 4806813.332173079,
+      "decimals": 18,
+      "display_symbol": "",
+      "id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/eth_token/logo_url/0x6b175474e89094c44da98b954eedeac495271d0f/549c4205dbb199f1b8b03af783f35e71.png",
+      "min_amount": 100,
+      "min_raw_amount": "100000000000000000000",
+      "name": "Dai Stablecoin",
+      "optimized_symbol": "DAI",
+      "price": 0.9998,
+      "price_24h_change": 0,
+      "protocol_id": "makerdao",
+      "symbol": "DAI",
+      "time_at": 1573672677,
+    },
+    "payToken": {
+      "amount": 0.037455616131198535,
+      "chain": "eth",
+      "credit_score": 100000000,
+      "decimals": 18,
+      "display_symbol": null,
+      "id": "eth",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/coin/logo_url/eth/6443cdccced33e204d90cb723c632917.png",
+      "name": "ETH",
+      "optimized_symbol": "ETH",
+      "price": 2685.05,
+      "price_24h_change": -0.01848216668311636,
+      "protocol_id": "",
+      "raw_amount": "37455616131198536",
+      "symbol": "ETH",
+      "time_at": 1483200000,
+    },
+    "receiveToken": {
+      "amount": 100,
+      "chain": "eth",
+      "credit_score": 4806813.332173079,
+      "decimals": 18,
+      "display_symbol": "",
+      "id": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "is_core": true,
+      "is_scam": false,
+      "is_suspicious": false,
+      "is_verified": true,
+      "is_wallet": true,
+      "logo_url": "https://static.debank.com/image/eth_token/logo_url/0x6b175474e89094c44da98b954eedeac495271d0f/549c4205dbb199f1b8b03af783f35e71.png",
+      "min_amount": 100,
+      "min_raw_amount": "100000000000000000000",
+      "name": "Dai Stablecoin",
+      "optimized_symbol": "DAI",
+      "price": 0.9998,
+      "price_24h_change": 0,
+      "protocol_id": "makerdao",
+      "symbol": "DAI",
+      "time_at": 1573672677,
+    },
+    "receiver": "0x341a1fbd51825e5a107db54ccb3166deba145479",
+    "slippageTolerance": 1.311e-17,
+    "usdValueDiff": "-0.59020209307462640175",
+    "usdValuePercentage": -0.005868558288551638,
+  },
+}
+`;

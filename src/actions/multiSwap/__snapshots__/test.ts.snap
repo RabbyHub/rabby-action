@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultiSwap: fetchDataMultiSwap 1`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0x19ceead7105607cd444f5ad10dd51356436095a1",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": true,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;
+
+exports[`MultiSwap: fetchDataMultiSwap 2`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0x19ceead7105607cd444f5ad10dd51356436095a1",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": true,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;
+
+exports[`MultiSwap: formatSecurityEngineMultiSwap 1`] = `
+{
+  "multiSwap": {
+    "chainId": "eth",
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "id": "0x19ceead7105607cd444f5ad10dd51356436095a1",
+    "receiver": "0x341a1fbd51825e5a107db54ccb3166deba145479",
+  },
+}
+`;
+
+exports[`MultiSwap: formatSecurityEngineMultiSwap 2`] = `
+{
+  "multiSwap": {
+    "chainId": "eth",
+    "from": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+    "id": "0x19ceead7105607cd444f5ad10dd51356436095a1",
+    "receiver": "0x341a1fbd51825e5a107db54ccb3166deba145479",
+  },
+}
+`;
+
+exports[`MultiSwap: parseActionMultiSwap 1`] = `
+{
+  "multiSwap": {
+    "payTokenList": undefined,
+    "receiveTokenList": undefined,
+    "receiver": "0x341a1fbd51825e5a107db54ccb3166deba145479",
+  },
+}
+`;
+
+exports[`MultiSwap: parseActionMultiSwap 2`] = `
+{
+  "multiSwap": {
+    "payTokenList": undefined,
+    "receiveTokenList": undefined,
+    "receiver": "0x341a1fbd51825e5a107db54ccb3166deba145479",
+  },
+}
+`;

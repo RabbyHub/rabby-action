@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransferOwner: fetchDataTransferOwner 1`] = `
+{
+  "receiver": {
+    "address": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    "cex": null,
+    "chain": {
+      "eip": {
+        "1559": true,
+      },
+      "enum": "ETH",
+      "hex": "0x1",
+      "id": 1,
+      "logo": {},
+      "name": "Ethereum",
+      "nativeTokenAddress": "eth",
+      "nativeTokenDecimals": 18,
+      "nativeTokenLogo": "https://static.debank.com/image/token/logo_url/eth/935ae4e4d1d12d59a99717a24f2540b5.png",
+      "nativeTokenSymbol": "ETH",
+      "network": "1",
+      "scanLink": "https://etherscan.io/tx/_s_",
+      "serverId": "eth",
+      "whiteLogo": {},
+    },
+    "contract": null,
+    "eoa": {
+      "bornAt": 1564655163,
+      "id": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    },
+    "hasTransfer": true,
+    "isTokenContract": true,
+    "name": null,
+    "onTransferWhitelist": false,
+    "usd_value": 4418.154405584272,
+  },
+}
+`;
+
+exports[`TransferOwner: fetchDataTransferOwner 2`] = `
+{
+  "receiver": {
+    "address": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    "cex": null,
+    "chain": {
+      "eip": {
+        "1559": true,
+      },
+      "enum": "ETH",
+      "hex": "0x1",
+      "id": 1,
+      "logo": {},
+      "name": "Ethereum",
+      "nativeTokenAddress": "eth",
+      "nativeTokenDecimals": 18,
+      "nativeTokenLogo": "https://static.debank.com/image/token/logo_url/eth/935ae4e4d1d12d59a99717a24f2540b5.png",
+      "nativeTokenSymbol": "ETH",
+      "network": "1",
+      "scanLink": "https://etherscan.io/tx/_s_",
+      "serverId": "eth",
+      "whiteLogo": {},
+    },
+    "contract": null,
+    "eoa": {
+      "bornAt": 1564655163,
+      "id": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    },
+    "hasTransfer": true,
+    "isTokenContract": true,
+    "name": null,
+    "onTransferWhitelist": false,
+    "usd_value": 4418.154405584272,
+  },
+}
+`;
+
+exports[`TransferOwner: formatSecurityEngineTransferOwner 1`] = `
+{
+  "transferOwner": {
+    "receiverInWhitelist": false,
+  },
+}
+`;
+
+exports[`TransferOwner: formatSecurityEngineTransferOwner 2`] = `
+{
+  "transferOwner": {
+    "receiverInWhitelist": false,
+  },
+}
+`;
+
+exports[`TransferOwner: parseActionTransferOwner 1`] = `
+{
+  "actionType": "transfer_ownership",
+  "brand": undefined,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "transferOwner": {
+    "description": "Transfer proxy ownership.",
+    "from": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    "to": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+  },
+}
+`;
+
+exports[`TransferOwner: parseActionTransferOwner 2`] = `
+{
+  "actionType": "transfer_ownership",
+  "brand": undefined,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "transferOwner": {
+    "description": "Transfer proxy ownership.",
+    "from": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    "to": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+  },
+}
+`;
