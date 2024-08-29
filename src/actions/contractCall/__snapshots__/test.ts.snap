@@ -103,7 +103,7 @@ exports[`ContractCall -> TypedData: formatSecurityEngineContractCall 1`] = `
 {
   "contractCall": {
     "chainId": "eth",
-    "id": undefined,
+    "id": "0xcccccccccccccccccccccccccccccccccccccccc",
   },
 }
 `;

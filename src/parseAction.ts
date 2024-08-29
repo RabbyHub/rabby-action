@@ -185,7 +185,12 @@ export function parseAction(options: ParseActionParameters): ParsedActionData {
 
   if (actionKeys.length === 0) {
     if (options.type === 'typed_data') {
-      return parseTypedDataAction(parseActionContractCall)(options);
+      const typedDataAction = action as ParsedActionData<'typed_data'>;
+
+      if (typedDataAction.chainId && typedDataAction.contractId) {
+        return parseTypedDataAction(parseActionContractCall)(options);
+      }
+      return parseTypedDataAction((r) => r)(options);
     } else if (options.type === 'transaction') {
       return parseActionContractCall(options);
     } else if (options.type === 'text') {
