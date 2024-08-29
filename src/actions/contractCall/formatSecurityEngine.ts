@@ -23,6 +23,10 @@ export const formatSecurityEngineContractCall: FormatSecurityEngineContext =
       return {};
     }
 
+    if (options.type === 'text') {
+      return {};
+    }
+
     const data = requireData as ContractCallRequireData;
     return {
       contractCall: {

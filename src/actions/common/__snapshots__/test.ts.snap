@@ -2,7 +2,7 @@
 
 exports[`Common -> TypedData -> with action: fetchDataCommon 1`] = `{}`;
 
-exports[`Common -> TypedData -> with action: fetchDataCommon 2`] = `null`;
+exports[`Common -> TypedData -> with action: fetchDataCommon 2`] = `{}`;
 
 exports[`Common -> TypedData -> with action: formatSecurityEngineCommon 1`] = `
 {

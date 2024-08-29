@@ -84,11 +84,5 @@ export const fetchActionRequiredData: FetchActionRequiredData = async (
     fetchDataRevokePermit(options),
   ]);
 
-  const requireData = result.reduce((acc, val) => ({ ...acc, ...val }), {});
-
-  if (requireData && Object.keys(requireData).length === 0) {
-    return null;
-  }
-
-  return requireData;
+  return result.reduce((acc, val) => ({ ...acc, ...val }), {});
 };

@@ -2,7 +2,7 @@
 
 exports[`DeployContract: fetchDataDeployContract 1`] = `{}`;
 
-exports[`DeployContract: fetchDataDeployContract 2`] = `null`;
+exports[`DeployContract: fetchDataDeployContract 2`] = `{}`;
 
 exports[`DeployContract: formatSecurityEngineDeployContract 1`] = `{}`;
 
