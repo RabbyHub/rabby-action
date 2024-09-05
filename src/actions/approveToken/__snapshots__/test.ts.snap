@@ -4,7 +4,6 @@ exports[`ApproveToken: fetchDataApproveToken 1`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
-  "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
   "protocol": {
@@ -44,7 +43,6 @@ exports[`ApproveToken: fetchDataApproveToken 2`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
-  "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
   "protocol": {
@@ -85,7 +83,6 @@ exports[`ApproveToken: formatSecurityEngineApproveToken 1`] = `
   "tokenApprove": {
     "chainId": "eth",
     "deployDays": 1539,
-    "hasInteracted": true,
     "isDanger": false,
     "isEOA": false,
     "riskExposure": 20000000000,
@@ -99,7 +96,6 @@ exports[`ApproveToken: formatSecurityEngineApproveToken 2`] = `
   "tokenApprove": {
     "chainId": "eth",
     "deployDays": 1539,
-    "hasInteracted": true,
     "isDanger": false,
     "isEOA": false,
     "riskExposure": 20000000000,

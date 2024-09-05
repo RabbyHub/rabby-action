@@ -32,7 +32,6 @@ export const fetchDataSwap: FetchActionRequiredData<{
     id,
     protocol: null,
     bornAt: 0,
-    hasInteraction: false,
     rank: null,
     sender,
     receiverInWallet,
@@ -46,14 +45,6 @@ export const fetchDataSwap: FetchActionRequiredData<{
       result.bornAt = contractInfo.create_at;
       result.protocol = contractInfo.protocol;
     }
-  });
-  queue.add(async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      id
-    );
-    result.hasInteraction = hasInteraction.has_interaction;
   });
   await waitQueueFinished(queue);
   return result;

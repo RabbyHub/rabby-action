@@ -24,7 +24,6 @@ export const formatSecurityEngineBatchPermit2: FormatSecurityEngineContext =
         deployDays: provider.getTimeSpan(
           Math.floor(Date.now() / 1000) - data.bornAt
         ).d,
-        hasInteracted: data.hasInteraction,
         isDanger: !!data.isDanger,
         chainId,
       },

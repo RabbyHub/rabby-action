@@ -5,7 +5,6 @@ exports[`CoboSafeModificationRole: fetchDataCoboSafeModificationRole 1`] = `{}`;
 exports[`CoboSafeModificationRole: fetchDataCoboSafeModificationRole 2`] = `
 {
   "bornAt": 1591388241,
-  "hasInteraction": true,
   "id": "0xc30fa458dd05dc162cf0a542794e9e9152aa8293",
   "protocol": {
     "id": "uniswap2",

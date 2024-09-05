@@ -3,7 +3,6 @@
 exports[`MultiSwap: fetchDataMultiSwap 1`] = `
 {
   "bornAt": 1591388241,
-  "hasInteraction": true,
   "id": "0x19ceead7105607cd444f5ad10dd51356436095a1",
   "protocol": {
     "id": "uniswap2",
@@ -19,7 +18,6 @@ exports[`MultiSwap: fetchDataMultiSwap 1`] = `
 exports[`MultiSwap: fetchDataMultiSwap 2`] = `
 {
   "bornAt": 1591388241,
-  "hasInteraction": true,
   "id": "0x19ceead7105607cd444f5ad10dd51356436095a1",
   "protocol": {
     "id": "uniswap2",

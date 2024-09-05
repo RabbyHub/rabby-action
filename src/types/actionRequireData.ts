@@ -15,7 +15,6 @@ export interface SwapRequireData {
     logo_url: string;
   } | null;
   bornAt: number;
-  hasInteraction: boolean;
   rank: number | null;
   sender: string;
   receiverInWallet: boolean;
@@ -61,7 +60,6 @@ export interface ApproveTokenRequireData {
   contract: Record<string, ContractDesc> | null;
   riskExposure: number;
   rank: number | null;
-  hasInteraction: boolean;
   bornAt: number;
   protocol: {
     id: string;
@@ -81,7 +79,6 @@ export interface WrapTokenRequireData {
     logo_url: string;
   } | null;
   bornAt: number;
-  hasInteraction: boolean;
   rank: number | null;
   sender: string;
   receiverInWallet: boolean;
@@ -91,7 +88,6 @@ export interface ContractCallRequireData {
   id: string;
   contract: Record<string, ContractDesc> | null;
   rank: number | null;
-  hasInteraction: boolean;
   bornAt: number;
   protocol: {
     name: string;
@@ -102,6 +98,7 @@ export interface ContractCallRequireData {
   nativeTokenSymbol: string;
   unexpectedAddr: ReceiverData | null;
   receiverInWallet: boolean;
+  isDanger?: boolean;
 }
 
 export type ApproveNFTRequireData = Omit<ApproveTokenRequireData, 'token'> & {
@@ -165,7 +162,6 @@ export interface ContractRequireData {
     logo_url: string;
   } | null;
   bornAt: number;
-  hasInteraction: boolean;
   rank: number | null;
   unexpectedAddr: ReceiverData | null;
   receiverInWallet: boolean;

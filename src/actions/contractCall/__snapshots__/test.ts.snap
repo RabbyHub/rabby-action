@@ -14,8 +14,8 @@ exports[`ContractCall -> Transaction: fetchDataContractCall 1`] = `
     "func": "",
   },
   "contract": {},
-  "hasInteraction": true,
   "id": "0x1111111254eeb25477b68fb85ed929f73a960582",
+  "isDanger": false,
   "nativeTokenSymbol": "ETH",
   "payNativeTokenAmount": "0x165cd59da18c9eb",
   "protocol": null,
@@ -39,8 +39,8 @@ exports[`ContractCall -> Transaction: fetchDataContractCall 2`] = `
     "func": "",
   },
   "contract": {},
-  "hasInteraction": true,
   "id": "0x1111111254eeb25477b68fb85ed929f73a960582",
+  "isDanger": false,
   "nativeTokenSymbol": "ETH",
   "payNativeTokenAmount": "0x165cd59da18c9eb",
   "protocol": null,
@@ -55,6 +55,7 @@ exports[`ContractCall -> Transaction: formatSecurityEngineContractCall 1`] = `
   "contractCall": {
     "chainId": "eth",
     "id": "0x1111111254eeb25477b68fb85ed929f73a960582",
+    "isDanger": false,
   },
 }
 `;
@@ -64,6 +65,7 @@ exports[`ContractCall -> Transaction: formatSecurityEngineContractCall 2`] = `
   "contractCall": {
     "chainId": "eth",
     "id": "0x1111111254eeb25477b68fb85ed929f73a960582",
+    "isDanger": false,
   },
 }
 `;
@@ -85,7 +87,6 @@ exports[`ContractCall -> TypedData: fetchDataContractCall 1`] = `{}`;
 exports[`ContractCall -> TypedData: fetchDataContractCall 2`] = `
 {
   "bornAt": 1591388241,
-  "hasInteraction": true,
   "id": "0xcccccccccccccccccccccccccccccccccccccccc",
   "protocol": {
     "id": "uniswap2",

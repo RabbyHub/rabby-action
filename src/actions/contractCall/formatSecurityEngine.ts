@@ -32,6 +32,7 @@ export const formatSecurityEngineContractCall: FormatSecurityEngineContext =
       contractCall: {
         chainId,
         id: data.id,
+        isDanger: data.isDanger,
       },
     };
   };

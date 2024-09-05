@@ -4,7 +4,6 @@ exports[`ApproveNFTCollection: fetchDataApproveNFTCollection 1`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
-  "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
   "protocol": {
@@ -22,7 +21,6 @@ exports[`ApproveNFTCollection: fetchDataApproveNFTCollection 2`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
-  "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
   "protocol": {
@@ -41,7 +39,6 @@ exports[`ApproveNFTCollection: formatSecurityEngineApproveNFTCollection 1`] = `
   "collectionApprove": {
     "chainId": "eth",
     "deployDays": 1539,
-    "hasInteracted": true,
     "isDanger": false,
     "isEOA": false,
     "riskExposure": 20000000000,
@@ -55,7 +52,6 @@ exports[`ApproveNFTCollection: formatSecurityEngineApproveNFTCollection 2`] = `
   "collectionApprove": {
     "chainId": "eth",
     "deployDays": 1539,
-    "hasInteracted": true,
     "isDanger": false,
     "isEOA": false,
     "riskExposure": 20000000000,

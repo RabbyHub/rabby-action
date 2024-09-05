@@ -29,7 +29,6 @@ export const fetchDataCommon: FetchActionRequiredData<{
     id: receiver,
     protocol: null,
     bornAt: 0,
-    hasInteraction: false,
     rank: null,
     unexpectedAddr: null,
     receiverInWallet: false,
@@ -58,14 +57,6 @@ export const fetchDataCommon: FetchActionRequiredData<{
       result.bornAt = desc.born_at;
     });
   }
-  queue.add(async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      receiver
-    );
-    result.hasInteraction = hasInteraction.has_interaction;
-  });
 
   if (actionData.contractCall || actionData.common) {
     const chain = walletProvider.findChain({
