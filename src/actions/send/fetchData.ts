@@ -69,6 +69,9 @@ export const fetchDataSend: FetchActionRequiredData<{
         bornAt: desc.born_at,
       };
     }
+    if (desc.protocol?.[chainId]) {
+      result.protocol = desc.protocol[chainId];
+    }
     result.usd_value = desc.usd_value;
     if (result.cex) {
       const { support } = await apiProvider.depositCexSupport(
