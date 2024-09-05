@@ -21,7 +21,6 @@ export const formatSecurityEngineApproveNFT: FormatSecurityEngineContext =
         deployDays: provider.getTimeSpan(
           Math.floor(Date.now() / 1000) - data.bornAt
         ).d,
-        hasInteracted: data.hasInteraction,
         isDanger: !!data.isDanger,
       },
     };

@@ -5,7 +5,6 @@ exports[`MultiSwap: fetchDataMultiSwap 1`] = `{}`;
 exports[`MultiSwap: fetchDataMultiSwap 2`] = `
 {
   "bornAt": 1591388241,
-  "hasInteraction": true,
   "id": "0x6a000f20005980200259b80c5102003040001068",
   "protocol": {
     "id": "uniswap2",

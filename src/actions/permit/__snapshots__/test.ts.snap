@@ -4,7 +4,6 @@ exports[`Permit: fetchDataPermit 1`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
-  "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
   "protocol": {
@@ -44,7 +43,6 @@ exports[`Permit: fetchDataPermit 2`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
-  "hasInteraction": true,
   "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
   "isDanger": false,
   "isEOA": false,
@@ -89,7 +87,6 @@ exports[`Permit: formatSecurityEnginePermit 1`] = `
   "permit": {
     "chainId": "eth",
     "deployDays": 1539,
-    "hasInteracted": true,
     "isDanger": false,
     "isEOA": false,
     "riskExposure": 20000000000,
@@ -103,7 +100,6 @@ exports[`Permit: formatSecurityEnginePermit 2`] = `
   "permit": {
     "chainId": "eth",
     "deployDays": 1539,
-    "hasInteracted": true,
     "isDanger": false,
     "isEOA": false,
     "riskExposure": 20000000000,

@@ -1,6 +1,6 @@
 {
   "name": "@rabby-wallet/rabby-action",
-  "version": "0.1.2-beta.0",
+  "version": "0.1.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -13,7 +13,7 @@
     "@babel/preset-env": "^7.19.1",
     "@debank/common": "^0.3.60",
     "@rabby-wallet/rabby-api": "0.7.28",
-    "@rabby-wallet/rabby-security-engine": "2.0.7-beta",
+    "@rabby-wallet/rabby-security-engine": "2.0.7",
     "@types/jest": "^29.0.3",
     "@types/lodash": "^4.14.185",
     "@types/node": "^18.7.18",
@@ -24,12 +24,12 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-mock-axios": "^4.7.0-beta",
     "lint-staged": ">=10",
+    "p-queue": "7.3.0",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^29.2.4",
     "ts-node": "^10.9.1",
-    "typescript": "^5.5.4",
-    "p-queue": "7.3.0"
+    "typescript": "^5.5.4"
   },
   "scripts": {
     "test": "jest",

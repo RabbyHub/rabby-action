@@ -34,7 +34,6 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
   const result: ContractCallRequireData = {
     contract: null,
     rank: null,
-    hasInteraction: false,
     bornAt: 0,
     protocol: null,
     call: contractCall!,
@@ -43,6 +42,7 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
     nativeTokenSymbol: chain?.nativeTokenSymbol || 'ETH',
     unexpectedAddr: null,
     receiverInWallet: false,
+    isDanger: false,
   };
   queue.add(async () => {
     const contractInfo = await apiProvider.getContractInfo(
@@ -53,6 +53,9 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
       result.rank = null;
     } else {
       result.rank = contractInfo.credit.rank_at;
+      result.isDanger = !!(
+        contractInfo.is_danger.auto || contractInfo.is_danger.edit
+      );
     }
   });
   queue.add(async () => {
@@ -64,14 +67,6 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
       }
     }
     result.protocol = getProtocol(desc.protocol, chainId);
-  });
-  queue.add(async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      contractCall!.contract.id
-    );
-    result.hasInteraction = hasInteraction.has_interaction;
   });
   queue.add(async () => {
     const addr = actionData.common?.receiver;

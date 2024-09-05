@@ -26,7 +26,6 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
     contract: null,
     riskExposure: 0,
     rank: null,
-    hasInteraction: false,
     bornAt: 0,
     protocol: null,
     isDanger: false,
@@ -63,15 +62,6 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
       result.token = t;
     });
   }
-
-  queue.add(async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      spender
-    );
-    result.hasInteraction = hasInteraction.has_interaction;
-  });
   await waitQueueFinished(queue);
   return result;
 };

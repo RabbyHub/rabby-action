@@ -24,7 +24,6 @@ export const fetchDataBatchPermit2: FetchActionRequiredData = async (
     contract: null,
     riskExposure: 0,
     rank: null,
-    hasInteraction: false,
     bornAt: 0,
     protocol: null,
     isDanger: false,
@@ -60,15 +59,6 @@ export const fetchDataBatchPermit2: FetchActionRequiredData = async (
       tokens.map((token) => apiProvider.getToken(sender, chainId, token.id))
     );
     result.tokens = list;
-  });
-
-  queue.add(async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      spender
-    );
-    result.hasInteraction = hasInteraction.has_interaction;
   });
   await waitQueueFinished(queue);
   return result;
