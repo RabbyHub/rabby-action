@@ -53,9 +53,7 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
       result.rank = null;
     } else {
       result.rank = contractInfo.credit.rank_at;
-      result.isDanger = !!(
-        contractInfo.is_danger.auto || contractInfo.is_danger.edit
-      );
+      result.isDanger = !!contractInfo.is_phishing;
     }
   });
   queue.add(async () => {
