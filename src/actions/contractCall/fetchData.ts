@@ -43,6 +43,7 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
     unexpectedAddr: null,
     receiverInWallet: false,
     isDanger: false,
+    hasInteraction: false,
   };
   queue.add(async () => {
     const contractInfo = await apiProvider.getContractInfo(
@@ -66,6 +67,16 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
     }
     result.protocol = getProtocol(desc.protocol, chainId);
   });
+
+  queue.add(async () => {
+    const hasInteraction = await apiProvider.hasInteraction(
+      sender,
+      chainId,
+      contractCall!.contract.id
+    );
+    result.hasInteraction = hasInteraction.has_interaction;
+  });
+
   queue.add(async () => {
     const addr = actionData.common?.receiver;
 

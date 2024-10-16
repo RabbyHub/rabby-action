@@ -32,6 +32,7 @@ export const fetchDataBatchPermit2: FetchActionRequiredData = async (
       amount: 0,
       raw_amount_hex_str: '0x0',
     })),
+    hasInteraction: false,
   };
   queue.add(async () => {
     const contractInfo = await apiProvider.getContractInfo(spender, chainId);
@@ -60,6 +61,16 @@ export const fetchDataBatchPermit2: FetchActionRequiredData = async (
     );
     result.tokens = list;
   });
+
+  queue.add(async () => {
+    const hasInteraction = await apiProvider.hasInteraction(
+      sender,
+      chainId,
+      spender
+    );
+    result.hasInteraction = hasInteraction.has_interaction;
+  });
+
   await waitQueueFinished(queue);
   return result;
 };

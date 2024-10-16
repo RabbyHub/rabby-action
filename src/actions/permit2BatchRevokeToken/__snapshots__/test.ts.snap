@@ -5,6 +5,7 @@ exports[`Permit2BatchRevokeToken: fetchDataPermit2BatchRevokeToken 1`] = `
   "0xb555edf5dcf85f42ceef1f3630a52a108e55a654": {
     "bornAt": 1591388241,
     "contract": null,
+    "hasInteraction": true,
     "isDanger": false,
     "isEOA": false,
     "protocol": {
@@ -27,6 +28,7 @@ exports[`Permit2BatchRevokeToken: fetchDataPermit2BatchRevokeToken 2`] = `
   "0xb555edf5dcf85f42ceef1f3630a52a108e55a654": {
     "bornAt": 1591388241,
     "contract": null,
+    "hasInteraction": true,
     "isDanger": false,
     "isEOA": false,
     "protocol": {

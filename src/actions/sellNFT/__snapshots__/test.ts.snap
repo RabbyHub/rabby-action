@@ -3,6 +3,7 @@
 exports[`SellNFT: fetchDataSellNFT 1`] = `
 {
   "bornAt": 1591388241,
+  "hasInteraction": true,
   "id": "0xeaf5453b329eb38be159a872a6ce91c9a8fb0260",
   "protocol": {
     "id": "uniswap2",
@@ -19,6 +20,7 @@ exports[`SellNFT: fetchDataSellNFT 1`] = `
 exports[`SellNFT: fetchDataSellNFT 2`] = `
 {
   "bornAt": 1591388241,
+  "hasInteraction": true,
   "id": "0xeaf5453b329eb38be159a872a6ce91c9a8fb0260",
   "protocol": {
     "id": "uniswap2",

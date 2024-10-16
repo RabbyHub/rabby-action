@@ -3,6 +3,7 @@
 exports[`UnwrapToken: fetchDataUnwrapToken 1`] = `
 {
   "bornAt": 1591388241,
+  "hasInteraction": true,
   "id": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
   "protocol": {
     "id": "uniswap2",
@@ -18,6 +19,7 @@ exports[`UnwrapToken: fetchDataUnwrapToken 1`] = `
 exports[`UnwrapToken: fetchDataUnwrapToken 2`] = `
 {
   "bornAt": 1591388241,
+  "hasInteraction": true,
   "id": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
   "protocol": {
     "id": "uniswap2",
