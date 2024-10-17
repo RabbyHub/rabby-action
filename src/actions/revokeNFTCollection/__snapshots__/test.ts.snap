@@ -4,6 +4,7 @@ exports[`RevokeNFTCollection: fetchDataRevokeNFTCollection 1`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
+  "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
   "protocol": {
@@ -21,6 +22,7 @@ exports[`RevokeNFTCollection: fetchDataRevokeNFTCollection 2`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
+  "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
   "protocol": {

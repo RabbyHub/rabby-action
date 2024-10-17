@@ -3,6 +3,7 @@
 exports[`CrossToken: fetchDataCrossToken 1`] = `
 {
   "bornAt": 1591388241,
+  "hasInteraction": true,
   "id": "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae",
   "protocol": {
     "id": "uniswap2",
@@ -18,6 +19,7 @@ exports[`CrossToken: fetchDataCrossToken 1`] = `
 exports[`CrossToken: fetchDataCrossToken 2`] = `
 {
   "bornAt": 1591388241,
+  "hasInteraction": true,
   "id": "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae",
   "protocol": {
     "id": "uniswap2",

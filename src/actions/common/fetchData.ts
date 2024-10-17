@@ -32,6 +32,7 @@ export const fetchDataCommon: FetchActionRequiredData<{
     rank: null,
     unexpectedAddr: null,
     receiverInWallet: false,
+    hasInteraction: false,
   };
 
   if (options.type === 'typed_data') {
@@ -57,6 +58,15 @@ export const fetchDataCommon: FetchActionRequiredData<{
       result.bornAt = desc.born_at;
     });
   }
+
+  queue.add(async () => {
+    const hasInteraction = await apiProvider.hasInteraction(
+      sender,
+      chainId,
+      receiver
+    );
+    result.hasInteraction = hasInteraction.has_interaction;
+  });
 
   if (actionData.contractCall || actionData.common) {
     const chain = walletProvider.findChain({

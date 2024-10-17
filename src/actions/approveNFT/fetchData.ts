@@ -22,6 +22,7 @@ export const fetchDataApproveNFT: FetchActionRequiredData<{
     protocol: null,
     isDanger: false,
     tokenBalance: '0',
+    hasInteraction: false,
   };
 
   queue.add(async () => {
@@ -48,6 +49,16 @@ export const fetchDataApproveNFT: FetchActionRequiredData<{
       });
     }
   });
+
+  queue.add(async () => {
+    const hasInteraction = await apiProvider.hasInteraction(
+      sender,
+      chainId,
+      action.spender
+    );
+    result.hasInteraction = hasInteraction.has_interaction;
+  });
+
   await waitQueueFinished(queue);
   return result;
 };

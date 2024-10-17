@@ -4,6 +4,7 @@ exports[`RevokeToken: fetchDataRevokeToken 1`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
+  "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
   "protocol": {
@@ -43,6 +44,7 @@ exports[`RevokeToken: fetchDataRevokeToken 2`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
+  "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
   "protocol": {

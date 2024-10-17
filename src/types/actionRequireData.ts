@@ -18,6 +18,7 @@ export interface SwapRequireData {
   rank: number | null;
   sender: string;
   receiverInWallet: boolean;
+  hasInteraction: boolean;
 }
 
 export interface SendRequireData {
@@ -68,6 +69,7 @@ export interface ApproveTokenRequireData {
   } | null;
   isDanger: boolean | null;
   token: TokenItem;
+  hasInteraction: boolean;
 }
 
 export type RevokeTokenApproveRequireData = ApproveTokenRequireData;
@@ -82,6 +84,7 @@ export interface WrapTokenRequireData {
   rank: number | null;
   sender: string;
   receiverInWallet: boolean;
+  hasInteraction: boolean;
 }
 
 export interface ContractCallRequireData {
@@ -99,6 +102,7 @@ export interface ContractCallRequireData {
   unexpectedAddr: ReceiverData | null;
   receiverInWallet: boolean;
   isDanger?: boolean;
+  hasInteraction: boolean;
 }
 
 export type ApproveNFTRequireData = Omit<ApproveTokenRequireData, 'token'> & {
@@ -165,6 +169,7 @@ export interface ContractRequireData {
   rank: number | null;
   unexpectedAddr: ReceiverData | null;
   receiverInWallet: boolean;
+  hasInteraction: boolean;
 }
 
 export interface AssetOrderRequireData extends ContractRequireData {
