@@ -40,7 +40,7 @@
   },
   "peerDependencies": {
     "@debank/common": "^0.3.60",
-    "@rabby-wallet/rabby-api": "^0.7.26",
+    "@rabby-wallet/rabby-api": "^0.8.1",
     "@rabby-wallet/rabby-security-engine": "^2.0.5",
     "bignumber.js": "*",
     "p-queue": "^7.3.0"
