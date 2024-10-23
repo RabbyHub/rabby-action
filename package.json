@@ -13,7 +13,7 @@
     "@babel/preset-env": "^7.19.1",
     "@debank/common": "^0.3.60",
     "@rabby-wallet/rabby-api": "0.8.1",
-    "@rabby-wallet/rabby-security-engine": "2.0.7",
+    "@rabby-wallet/rabby-security-engine": "2.0.8-beta.1",
     "@types/jest": "^29.0.3",
     "@types/lodash": "^4.14.185",
     "@types/node": "^18.7.18",
@@ -41,7 +41,7 @@
   "peerDependencies": {
     "@debank/common": "^0.3.60",
     "@rabby-wallet/rabby-api": "^0.8.1",
-    "@rabby-wallet/rabby-security-engine": "^2.0.5",
+    "@rabby-wallet/rabby-security-engine": "^2.0.8-beta.1",
     "bignumber.js": "*",
     "p-queue": "^7.3.0"
   },
