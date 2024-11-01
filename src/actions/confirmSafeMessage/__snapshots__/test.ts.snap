@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirm Safe Message: fetchDataConfirmSafeMessage 1`] = `
+{
+  "contract": {},
+  "id": "0x89f4a8e75da4b985bae9798162073fe5c037e9dd",
+}
+`;
+
+exports[`Confirm Safe Message: fetchDataConfirmSafeMessage 2`] = `
+{
+  "bornAt": 1591388241,
+  "hasInteraction": true,
+  "id": "0x89f4a8e75da4b985bae9798162073fe5c037e9dd",
+  "protocol": {
+    "id": "uniswap2",
+    "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
+    "name": "Uniswap V2",
+  },
+  "rank": 65,
+  "receiverInWallet": false,
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+  "unexpectedAddr": null,
+}
+`;
+
+exports[`Confirm Safe Message: formatSecurityEngineConfirmSafeMessage 1`] = `{}`;
+
+exports[`Confirm Safe Message: formatSecurityEngineConfirmSafeMessage 2`] = `
+{
+  "contractCall": {
+    "chainId": "eth",
+    "id": "0x89f4a8e75da4b985bae9798162073fe5c037e9dd",
+  },
+}
+`;
+
+exports[`Confirm Safe Message: parseActionConfirmSafeMessage 1`] = `
+{
+  "actionType": "confirm_safe_message",
+  "brand": undefined,
+  "chainId": "0x1",
+  "confirmSafeMessage": {
+    "multisig_id": "0x89f4a8e75da4b985bae9798162073fe5c037e9dd",
+  },
+  "contractId": "0x89f4a8e75da4b985bae9798162073fe5c037e9dd",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;
+
+exports[`Confirm Safe Message: parseActionConfirmSafeMessage 2`] = `
+{
+  "actionType": "contractCall",
+  "brand": undefined,
+  "chainId": "0x1",
+  "contractCall": {},
+  "contractId": "0x89f4a8e75da4b985bae9798162073fe5c037e9dd",
+  "sender": "0x5853ed4f26a3fcea565b3fbc698bb19cdf6deb85",
+}
+`;

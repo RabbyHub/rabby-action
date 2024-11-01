@@ -1,3 +1,4 @@
+import { ConfirmSafeMessageActions } from './../../node_modules/@rabby-wallet/rabby-api/dist/types.d';
 import {
   TokenItem,
   NFTItem,
@@ -154,6 +155,7 @@ export type ParsedTypedDataActionData = ParsedTransactionActionData & {
   sellNFT?: SellNFTOrderAction;
   batchSellNFT?: BatchSellNFTOrderAction;
   signMultiSig?: SignMultiSigActions;
+  confirmSafeMessage?: ConfirmSafeMessageActions;
   buyNFT?: BuyNFTOrderAction;
   permit?: PermitActionData;
   permit2?: Permit2ActionData;
