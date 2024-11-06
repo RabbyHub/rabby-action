@@ -39,9 +39,9 @@
     "prepare": "husky install"
   },
   "peerDependencies": {
-    "@debank/common": ">=0.3.60",
-    "@rabby-wallet/rabby-api": ">=0.7.26",
-    "@rabby-wallet/rabby-security-engine": ">=2.0.5",
+    "@debank/common": "*",
+    "@rabby-wallet/rabby-api": "*",
+    "@rabby-wallet/rabby-security-engine": "*",
     "bignumber.js": "*",
     "p-queue": "^7.3.0"
   },
