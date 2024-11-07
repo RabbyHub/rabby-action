@@ -1,6 +1,6 @@
 {
   "name": "@rabby-wallet/rabby-action",
-  "version": "0.1.5-beta4",
+  "version": "0.1.7",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -12,8 +12,6 @@
   "devDependencies": {
     "@babel/preset-env": "^7.19.1",
     "@debank/common": "^0.3.60",
-    "@rabby-wallet/rabby-api": "0.7.33",
-    "@rabby-wallet/rabby-security-engine": "2.0.7",
     "@types/jest": "^29.0.3",
     "@types/lodash": "^4.14.185",
     "@types/node": "^18.7.18",
