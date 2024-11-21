@@ -57,7 +57,34 @@ export const fetchDataBatchPermit2: FetchActionRequiredData = async (
   });
   queue.add(async () => {
     const list = await Promise.all(
-      tokens.map((token) => apiProvider.getToken(sender, chainId, token.id))
+      tokens.map(async (token) => {
+        const t = await apiProvider.getToken(sender, chainId, token.id);
+        if (!t) {
+          // hacker will build a not exist token in batchPermit2 for avoid signature parse
+          return {
+            amount: 0,
+            chain: chainId,
+            decimals: 0,
+            display_symbol: 'Unknown Token',
+            id: token.id,
+            is_core: false,
+            is_verified: false,
+            is_wallet: false,
+            logo_url: '',
+            name: 'Unknown Token',
+            optimized_symbol: 'Unknown Token',
+            permit2_allowance_amount: 0,
+            permit2_allowance_raw_amount: '0',
+            price: 0,
+            price_24h_change: 0,
+            protocol_id: '',
+            raw_amount: '9000',
+            symbol: 'Unknown Token',
+            time_at: 0,
+          };
+        }
+        return t;
+      })
     );
     result.tokens = list;
   });
