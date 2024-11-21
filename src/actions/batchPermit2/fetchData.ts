@@ -78,7 +78,7 @@ export const fetchDataBatchPermit2: FetchActionRequiredData = async (
             price: 0,
             price_24h_change: 0,
             protocol_id: '',
-            raw_amount: '9000',
+            raw_amount: '0',
             symbol: 'Unknown Token',
             time_at: 0,
           };
