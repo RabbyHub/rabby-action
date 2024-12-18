@@ -23,13 +23,9 @@ export function fetchHasInteraction({
   };
 }) {
   const handleHasInteraction = async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      spender
-    );
+    const result = await apiProvider.hasInteraction(sender, chainId, spender);
 
-    return hasInteraction.has_interaction;
+    return result.has_interaction;
   };
 
   if (!extraActionDataState) {
@@ -40,8 +36,8 @@ export function fetchHasInteraction({
 
   if (extraActionDataState?.setHasInteraction) {
     result.extraState.hasInteraction = async () => {
-      const hasInteraction = await handleHasInteraction();
-      extraActionDataState.setHasInteraction?.(hasInteraction);
+      const result = await handleHasInteraction();
+      extraActionDataState.setHasInteraction?.(result);
     };
   }
 }

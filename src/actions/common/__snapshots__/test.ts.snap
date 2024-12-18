@@ -71,6 +71,7 @@ exports[`Common -> TypedData: fetchDataCommon 1`] = `
   "bornAt": 1591388241,
   "extraState": {
     "hasInteraction": [Function],
+    "receiverHasTransfer": [Function],
   },
   "hasInteraction": true,
   "id": "0xcccccccccccccccccccccccccccccccccccccccc",
@@ -91,6 +92,7 @@ exports[`Common -> TypedData: fetchDataCommon 2`] = `
   "bornAt": 1591388241,
   "extraState": {
     "hasInteraction": [Function],
+    "receiverHasTransfer": [Function],
   },
   "hasInteraction": true,
   "id": "0xcccccccccccccccccccccccccccccccccccccccc",

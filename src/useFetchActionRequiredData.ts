@@ -3,6 +3,7 @@ import {
   ActionRequireData,
   ExtraActionRequiredDataState,
   FetchActionRequiredDataParameters,
+  ReceiverData,
 } from './types';
 import React from 'react';
 
@@ -21,18 +22,33 @@ export const useFetchActionRequiredData = () => {
     });
   }, []);
 
+  const setReceiverHasTransfer: NonNullable<
+    ExtraActionRequiredDataState['setReceiverHasTransfer']
+  > = React.useCallback((hasTransfer) => {
+    setRequiredData((prev: { unexpectedAddr: ReceiverData }) => {
+      return {
+        ...prev,
+        unexpectedAddr: {
+          ...prev?.unexpectedAddr,
+          hasTransfer,
+        },
+      };
+    });
+  }, []);
+
   const _fetchActionRequiredData = React.useCallback(
     async (options: FetchActionRequiredDataParameters) => {
       const result = await fetchActionRequiredData({
         ...options,
         extraActionDataState: {
           setHasInteraction,
+          setReceiverHasTransfer,
         },
       });
       setRequiredData(result);
       return result;
     },
-    [setHasInteraction]
+    [setHasInteraction, setReceiverHasTransfer]
   );
 
   return {

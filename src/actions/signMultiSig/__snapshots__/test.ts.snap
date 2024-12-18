@@ -13,6 +13,7 @@ exports[`ApproveToken: fetchDataSignMultiSig 2`] = `
   "contract": {},
   "extraState": {
     "hasInteraction": [Function],
+    "receiverHasTransfer": [Function],
   },
   "hasInteraction": true,
   "id": "0xb5d05de17c00aed6c465b6bbba01d5edae59e19c",

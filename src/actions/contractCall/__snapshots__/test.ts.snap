@@ -16,6 +16,7 @@ exports[`ContractCall -> Transaction: fetchDataContractCall 1`] = `
   "contract": {},
   "extraState": {
     "hasInteraction": [Function],
+    "receiverHasTransfer": [Function],
   },
   "hasInteraction": true,
   "id": "0x1111111254eeb25477b68fb85ed929f73a960582",
@@ -45,6 +46,7 @@ exports[`ContractCall -> Transaction: fetchDataContractCall 2`] = `
   "contract": {},
   "extraState": {
     "hasInteraction": [Function],
+    "receiverHasTransfer": [Function],
   },
   "hasInteraction": true,
   "id": "0x1111111254eeb25477b68fb85ed929f73a960582",
@@ -97,6 +99,7 @@ exports[`ContractCall -> TypedData: fetchDataContractCall 2`] = `
   "bornAt": 1591388241,
   "extraState": {
     "hasInteraction": [Function],
+    "receiverHasTransfer": [Function],
   },
   "hasInteraction": true,
   "id": "0xcccccccccccccccccccccccccccccccccccccccc",

@@ -2,6 +2,9 @@
 
 exports[`TransferOwner: fetchDataTransferOwner 1`] = `
 {
+  "extraState": {
+    "receiverHasTransfer": [Function],
+  },
   "receiver": {
     "address": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
     "cex": null,
@@ -39,6 +42,9 @@ exports[`TransferOwner: fetchDataTransferOwner 1`] = `
 
 exports[`TransferOwner: fetchDataTransferOwner 2`] = `
 {
+  "extraState": {
+    "receiverHasTransfer": [Function],
+  },
   "receiver": {
     "address": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
     "cex": null,

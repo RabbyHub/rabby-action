@@ -7,6 +7,7 @@ import {
 import { getProtocol } from '../../utils/getProtocol';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
 import { fetchHasInteraction } from '../../fetches/fetchHasInteraction';
+import { fetchReceiverHasTransfer } from '../../fetches/fetchHasTransfer';
 
 export const fetchDataContractCall: FetchActionRequiredData = async (
   options
@@ -48,6 +49,7 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
     hasInteraction: null,
     extraState: {
       hasInteraction: () => undefined,
+      receiverHasTransfer: () => undefined,
     },
   };
   queue.add(async () => {
@@ -95,18 +97,22 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
         cex: null,
         contract: null,
         usd_value: 0,
-        hasTransfer: false,
+        hasTransfer: null,
         isTokenContract: false,
         name: null,
         onTransferWhitelist: false,
       };
 
-      const { has_transfer } = await apiProvider.hasTransfer(
+      fetchReceiverHasTransfer({
+        apiProvider,
         chainId,
         sender,
-        addr
-      );
-      receiverData.hasTransfer = has_transfer;
+        spender: addr,
+        queue,
+        extraActionDataState,
+        receiverData,
+        result,
+      });
 
       const { desc } = await apiProvider.addrDesc(addr);
       if (desc.cex?.id) {

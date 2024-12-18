@@ -6,6 +6,7 @@ import { ActionRequireData } from './actionRequireData';
 
 export type ExtraActionRequiredDataState = {
   setHasInteraction?: (v: boolean) => void;
+  setReceiverHasTransfer?: (v: boolean) => void;
 };
 
 type BaseFetchActionRequiredDataParameters<

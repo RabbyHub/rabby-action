@@ -114,6 +114,7 @@ export interface ContractCallRequireData {
   hasInteraction: boolean | null;
   extraState: {
     hasInteraction: () => void;
+    receiverHasTransfer: () => void;
   };
 }
 
@@ -155,7 +156,7 @@ export interface ReceiverData {
   } | null;
   contract: Record<string, ContractDesc> | null;
   usd_value: number;
-  hasTransfer: boolean;
+  hasTransfer: boolean | null;
   isTokenContract: boolean;
   name: string | null;
   onTransferWhitelist: boolean;
@@ -169,6 +170,9 @@ export interface ReceiverData {
 
 export interface TransferOwnerRequireData {
   receiver: ReceiverData | null;
+  extraState: {
+    receiverHasTransfer: () => void;
+  };
 }
 
 export interface ContractRequireData {
@@ -184,6 +188,7 @@ export interface ContractRequireData {
   hasInteraction: boolean | null;
   extraState: {
     hasInteraction: () => void;
+    receiverHasTransfer: () => void;
   };
 }
 

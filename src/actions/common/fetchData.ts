@@ -7,6 +7,7 @@ import {
 } from '../../types';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
 import { fetchHasInteraction } from '../../fetches/fetchHasInteraction';
+import { fetchReceiverHasTransfer } from '../../fetches/fetchHasTransfer';
 
 export const fetchDataCommon: FetchActionRequiredData<{
   receiver: string;
@@ -37,6 +38,7 @@ export const fetchDataCommon: FetchActionRequiredData<{
     hasInteraction: null,
     extraState: {
       hasInteraction: () => undefined,
+      receiverHasTransfer: () => undefined,
     },
   };
 
@@ -91,18 +93,22 @@ export const fetchDataCommon: FetchActionRequiredData<{
           cex: null,
           contract: null,
           usd_value: 0,
-          hasTransfer: false,
+          hasTransfer: null,
           isTokenContract: false,
           name: null,
           onTransferWhitelist: false,
         };
 
-        const { has_transfer } = await apiProvider.hasTransfer(
+        fetchReceiverHasTransfer({
+          apiProvider,
           chainId,
           sender,
-          addr
-        );
-        receiverData.hasTransfer = has_transfer;
+          spender: addr,
+          queue,
+          extraActionDataState,
+          receiverData,
+          result,
+        });
 
         const { desc } = await apiProvider.addrDesc(addr);
         if (desc.cex?.id) {
