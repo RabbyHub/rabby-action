@@ -3,6 +3,9 @@
 exports[`BatchSellNFT: fetchDataBatchSellNFT 1`] = `
 {
   "bornAt": 1591388241,
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "id": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
   "protocol": {
@@ -20,6 +23,9 @@ exports[`BatchSellNFT: fetchDataBatchSellNFT 1`] = `
 exports[`BatchSellNFT: fetchDataBatchSellNFT 2`] = `
 {
   "bornAt": 1591388241,
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "id": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
   "protocol": {

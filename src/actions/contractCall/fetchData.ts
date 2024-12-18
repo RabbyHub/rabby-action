@@ -6,10 +6,12 @@ import {
 } from '../../types';
 import { getProtocol } from '../../utils/getProtocol';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
+import { fetchHasInteraction } from '../../fetches/fetchHasInteraction';
 
 export const fetchDataContractCall: FetchActionRequiredData = async (
   options
 ) => {
+  const { extraActionDataState } = options;
   if (options.type !== 'transaction') {
     return {};
   }
@@ -43,7 +45,10 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
     unexpectedAddr: null,
     receiverInWallet: false,
     isDanger: false,
-    hasInteraction: false,
+    hasInteraction: null,
+    extraState: {
+      hasInteraction: () => undefined,
+    },
   };
   queue.add(async () => {
     const contractInfo = await apiProvider.getContractInfo(
@@ -68,13 +73,14 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
     result.protocol = getProtocol(desc.protocol, chainId);
   });
 
-  queue.add(async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      contractCall!.contract.id
-    );
-    result.hasInteraction = hasInteraction.has_interaction;
+  fetchHasInteraction({
+    apiProvider,
+    sender,
+    chainId,
+    spender: contractCall!.contract.id,
+    extraActionDataState,
+    queue,
+    result,
   });
 
   queue.add(async () => {

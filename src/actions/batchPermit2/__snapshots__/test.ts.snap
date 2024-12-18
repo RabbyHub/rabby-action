@@ -4,6 +4,9 @@ exports[`BatchPermit2: fetchDataBatchPermit2 1`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
@@ -115,6 +118,9 @@ exports[`BatchPermit2: fetchDataBatchPermit2 2`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "id": "0x000000000022d473030f116ddee9f6b43ac78ba3",
   "isDanger": false,

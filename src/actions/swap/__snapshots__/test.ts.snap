@@ -3,6 +3,9 @@
 exports[`Swap: fetchDataSwap 1`] = `
 {
   "bornAt": 1591388241,
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "id": "0x6352a56caadc4f1e25cd6c75970fa768a3304e64",
   "protocol": {
@@ -19,6 +22,9 @@ exports[`Swap: fetchDataSwap 1`] = `
 exports[`Swap: fetchDataSwap 2`] = `
 {
   "bornAt": 1591388241,
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "id": "0x6352a56caadc4f1e25cd6c75970fa768a3304e64",
   "protocol": {

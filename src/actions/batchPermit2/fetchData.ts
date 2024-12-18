@@ -4,6 +4,7 @@ import {
   FetchActionRequiredData,
 } from '../../types';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
+import { fetchHasInteraction } from '../../fetches/fetchHasInteraction';
 
 export const fetchDataBatchPermit2: FetchActionRequiredData = async (
   options
@@ -11,7 +12,8 @@ export const fetchDataBatchPermit2: FetchActionRequiredData = async (
   if (options.type !== 'typed_data') {
     return {};
   }
-  const { actionData, apiProvider, sender, chainId } = options;
+  const { actionData, apiProvider, sender, chainId, extraActionDataState } =
+    options;
   if (!actionData.batchPermit2 || !chainId) {
     return {};
   }
@@ -32,7 +34,10 @@ export const fetchDataBatchPermit2: FetchActionRequiredData = async (
       amount: 0,
       raw_amount_hex_str: '0x0',
     })),
-    hasInteraction: false,
+    hasInteraction: null,
+    extraState: {
+      hasInteraction: () => undefined,
+    },
   };
   queue.add(async () => {
     const contractInfo = await apiProvider.getContractInfo(spender, chainId);
@@ -89,13 +94,14 @@ export const fetchDataBatchPermit2: FetchActionRequiredData = async (
     result.tokens = list;
   });
 
-  queue.add(async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      spender
-    );
-    result.hasInteraction = hasInteraction.has_interaction;
+  fetchHasInteraction({
+    apiProvider,
+    sender,
+    chainId,
+    spender,
+    extraActionDataState,
+    queue,
+    result,
   });
 
   await waitQueueFinished(queue);

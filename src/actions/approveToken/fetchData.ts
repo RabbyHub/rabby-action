@@ -6,13 +6,15 @@ import {
 } from '../../types';
 import { ApproveAction } from '@rabby-wallet/rabby-api/dist/types';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
+import { fetchHasInteraction } from '../../fetches/fetchHasInteraction';
 
 export const fetchDataApproveToken: FetchActionRequiredData<{
   spender: ApproveAction['spender'];
   token?: ApproveAction['token'];
 }> = async (options, likeAction) => {
   const queue = new PQueue();
-  const { sender, apiProvider, chainId, actionData } = options;
+  const { sender, apiProvider, chainId, actionData, extraActionDataState } =
+    options;
   const action =
     likeAction || (<ParsedActionData<'transaction'>>actionData).approveToken;
 
@@ -25,7 +27,7 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
     isEOA: false,
     contract: null,
     riskExposure: 0,
-    hasInteraction: false,
+    hasInteraction: null,
     rank: null,
     bornAt: 0,
     protocol: null,
@@ -35,6 +37,9 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
       amount: 0,
       raw_amount_hex_str: '0x0',
     } as any,
+    extraState: {
+      hasInteraction: () => undefined,
+    },
   };
   queue.add(async () => {
     const contractInfo = await apiProvider.getContractInfo(spender, chainId);
@@ -64,13 +69,14 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
     });
   }
 
-  queue.add(async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      spender
-    );
-    result.hasInteraction = hasInteraction.has_interaction;
+  fetchHasInteraction({
+    apiProvider,
+    sender,
+    chainId,
+    spender,
+    extraActionDataState,
+    queue,
+    result,
   });
 
   await waitQueueFinished(queue);

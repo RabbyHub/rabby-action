@@ -17,6 +17,7 @@
     "@types/jest": "^29.0.3",
     "@types/lodash": "^4.14.185",
     "@types/node": "^18.7.18",
+    "@types/react": "^19.0.1",
     "babel-jest": "^29.0.3",
     "bignumber.js": "^9.1.2",
     "husky": ">=6",
@@ -26,6 +27,7 @@
     "lint-staged": ">=10",
     "p-queue": "7.3.0",
     "prettier": "^2.7.1",
+    "react": "^19.0.0",
     "rimraf": "^3.0.2",
     "ts-jest": "^29.2.4",
     "ts-node": "^10.9.1",
@@ -43,7 +45,8 @@
     "@rabby-wallet/rabby-api": "*",
     "@rabby-wallet/rabby-security-engine": "*",
     "bignumber.js": "*",
-    "p-queue": "^7.3.0"
+    "p-queue": "^7.3.0",
+    "react": "*"
   },
   "author": "rabby",
   "description": "",

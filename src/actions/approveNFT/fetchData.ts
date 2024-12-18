@@ -1,12 +1,14 @@
 import PQueue from 'p-queue';
 import { ApproveNFTRequireData, FetchActionRequiredData } from '../../types';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
+import { fetchHasInteraction } from '../../fetches/fetchHasInteraction';
 
 export const fetchDataApproveNFT: FetchActionRequiredData<{
   spender: string;
 }> = async (options, likeAction) => {
   const queue = new PQueue();
-  const { sender, apiProvider, chainId, actionData } = options;
+  const { sender, apiProvider, chainId, actionData, extraActionDataState } =
+    options;
   const action = likeAction || actionData.approveNFT;
 
   if (!action) {
@@ -22,7 +24,10 @@ export const fetchDataApproveNFT: FetchActionRequiredData<{
     protocol: null,
     isDanger: false,
     tokenBalance: '0',
-    hasInteraction: false,
+    hasInteraction: null,
+    extraState: {
+      hasInteraction: () => undefined,
+    },
   };
 
   queue.add(async () => {
@@ -50,13 +55,14 @@ export const fetchDataApproveNFT: FetchActionRequiredData<{
     }
   });
 
-  queue.add(async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      action.spender
-    );
-    result.hasInteraction = hasInteraction.has_interaction;
+  fetchHasInteraction({
+    apiProvider,
+    sender,
+    chainId,
+    spender: action.spender,
+    extraActionDataState,
+    queue,
+    result,
   });
 
   await waitQueueFinished(queue);

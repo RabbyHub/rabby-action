@@ -1,6 +1,7 @@
 import PQueue from 'p-queue';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
 import { FetchActionRequiredData, SwapRequireData } from '../../types';
+import { fetchHasInteraction } from '../../fetches/fetchHasInteraction';
 
 // TODO: text
 export const fetchDataSwap: FetchActionRequiredData<{
@@ -10,7 +11,14 @@ export const fetchDataSwap: FetchActionRequiredData<{
     return {};
   }
   const queue = new PQueue();
-  const { actionData, walletProvider, sender, apiProvider, chainId } = options;
+  const {
+    actionData,
+    walletProvider,
+    sender,
+    apiProvider,
+    chainId,
+    extraActionDataState,
+  } = options;
   const swapAction = likeSwapAction || actionData.swap;
   if (!swapAction) {
     return {};
@@ -35,7 +43,10 @@ export const fetchDataSwap: FetchActionRequiredData<{
     rank: null,
     sender,
     receiverInWallet,
-    hasInteraction: false,
+    hasInteraction: null,
+    extraState: {
+      hasInteraction: () => undefined,
+    },
   };
   queue.add(async () => {
     const contractInfo = await apiProvider.getContractInfo(id, chainId);
@@ -47,13 +58,15 @@ export const fetchDataSwap: FetchActionRequiredData<{
       result.protocol = contractInfo.protocol;
     }
   });
-  queue.add(async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      id
-    );
-    result.hasInteraction = hasInteraction.has_interaction;
+
+  fetchHasInteraction({
+    apiProvider,
+    sender,
+    chainId,
+    spender: id,
+    extraActionDataState,
+    queue,
+    result,
   });
 
   await waitQueueFinished(queue);

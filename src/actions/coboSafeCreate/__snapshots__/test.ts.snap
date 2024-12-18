@@ -5,6 +5,9 @@ exports[`CoboSafeCreate: fetchDataCoboSafeCreate 1`] = `{}`;
 exports[`CoboSafeCreate: fetchDataCoboSafeCreate 2`] = `
 {
   "bornAt": 1591388241,
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "id": "0x20823bb02947c741a5cc2f1ccfd8293c4a8d08b3",
   "protocol": {
