@@ -91,6 +91,9 @@ export interface WrapTokenRequireData {
   sender: string;
   receiverInWallet: boolean;
   hasInteraction: boolean | null;
+  extraState: {
+    hasInteraction: () => void;
+  };
 }
 
 export interface ContractCallRequireData {

@@ -11,6 +11,9 @@ exports[`ApproveToken: fetchDataSignMultiSig 2`] = `
 {
   "bornAt": 1591388241,
   "contract": {},
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "id": "0xb5d05de17c00aed6c465b6bbba01d5edae59e19c",
   "protocol": {

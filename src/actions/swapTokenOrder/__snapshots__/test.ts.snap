@@ -3,6 +3,9 @@
 exports[`SwapTokenOrder: fetchDataSwapTokenOrder 1`] = `
 {
   "bornAt": 1591388241,
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "id": "0xbbbbbbb520d69a9775e85b458c58c648259fad5f",
   "protocol": {
@@ -20,6 +23,9 @@ exports[`SwapTokenOrder: fetchDataSwapTokenOrder 1`] = `
 exports[`SwapTokenOrder: fetchDataSwapTokenOrder 2`] = `
 {
   "bornAt": 1591388241,
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "id": "0xbbbbbbb520d69a9775e85b458c58c648259fad5f",
   "protocol": {
