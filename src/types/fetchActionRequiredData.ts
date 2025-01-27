@@ -4,6 +4,11 @@ import { OpenApiService } from '@rabby-wallet/rabby-api';
 import { WalletProvider } from './walletProvider';
 import { ActionRequireData } from './actionRequireData';
 
+export type ExtraActionRequiredDataState = {
+  setHasInteraction?: (v: boolean) => void;
+  setReceiverHasTransfer?: (v: boolean) => void;
+};
+
 type BaseFetchActionRequiredDataParameters<
   T extends 'typed_data' | 'transaction' | 'text' | undefined
 > = {
@@ -12,6 +17,7 @@ type BaseFetchActionRequiredDataParameters<
   walletProvider: WalletProvider;
   apiProvider: OpenApiService;
   chainId: string;
+  extraActionDataState?: ExtraActionRequiredDataState;
 };
 
 export type FetchTransactionRequiredDataParameters =

@@ -4,6 +4,9 @@ exports[`RevokePermit2: fetchDataRevokePermit2 1`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
@@ -44,6 +47,9 @@ exports[`RevokePermit2: fetchDataRevokePermit2 2`] = `
 {
   "bornAt": 1591388241,
   "contract": null,
+  "extraState": {
+    "hasInteraction": [Function],
+  },
   "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,

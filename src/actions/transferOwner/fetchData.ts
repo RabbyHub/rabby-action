@@ -5,6 +5,7 @@ import {
   ReceiverData,
 } from '../../types';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
+import { fetchReceiverHasTransfer } from '../../fetches/fetchHasTransfer';
 
 export const fetchDataTransferOwner: FetchActionRequiredData = async (
   options
@@ -13,10 +14,20 @@ export const fetchDataTransferOwner: FetchActionRequiredData = async (
     return {};
   }
   const queue = new PQueue();
-  const { actionData, walletProvider, apiProvider, chainId, sender } = options;
+  const {
+    actionData,
+    walletProvider,
+    apiProvider,
+    chainId,
+    sender,
+    extraActionDataState,
+  } = options;
   const addr = actionData.transferOwner?.to;
   const result: TransferOwnerRequireData = {
     receiver: null,
+    extraState: {
+      receiverHasTransfer: () => undefined,
+    },
   };
   if (addr) {
     const chain = walletProvider.findChain({
@@ -29,18 +40,20 @@ export const fetchDataTransferOwner: FetchActionRequiredData = async (
       cex: null,
       contract: null,
       usd_value: 0,
-      hasTransfer: false,
+      hasTransfer: null,
       isTokenContract: false,
       name: null,
       onTransferWhitelist: false,
     };
-    queue.add(async () => {
-      const { has_transfer } = await apiProvider.hasTransfer(
-        chainId,
-        sender,
-        addr
-      );
-      receiverData.hasTransfer = has_transfer;
+    fetchReceiverHasTransfer({
+      apiProvider,
+      chainId,
+      sender,
+      spender: addr,
+      queue,
+      extraActionDataState,
+      receiverData,
+      result,
     });
     queue.add(async () => {
       const { desc } = await apiProvider.addrDesc(addr);

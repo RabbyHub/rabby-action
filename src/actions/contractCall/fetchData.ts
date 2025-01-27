@@ -6,10 +6,13 @@ import {
 } from '../../types';
 import { getProtocol } from '../../utils/getProtocol';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
+import { fetchHasInteraction } from '../../fetches/fetchHasInteraction';
+import { fetchReceiverHasTransfer } from '../../fetches/fetchHasTransfer';
 
 export const fetchDataContractCall: FetchActionRequiredData = async (
   options
 ) => {
+  const { extraActionDataState } = options;
   if (options.type !== 'transaction') {
     return {};
   }
@@ -43,7 +46,11 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
     unexpectedAddr: null,
     receiverInWallet: false,
     isDanger: false,
-    hasInteraction: false,
+    hasInteraction: null,
+    extraState: {
+      hasInteraction: () => undefined,
+      receiverHasTransfer: () => undefined,
+    },
   };
   queue.add(async () => {
     const contractInfo = await apiProvider.getContractInfo(
@@ -68,13 +75,14 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
     result.protocol = getProtocol(desc.protocol, chainId);
   });
 
-  queue.add(async () => {
-    const hasInteraction = await apiProvider.hasInteraction(
-      sender,
-      chainId,
-      contractCall!.contract.id
-    );
-    result.hasInteraction = hasInteraction.has_interaction;
+  fetchHasInteraction({
+    apiProvider,
+    sender,
+    chainId,
+    spender: contractCall!.contract.id,
+    extraActionDataState,
+    queue,
+    result,
   });
 
   queue.add(async () => {
@@ -89,18 +97,22 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
         cex: null,
         contract: null,
         usd_value: 0,
-        hasTransfer: false,
+        hasTransfer: null,
         isTokenContract: false,
         name: null,
         onTransferWhitelist: false,
       };
 
-      const { has_transfer } = await apiProvider.hasTransfer(
+      fetchReceiverHasTransfer({
+        apiProvider,
         chainId,
         sender,
-        addr
-      );
-      receiverData.hasTransfer = has_transfer;
+        spender: addr,
+        queue,
+        extraActionDataState,
+        receiverData,
+        result,
+      });
 
       const { desc } = await apiProvider.addrDesc(addr);
       if (desc.cex?.id) {

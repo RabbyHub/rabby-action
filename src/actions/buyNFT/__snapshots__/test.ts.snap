@@ -3,6 +3,10 @@
 exports[`BuyNFT: fetchDataBuyNFT 1`] = `
 {
   "bornAt": 1591388241,
+  "extraState": {
+    "hasInteraction": [Function],
+    "receiverHasTransfer": [Function],
+  },
   "hasInteraction": true,
   "id": "0x0cab6977a9c70e04458b740476b498b214019641",
   "protocol": {
@@ -20,6 +24,10 @@ exports[`BuyNFT: fetchDataBuyNFT 1`] = `
 exports[`BuyNFT: fetchDataBuyNFT 2`] = `
 {
   "bornAt": 1591388241,
+  "extraState": {
+    "hasInteraction": [Function],
+    "receiverHasTransfer": [Function],
+  },
   "hasInteraction": true,
   "id": "0x0cab6977a9c70e04458b740476b498b214019641",
   "protocol": {
