@@ -6,6 +6,7 @@ import {
   ReceiverData,
 } from '../../types';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
+import { catchTimeoutError } from '../../utils/catchTimeoutError';
 
 export const fetchDataCommon: FetchActionRequiredData<{
   receiver: string;
@@ -91,10 +92,11 @@ export const fetchDataCommon: FetchActionRequiredData<{
           onTransferWhitelist: false,
         };
 
-        const { has_transfer } = await apiProvider.hasTransfer(
-          chainId,
-          sender,
-          addr
+        const { has_transfer } = await catchTimeoutError(
+          apiProvider.hasTransfer(chainId, sender, addr),
+          {
+            has_transfer: false,
+          }
         );
         receiverData.hasTransfer = has_transfer;
 
