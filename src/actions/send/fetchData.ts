@@ -76,13 +76,18 @@ export const fetchDataSend: FetchActionRequiredData<{
     }
     result.usd_value = desc.usd_value;
     if (result.cex) {
-      const { support } = await apiProvider.depositCexSupport(
-        sendAction.token.id,
-        sendAction.token.chain,
-        result.cex.id
-      );
-      result.cex.supportToken = support;
+      if (options.isCEXAddress) {
+        result.cex.supportToken = true;
+      } else {
+        const { support } = await apiProvider.depositCexSupport(
+          sendAction.token.id,
+          sendAction.token.chain,
+          result.cex.id
+        );
+        result.cex.supportToken = support;
+      }
     }
+
     if (result.contract) {
       const { is_token } = await apiProvider.isTokenContract(
         chainId,

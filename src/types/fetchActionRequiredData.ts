@@ -12,6 +12,7 @@ type BaseFetchActionRequiredDataParameters<
   walletProvider: WalletProvider;
   apiProvider: OpenApiService;
   chainId: string;
+  isCEXAddress?: boolean;
 };
 
 export type FetchTransactionRequiredDataParameters =
