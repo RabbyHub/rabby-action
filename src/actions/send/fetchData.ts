@@ -61,6 +61,12 @@ export const fetchDataSend: FetchActionRequiredData<{
         bornAt: desc.born_at,
         isDeposit: desc.cex.is_deposit,
       };
+
+      if (options.cex) {
+        result.cex.logo = options.cex.logo;
+        result.cex.name = options.cex.name;
+        result.cex.id = options.cex.id;
+      }
     }
     if (desc.contract && Object.keys(desc.contract).length > 0) {
       result.contract = desc.contract;
@@ -76,16 +82,12 @@ export const fetchDataSend: FetchActionRequiredData<{
     }
     result.usd_value = desc.usd_value;
     if (result.cex) {
-      if (options.isCEXAddress) {
-        result.cex.supportToken = true;
-      } else {
-        const { support } = await apiProvider.depositCexSupport(
-          sendAction.token.id,
-          sendAction.token.chain,
-          result.cex.id
-        );
-        result.cex.supportToken = support;
-      }
+      const { support } = await apiProvider.depositCexSupport(
+        sendAction.token.id,
+        sendAction.token.chain,
+        result.cex.id
+      );
+      result.cex.supportToken = support;
     }
 
     if (result.contract) {
