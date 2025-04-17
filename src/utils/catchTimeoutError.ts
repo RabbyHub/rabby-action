@@ -6,7 +6,11 @@ export const catchTimeoutError = async <T>(
   try {
     return await promise;
   } catch (error) {
-    if (error instanceof AxiosError && error.name === AxiosError.ETIMEDOUT) {
+    if (
+      error instanceof AxiosError &&
+      (error.code === AxiosError.ECONNABORTED ||
+        error.code === AxiosError.ETIMEDOUT)
+    ) {
       return timeoutResponse;
     }
     throw error;
