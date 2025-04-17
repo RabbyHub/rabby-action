@@ -6,6 +6,7 @@ import {
 } from '../../types';
 import { getProtocol } from '../../utils/getProtocol';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
+import { catchTimeoutError } from '../../utils/catchTimeoutError';
 
 export const fetchDataContractCall: FetchActionRequiredData = async (
   options
@@ -95,10 +96,11 @@ export const fetchDataContractCall: FetchActionRequiredData = async (
         onTransferWhitelist: false,
       };
 
-      const { has_transfer } = await apiProvider.hasTransfer(
-        chainId,
-        sender,
-        addr
+      const { has_transfer } = await catchTimeoutError(
+        apiProvider.hasTransfer(chainId, sender, addr),
+        {
+          has_transfer: false,
+        }
       );
       receiverData.hasTransfer = has_transfer;
 

@@ -2,6 +2,7 @@ import PQueue from 'p-queue';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
 import { FetchActionRequiredData, SendRequireData } from '../../types';
 import { KEYRING_TYPE } from '../../utils/keyring';
+import { catchTimeoutError } from '../../utils/catchTimeoutError';
 
 // send, sendNFT, typedData.send
 export const fetchDataSend: FetchActionRequiredData<{
@@ -42,10 +43,11 @@ export const fetchDataSend: FetchActionRequiredData<{
       hasPrivateKeyInWallet === KEYRING_TYPE.HdKeyring;
   }
   queue.add(async () => {
-    const { has_transfer } = await apiProvider.hasTransfer(
-      chainId,
-      sender,
-      sendAction.to
+    const { has_transfer } = await catchTimeoutError(
+      apiProvider.hasTransfer(chainId, sender, sendAction.to),
+      {
+        has_transfer: false,
+      }
     );
     result.hasTransfer = has_transfer;
   });

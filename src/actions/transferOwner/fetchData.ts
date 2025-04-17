@@ -5,6 +5,7 @@ import {
   ReceiverData,
 } from '../../types';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
+import { catchTimeoutError } from '../../utils/catchTimeoutError';
 
 export const fetchDataTransferOwner: FetchActionRequiredData = async (
   options
@@ -35,10 +36,11 @@ export const fetchDataTransferOwner: FetchActionRequiredData = async (
       onTransferWhitelist: false,
     };
     queue.add(async () => {
-      const { has_transfer } = await apiProvider.hasTransfer(
-        chainId,
-        sender,
-        addr
+      const { has_transfer } = await catchTimeoutError(
+        apiProvider.hasTransfer(chainId, sender, addr),
+        {
+          has_transfer: false,
+        }
       );
       receiverData.hasTransfer = has_transfer;
     });
