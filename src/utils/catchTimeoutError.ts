@@ -5,11 +5,10 @@ export const catchTimeoutError = async <T>(
 ): Promise<T> => {
   try {
     return await promise;
-  } catch (error) {
+  } catch (error: any) {
     if (
-      error instanceof AxiosError &&
-      (error.code === AxiosError.ECONNABORTED ||
-        error.code === AxiosError.ETIMEDOUT)
+      error?.code === AxiosError.ECONNABORTED ||
+      error?.code === AxiosError.ETIMEDOUT
     ) {
       return timeoutResponse;
     }
