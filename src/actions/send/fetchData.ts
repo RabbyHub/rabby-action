@@ -61,12 +61,20 @@ export const fetchDataSend: FetchActionRequiredData<{
         bornAt: desc.born_at,
         isDeposit: desc.cex.is_deposit,
       };
-
-      if (options.cex) {
-        result.cex.logo = options.cex.logo;
-        result.cex.name = options.cex.name;
-        result.cex.id = options.cex.id;
+    }
+    if (options.cex) {
+      if (!result.cex) {
+        result.cex = {
+          id: options.cex.id,
+          logo: options.cex.logo,
+          name: options.cex.name,
+          bornAt: desc.born_at,
+          isDeposit: true,
+        };
       }
+      result.cex.logo = options.cex.logo;
+      result.cex.name = options.cex.name;
+      result.cex.id = options.cex.id;
     }
     if (desc.contract && Object.keys(desc.contract).length > 0) {
       result.contract = desc.contract;
