@@ -75,6 +75,7 @@ export const fetchDataSend: FetchActionRequiredData<{
       result.cex.logo = options.cex.logo;
       result.cex.name = options.cex.name;
       result.cex.id = options.cex.id;
+      result.cex.isDeposit = true;
     }
     if (desc.contract && Object.keys(desc.contract).length > 0) {
       result.contract = desc.contract;
