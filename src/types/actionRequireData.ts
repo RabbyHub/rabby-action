@@ -192,6 +192,25 @@ export type BatchApproveTokenRequireData = Omit<
   tokens: TokenItem[];
 };
 
+export interface AddLiquidityRequireData {
+  id: string;
+  protocol: {
+    name: string;
+    logo_url: string;
+  } | null;
+  bornAt: number;
+  rank: number | null;
+  receiverInWallet: boolean;
+  hasInteraction: boolean;
+  sender: string;
+  receiver: string;
+  poolRate: string;
+  token0: TokenItem;
+  token1: TokenItem;
+  marketRate: string;
+  diff: number;
+}
+
 export type ActionRequireData =
   | SwapRequireData
   | ApproveTokenRequireData
@@ -210,4 +229,5 @@ export type ActionRequireData =
   | ContractRequireData
   | MultiSigRequireData
   | BatchApproveTokenRequireData
+  | AddLiquidityRequireData
   | null;

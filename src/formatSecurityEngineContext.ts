@@ -1,6 +1,7 @@
 import { FormatSecurityEngineContext } from './types/formatSecurityEngineContext';
 import { formatSecurityEngineApproveNFT } from './actions/approveNFT/formatSecurityEngine';
 import { formatSecurityEngineApproveNFTCollection } from './actions/approveNFTCollection/formatSecurityEngine';
+import { formatSecurityEngineAddLiquidity } from './actions/addLiquidity/formatSecurityEngine';
 import { formatSecurityEngineApproveToken } from './actions/approveToken/formatSecurityEngine';
 import { formatSecurityEngineAssetOrder } from './actions/assetOrder/formatSecurityEngine';
 import { formatSecurityEngineCancelTx } from './actions/cancelTx/formatSecurityEngine';
@@ -86,6 +87,7 @@ export const formatSecurityEngineContext: FormatSecurityEngineContext = async (
     formatSecurityEngineCoboSafeModificationRole(options),
     formatSecurityEngineCoboSafeModificationTokenApproval(options),
     formatSecurityEngineRevokePermit(options),
+    formatSecurityEngineAddLiquidity(options),
   ]);
 
   return result.reduce((acc, val) => ({ ...acc, ...val }), {});

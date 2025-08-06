@@ -2,6 +2,7 @@ import { FetchActionRequiredData } from './types/fetchActionRequiredData';
 import { fetchDataDeployContract } from './actions/deployContract/fetchData';
 import { fetchDataSend } from './actions/send/fetchData';
 import { fetchDataSendNFT } from './actions/sendNFT/fetchData';
+import { fetchDataAddLiquidity } from './actions/addLiquidity/fetchData';
 import { fetchDataSwap } from './actions/swap/fetchData';
 import { fetchDataCrossToken } from './actions/crossToken/fetchData';
 import { fetchDataCrossSwapToken } from './actions/crossSwapToken/fetchData';
@@ -82,6 +83,7 @@ export const fetchActionRequiredData: FetchActionRequiredData = async (
     fetchDataCoboSafeModificationRole(options),
     fetchDataCoboSafeModificationTokenApproval(options),
     fetchDataRevokePermit(options),
+    fetchDataAddLiquidity(options),
   ]);
 
   return result.reduce((acc, val) => ({ ...acc, ...val }), {});
