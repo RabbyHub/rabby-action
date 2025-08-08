@@ -9,6 +9,7 @@ import {
 import { parseActionSwapLimitPay } from './actions/swapLimitPay/parseAction';
 import { parseActionMultiSwap } from './actions/multiSwap/parseAction';
 import { parseActionTransferOwner } from './actions/transferOwner/parseAction';
+import { parseActionAddLiquidity } from './actions/addLiquidity/parseAction';
 import { parseActionSend } from './actions/send/parseAction';
 import { parseActionApproveNFT } from './actions/approveNFT/parseAction';
 import { parseActionApproveNFTCollection } from './actions/approveNFTCollection/parseAction';
@@ -84,7 +85,8 @@ export function parseAction(options: ParseActionParameters): ParsedActionData {
       parseActionPermit2BatchRevokeToken(options),
       parseActionTransferOwner(options),
       parseActionSwapLimitPay(options),
-      parseActionMultiSwap(options)
+      parseActionMultiSwap(options),
+      parseActionAddLiquidity(options)
     );
   }
 
@@ -114,6 +116,7 @@ export function parseAction(options: ParseActionParameters): ParsedActionData {
       parseTypedDataAction(parseActionTransferOwner)(options),
       parseTypedDataAction(parseActionSwapLimitPay)(options),
       parseTypedDataAction(parseActionMultiSwap)(options),
+      parseTypedDataAction(parseActionAddLiquidity)(options),
 
       // typed data actions
       parseTypedDataAction(parseActionCreateKey)(options),
@@ -161,6 +164,7 @@ export function parseAction(options: ParseActionParameters): ParsedActionData {
       parseTextAction(parseActionUnwrapToken)(options),
       parseTextAction(parseActionWrapToken)(options),
       parseTextAction(parseActionPermit2BatchRevokeToken)(options),
+      parseTextAction(parseActionAddLiquidity)(options),
 
       // text actions
       parseTextAction(parseActionCreateKey)(options),

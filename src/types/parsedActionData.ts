@@ -140,6 +140,14 @@ export type ParsedTransactionActionData = {
     receiver?: string;
     from: string;
   };
+  addLiquidity?: {
+    receiver: string;
+    exchange_rate: string;
+    min_exchange_rate: string;
+    max_exchange_rate: string;
+    token0: TokenItem;
+    token1: TokenItem;
+  };
 };
 
 export type ParsedTypedDataActionData = ParsedTransactionActionData & {

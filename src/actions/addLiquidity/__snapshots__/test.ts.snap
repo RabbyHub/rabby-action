@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApproveNFT: fetchDataAddLiquidity 1`] = `{}`;
+
+exports[`ApproveNFT: fetchDataAddLiquidity 2`] = `
+{
+  "pendingTxs": [],
+}
+`;
+
+exports[`ApproveNFT: formatSecurityEngineAddLiquidity 1`] = `{}`;
+
+exports[`ApproveNFT: formatSecurityEngineAddLiquidity 2`] = `{}`;
+
+exports[`ApproveNFT: parseActionAddLiquidity 1`] = `{}`;
+
+exports[`ApproveNFT: parseActionAddLiquidity 2`] = `
+{
+  "cancelTx": {
+    "nonce": "0x4",
+  },
+}
+`;
