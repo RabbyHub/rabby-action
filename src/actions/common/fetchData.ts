@@ -36,9 +36,7 @@ export const fetchDataCommon: FetchActionRequiredData<{
     hasInteraction: false,
   };
 
-  if (options.type === 'typed_data') {
-    (result as AssetOrderRequireData).sender = sender;
-  }
+  (result as AssetOrderRequireData).sender = sender;
 
   let isEOA = false;
   queue.add(async () => {
