@@ -68,7 +68,16 @@ export interface TransactionGroup {
   $ctx?: any;
 }
 
+type EthRpc = (
+  data: {
+    method: 'eth_call';
+    params: [{ to: string; data: string }, 'latest'];
+  },
+  chainId: string
+) => Promise<string>;
+
 export type WalletProvider = {
+  ethRpc?: EthRpc;
   hasAddress: (address: string) => Promise<boolean>;
   hasPrivateKeyInWallet: (address: string) => Promise<string>;
   getWhitelist: () => Promise<string[]>;
