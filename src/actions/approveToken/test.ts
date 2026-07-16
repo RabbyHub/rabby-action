@@ -124,24 +124,30 @@ test('loads the token balance from wallet ethRpc', async () => {
   });
 });
 
-test('rejects an invalid token balance returned by wallet ethRpc', async () => {
+test('keeps parsed token data when wallet ethRpc returns an invalid balance', async () => {
   const actionData = createApproveTokenActionData();
+  const token = actionData.approveToken!.token;
 
-  await expect(
-    fetchDataApproveToken({
-      type: 'transaction',
-      actionData,
-      contractCall: parseTxData.contract_call,
-      chainId: ETH_CHAIN_ID,
-      sender: SENDER,
-      walletProvider: {
-        ...walletProvider,
-        ethRpc: jest.fn().mockResolvedValue('not-a-hex-quantity'),
-      },
-      tx: txData,
-      apiProvider,
-    })
-  ).rejects.toThrow('Invalid token balance returned by ethRpc');
+  const requireData = (await fetchDataApproveToken({
+    type: 'transaction',
+    actionData,
+    contractCall: parseTxData.contract_call,
+    chainId: ETH_CHAIN_ID,
+    sender: SENDER,
+    walletProvider: {
+      ...walletProvider,
+      ethRpc: jest.fn().mockResolvedValue('not-a-hex-quantity'),
+    },
+    tx: txData,
+    apiProvider,
+  })) as ApproveTokenRequireData;
+
+  expect(requireData.token).toMatchObject({
+    id: token.id,
+    name: token.name,
+    amount: 0,
+    raw_amount_hex_str: '0x0',
+  });
 });
 
 test('keeps parsed token data when apiProvider returns no token', async () => {
