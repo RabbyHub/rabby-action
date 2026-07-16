@@ -60,9 +60,10 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
       });
     }
   });
-  const tokenTask = token
-    ? queue.add(async () => {
-        if (!walletProvider.ethRpc) {
+  if (token) {
+    queue.add(async () => {
+      if (!walletProvider.ethRpc) {
+        try {
           const tokenData = await apiProvider.getToken(
             sender,
             chainId,
@@ -72,12 +73,17 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
             result.token = tokenData;
           }
           return;
+        } catch (e) {
+          console.error('apiProvider.getToken failed to fetch token data:', e);
+          return;
         }
+      }
 
-        const data = `${BALANCE_OF_SELECTOR}${sender
-          .toLowerCase()
-          .replace(/^0x/, '')
-          .padStart(64, '0')}`;
+      const data = `${BALANCE_OF_SELECTOR}${sender
+        .toLowerCase()
+        .replace(/^0x/, '')
+        .padStart(64, '0')}`;
+      try {
         const rawAmountHex = await walletProvider.ethRpc(
           {
             method: 'eth_call',
@@ -89,7 +95,8 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
           typeof rawAmountHex !== 'string' ||
           !/^0x[0-9a-f]+$/i.test(rawAmountHex)
         ) {
-          throw new Error('Invalid token balance returned by ethRpc');
+          console.error('walletProvider.ethRpc error res:', rawAmountHex);
+          return;
         }
 
         const rawAmount = new BigNumber(rawAmountHex.slice(2), 16);
@@ -101,8 +108,15 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
           raw_amount: rawAmount.toFixed(0),
           raw_amount_hex_str: `0x${rawAmount.toString(16)}`,
         };
-      })
-    : Promise.resolve();
+      } catch (error) {
+        console.error(
+          'walletProvider.ethRpc failed to fetch token balance:',
+          error
+        );
+        return;
+      }
+    });
+  }
 
   queue.add(async () => {
     const hasInteraction = await apiProvider.hasInteraction(
@@ -113,6 +127,6 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
     result.hasInteraction = hasInteraction.has_interaction;
   });
 
-  await Promise.all([waitQueueFinished(queue), tokenTask]);
+  await waitQueueFinished(queue);
   return result;
 };
