@@ -1,12 +1,87 @@
 import PQueue from 'p-queue';
 import {
   AssetOrderRequireData,
+  ContractDisplayData,
   ContractRequireData,
+  ContractSafetyGateData,
   FetchActionRequiredData,
+  FetchActionRequiredDataParameters,
+  NFTOrderActionKind,
   ReceiverData,
+  StagedActionRequiredData,
 } from '../../types';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
 import { catchTimeoutError } from '../../utils/catchTimeoutError';
+import { startRequest } from '../../utils/startRequest';
+
+export const settleStagedDisplay = <T>(request: () => T | Promise<T>) =>
+  startRequest(request).then(
+    (value) => ({ success: true as const, value }),
+    () => ({ success: false as const })
+  );
+
+export const fetchStagedCommonDisplayData = (
+  apiProvider: FetchActionRequiredDataParameters['apiProvider'],
+  sender: string,
+  chainId: string,
+  id: string
+): Promise<ContractDisplayData | null> =>
+  Promise.all([
+    settleStagedDisplay(() => apiProvider.getContractInfo(id, chainId)),
+    settleStagedDisplay(() => apiProvider.hasInteraction(sender, chainId, id)),
+  ])
+    .then(([contractInfo, hasInteraction]): ContractDisplayData | null => {
+      const contract = contractInfo.success ? contractInfo.value : null;
+      const interaction = hasInteraction.success ? hasInteraction.value : null;
+
+      if (
+        !contract ||
+        typeof contract.create_at !== 'number' ||
+        !contract.credit ||
+        (typeof contract.credit.rank_at !== 'number' &&
+          contract.credit.rank_at !== null) ||
+        (contract.protocol !== null && typeof contract.protocol !== 'object') ||
+        typeof interaction?.has_interaction !== 'boolean'
+      ) {
+        return null;
+      }
+
+      return {
+        protocol: contract.protocol,
+        bornAt: contract.create_at,
+        rank: contract.credit.rank_at,
+        hasInteraction: interaction.has_interaction,
+      };
+    })
+    .catch(() => null);
+
+// buyNFT / sellNFT / batchSellNFT share one shape: typed_data only, gate is the
+// locally-parsed contractId + sender, everything else is display.
+export const fetchStagedDataNFTOrder = async <K extends NFTOrderActionKind>(
+  options: FetchActionRequiredDataParameters,
+  kind: K
+): Promise<Extract<StagedActionRequiredData, { kind: K }> | null> => {
+  if (
+    options.type !== 'typed_data' ||
+    !options.actionData.contractId ||
+    !(options.actionData as Record<string, unknown>)[kind]
+  ) {
+    return null;
+  }
+
+  const id = options.actionData.contractId;
+  const securityData: ContractSafetyGateData = { id, sender: options.sender };
+  return {
+    kind,
+    securityData,
+    displayData: fetchStagedCommonDisplayData(
+      options.apiProvider,
+      options.sender,
+      options.chainId,
+      id
+    ),
+  } as Extract<StagedActionRequiredData, { kind: K }>;
+};
 
 export const fetchDataCommon: FetchActionRequiredData<{
   receiver: string;

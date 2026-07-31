@@ -1,12 +1,93 @@
 import PQueue from 'p-queue';
 import {
+  ContractCallSafetyGateData,
   ContractCallRequireData,
   FetchActionRequiredData,
+  FetchActionRequiredDataParameters,
   ReceiverData,
+  StagedActionRequiredData,
 } from '../../types';
 import { getProtocol } from '../../utils/getProtocol';
 import { waitQueueFinished } from '../../utils/waitQueueFinished';
 import { catchTimeoutError } from '../../utils/catchTimeoutError';
+import { isNullableBoolean } from '../../utils/isNullableBoolean';
+import { startRequest } from '../../utils/startRequest';
+
+export const fetchStagedDataContractCall = async (
+  options: FetchActionRequiredDataParameters
+): Promise<Extract<
+  StagedActionRequiredData,
+  { kind: 'contractCall' }
+> | null> => {
+  if (
+    options.type !== 'transaction' ||
+    !options.actionData.contractCall ||
+    !options.contractCall
+  ) {
+    return null;
+  }
+
+  const { contractCall, apiProvider, chainId, sender, walletProvider, tx } =
+    options;
+  const chain = walletProvider.findChain({ serverId: chainId });
+  const id = contractCall.contract.id;
+  if (!id) {
+    return null;
+  }
+
+  const contractInfoPromise = startRequest(() =>
+    apiProvider.getContractInfo(id, chainId)
+  );
+  const displayData = Promise.all([
+    contractInfoPromise,
+    startRequest(() => apiProvider.addrDesc(id)),
+    startRequest(() => apiProvider.hasInteraction(sender, chainId, id)),
+  ])
+    .then(
+      ([
+        contractInfo,
+        { desc },
+        hasInteraction,
+      ]): ContractCallRequireData | null => {
+        const contract = desc.contract;
+        const contractByChain = contract?.[chainId];
+        if (
+          !contractByChain ||
+          typeof contractByChain.create_at !== 'number' ||
+          typeof hasInteraction?.has_interaction !== 'boolean'
+        ) {
+          return null;
+        }
+
+        return {
+          contract,
+          rank: contractInfo ? contractInfo.credit.rank_at : null,
+          bornAt: contractByChain.create_at,
+          protocol: getProtocol(desc.protocol, chainId),
+          call: contractCall,
+          id,
+          payNativeTokenAmount: tx.value || '0x0',
+          nativeTokenSymbol: chain?.nativeTokenSymbol || 'ETH',
+          unexpectedAddr: null,
+          receiverInWallet: false,
+          isDanger: contractInfo ? !!contractInfo.is_phishing : false,
+          hasInteraction: hasInteraction.has_interaction,
+        };
+      }
+    )
+    .catch(() => null);
+
+  const contractInfo = await contractInfoPromise;
+  if (contractInfo && !isNullableBoolean(contractInfo.is_phishing)) {
+    throw new Error('Invalid contract call security data');
+  }
+  const securityData: ContractCallSafetyGateData = {
+    id,
+    isDanger: Boolean(contractInfo?.is_phishing),
+    receiverInWallet: false,
+  };
+  return { kind: 'contractCall', securityData, displayData };
+};
 
 export const fetchDataContractCall: FetchActionRequiredData = async (
   options

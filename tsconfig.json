@@ -11,5 +11,5 @@
     "declaration": true
   },
   "include": ["src"],
-  "exclude": ["**/test.ts", "**/mocks.ts"]
+  "exclude": ["**/test.ts", "**/*.test.ts", "**/mocks.ts"]
 }
