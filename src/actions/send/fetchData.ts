@@ -1,15 +1,18 @@
-import PQueue from 'p-queue';
-import { waitQueueFinished } from '../../utils/waitQueueFinished';
 import { FetchActionRequiredData, SendRequireData } from '../../types';
 import { KEYRING_TYPE } from '../../utils/keyring';
 import { catchTimeoutError } from '../../utils/catchTimeoutError';
+import { startRequest } from '../../utils/startRequest';
 
-// send, sendNFT, typedData.send
-export const fetchDataSend: FetchActionRequiredData<{
+type SendAction = {
   to: string;
   token: { id: string; chain: string };
-}> = async (options, likeSendAction) => {
-  const queue = new PQueue();
+};
+
+// send, sendNFT, typedData.send
+export const fetchDataSend: FetchActionRequiredData<SendAction> = async (
+  options,
+  likeSendAction
+) => {
   const { actionData, walletProvider, apiProvider, chainId, sender } = options;
   const sendAction = likeSendAction || actionData.send;
 
@@ -33,25 +36,8 @@ export const fetchDataSend: FetchActionRequiredData<{
     hasReceiverPrivateKeyInWallet: false,
     hasReceiverMnemonicInWallet: false,
   };
-  const hasPrivateKeyInWallet = await walletProvider.hasPrivateKeyInWallet(
-    sendAction.to
-  );
-  if (hasPrivateKeyInWallet) {
-    result.hasReceiverPrivateKeyInWallet =
-      hasPrivateKeyInWallet === KEYRING_TYPE.SimpleKeyring;
-    result.hasReceiverMnemonicInWallet =
-      hasPrivateKeyInWallet === KEYRING_TYPE.HdKeyring;
-  }
-  queue.add(async () => {
-    const { has_transfer } = await catchTimeoutError(
-      apiProvider.hasTransfer(chainId, sender, sendAction.to),
-      {
-        has_transfer: false,
-      }
-    );
-    result.hasTransfer = has_transfer;
-  });
-  queue.add(async () => {
+
+  const addressDescriptionTask = startRequest(async () => {
     const { desc } = await apiProvider.addrDesc(sendAction.to);
     if (desc.cex?.id) {
       result.cex = {
@@ -90,47 +76,78 @@ export const fetchDataSend: FetchActionRequiredData<{
       result.protocol = desc.protocol[chainId];
     }
     result.usd_value = desc.usd_value;
-    if (result.cex) {
-      const { support } = await apiProvider.depositCexSupport(
-        sendAction.token.id,
-        sendAction.token.chain,
-        result.cex.id
-      );
-      result.cex.supportToken = support;
-    }
-
-    if (result.contract) {
-      const { is_token } = await apiProvider.isTokenContract(
-        chainId,
-        sendAction.to
-      );
-      result.isTokenContract = is_token;
-    }
     result.name = desc.name;
     if (walletProvider.ALIAS_ADDRESS[sendAction.to.toLowerCase()]) {
       result.name = walletProvider.ALIAS_ADDRESS[sendAction.to.toLowerCase()];
     }
-  });
-  queue.add(async () => {
-    const usedChainList = await apiProvider.addrUsedChainList(sendAction.to);
-    result.usedChains = usedChainList;
-  });
-  queue.add(async () => {
-    const { is_spoofing } = await apiProvider.checkSpoofing({
-      from: sender,
-      to: sendAction.to,
-    });
-    result.receiverIsSpoofing = is_spoofing;
+
+    const [cexSupport, tokenContract] = await Promise.all([
+      result.cex
+        ? startRequest(() =>
+            apiProvider.depositCexSupport(
+              sendAction.token.id,
+              sendAction.token.chain,
+              result.cex!.id
+            )
+          )
+        : null,
+      result.contract
+        ? startRequest(() =>
+            apiProvider.isTokenContract(chainId, sendAction.to)
+          )
+        : null,
+    ]);
+    if (result.cex && cexSupport) {
+      result.cex.supportToken = cexSupport.support;
+    }
+    if (result.contract && tokenContract) {
+      result.isTokenContract = tokenContract.is_token;
+    }
   });
 
-  const whitelist = await walletProvider.getWhitelist();
-  // FIXME: I don't know why `isWhitelistEnabled` is blocking running tests, so skip it in test
-  if (process.env.NODE_ENV !== 'test') {
-    const whitelistEnable = await walletProvider.isWhitelistEnabled();
-    result.whitelistEnable = whitelistEnable;
+  const [
+    hasPrivateKeyInWallet,
+    whitelist,
+    whitelistEnable,
+    { has_transfer },
+    usedChains,
+    { is_spoofing },
+  ] = await Promise.all([
+    startRequest(() => walletProvider.hasPrivateKeyInWallet(sendAction.to)),
+    startRequest(() => walletProvider.getWhitelist()),
+    process.env.NODE_ENV !== 'test'
+      ? startRequest(() => walletProvider.isWhitelistEnabled())
+      : Promise.resolve(false),
+    startRequest(() =>
+      catchTimeoutError(
+        apiProvider.hasTransfer(chainId, sender, sendAction.to),
+        {
+          has_transfer: false,
+        }
+      )
+    ),
+    startRequest(() => apiProvider.addrUsedChainList(sendAction.to)),
+    startRequest(() =>
+      apiProvider.checkSpoofing({
+        from: sender,
+        to: sendAction.to,
+      })
+    ),
+    addressDescriptionTask,
+  ]);
+
+  if (hasPrivateKeyInWallet) {
+    result.hasReceiverPrivateKeyInWallet =
+      hasPrivateKeyInWallet === KEYRING_TYPE.SimpleKeyring;
+    result.hasReceiverMnemonicInWallet =
+      hasPrivateKeyInWallet === KEYRING_TYPE.HdKeyring;
   }
+
+  result.hasTransfer = has_transfer;
+  result.usedChains = usedChains;
+  result.receiverIsSpoofing = is_spoofing;
+  result.whitelistEnable = whitelistEnable;
   result.onTransferWhitelist = whitelist.includes(sendAction.to.toLowerCase());
-  await waitQueueFinished(queue);
 
   return result;
 };
