@@ -1225,10 +1225,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@rabby-wallet/rabby-api@0.9.19":
-  version "0.9.19"
-  resolved "https://registry.yarnpkg.com/@rabby-wallet/rabby-api/-/rabby-api-0.9.19.tgz#47b8cea3d74ce41328481394c5373df370fbc0ac"
-  integrity sha512-jOIYhvzu9G7Gr5T3/P49AD86bZ+5z+py/V6SSqUF1V5eVqmM8j8mZPkhYISSfNvOreCc54MQnpMXGU9rKZp3tA==
+"@rabby-wallet/rabby-api@0.9.62":
+  version "0.9.62"
+  resolved "https://registry.yarnpkg.com/@rabby-wallet/rabby-api/-/rabby-api-0.9.62.tgz#1ef79c5104a5b6be666a1fd48b8322eb2f01d345"
+  integrity sha512-gyzdbA5qHH6AFQsA9/X9em6rbNLIPNLZXwEw+wkaB0fuo+iRPny86HCBzwPjy8B9pJ0tUtPfpr5GzpBNwl02fQ==
   dependencies:
     "@rabby-wallet/rabby-sign" "0.4.0"
     axios "^0.27.2"
