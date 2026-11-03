@@ -174,3 +174,40 @@ test('keeps parsed token data when apiProvider returns no token', async () => {
     raw_amount_hex_str: '0x0',
   });
 });
+
+test.each([
+  ['edit false (reviewer marked safe)', { auto: null, edit: false }, true],
+  ['edit null (never reviewed)', { auto: null, edit: null }, false],
+  ['edit true (reviewer marked danger)', { auto: null, edit: true }, false],
+  ['no contract info (EOA)', null, false],
+])('isManualSafe: %s', async (_, isDanger, expected) => {
+  const actionData = createApproveTokenActionData();
+  const contractInfo = await apiProvider.getContractInfo('', ETH_CHAIN_ID);
+  const getContractInfo = jest
+    .fn()
+    .mockResolvedValue(
+      isDanger ? { ...contractInfo, is_danger: isDanger } : null
+    );
+
+  const requireData = (await fetchDataApproveToken({
+    type: 'transaction',
+    actionData,
+    contractCall: parseTxData.contract_call,
+    chainId: ETH_CHAIN_ID,
+    sender: SENDER,
+    walletProvider,
+    tx: txData,
+    apiProvider: Object.assign(Object.create(apiProvider), { getContractInfo }),
+  })) as ApproveTokenRequireData;
+  expect(requireData.isManualSafe).toBe(expected);
+
+  const ctx = await formatSecurityEngineApproveToken({
+    type: 'transaction',
+    actionData,
+    requireData,
+    chainId: ETH_CHAIN_ID,
+    isTestnet: false,
+    provider: formatProvider,
+  });
+  expect(ctx.tokenApprove?.isManualSafe).toBe(expected);
+});

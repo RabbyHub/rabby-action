@@ -57,3 +57,48 @@ test.each([
   });
   expect(ctx).toMatchSnapshot('formatSecurityEngineApproveNFT');
 });
+
+test.each([
+  ['edit false (reviewer marked safe)', { auto: null, edit: false }, true],
+  ['edit null (never reviewed)', { auto: null, edit: null }, false],
+  ['edit true (reviewer marked danger)', { auto: null, edit: true }, false],
+  ['no contract info (EOA)', null, false],
+])('isManualSafe: %s', async (_, isDanger, expected) => {
+  const actionData = parseActionApproveNFT({
+    type: 'transaction',
+    data: parseTxData['action'],
+    balanceChange: preExecData.balance_change,
+    sender: txData.from,
+    preExecVersion: preExecData.pre_exec_version,
+    gasUsed: preExecData.gas.gas_used,
+    tx: txData,
+  }) as ParsedTransactionActionData;
+  const contractInfo = await apiProvider.getContractInfo('', ETH_CHAIN_ID);
+  const getContractInfo = jest
+    .fn()
+    .mockResolvedValue(
+      isDanger ? { ...contractInfo, is_danger: isDanger } : null
+    );
+
+  const requireData = await fetchDataApproveNFT({
+    type: 'transaction',
+    actionData,
+    contractCall: parseTxData.contract_call,
+    chainId: ETH_CHAIN_ID,
+    sender: SENDER,
+    walletProvider,
+    tx: txData,
+    apiProvider: Object.assign(Object.create(apiProvider), { getContractInfo }),
+  });
+  expect(requireData).toMatchObject({ isManualSafe: expected });
+
+  const ctx = await formatSecurityEngineApproveNFT({
+    type: 'transaction',
+    actionData,
+    requireData,
+    chainId: ETH_CHAIN_ID,
+    isTestnet: false,
+    provider: formatProvider,
+  });
+  expect(ctx.nftApprove?.isManualSafe).toBe(expected);
+});
