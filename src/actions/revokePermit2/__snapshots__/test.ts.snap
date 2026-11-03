@@ -7,6 +7,7 @@ exports[`RevokePermit2: fetchDataRevokePermit2 1`] = `
   "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
+  "isManualSafe": true,
   "protocol": {
     "id": "uniswap2",
     "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
@@ -47,6 +48,7 @@ exports[`RevokePermit2: fetchDataRevokePermit2 2`] = `
   "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
+  "isManualSafe": true,
   "protocol": {
     "id": "uniswap2",
     "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",

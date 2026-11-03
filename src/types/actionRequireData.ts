@@ -60,6 +60,7 @@ export interface ApproveTokenRequireData {
   isEOA: boolean;
   contract: Record<string, ContractDesc> | null;
   riskExposure: number;
+  isManualSafe: boolean;
   rank: number | null;
   bornAt: number;
   protocol: {
