@@ -39,7 +39,7 @@ export const fetchDataApproveNFT: FetchActionRequiredData<{
       result.riskExposure = contractInfo.top_nft_spend_usd_value;
       result.bornAt = contractInfo.create_at;
       result.isDanger =
-        contractInfo.is_danger.auto || contractInfo.is_danger.edit;
+        contractInfo.is_danger.edit ?? contractInfo.is_danger.auto;
       result.isManualSafe = contractInfo.is_danger.edit === false;
       result.protocol = contractInfo.protocol;
     }
