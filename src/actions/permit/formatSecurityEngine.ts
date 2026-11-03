@@ -21,6 +21,7 @@ export const formatSecurityEnginePermit: FormatSecurityEngineContext = async (
       spender: actionData.permit.spender,
       isEOA: data.isEOA,
       riskExposure: data.riskExposure,
+      isManualSafe: data.isManualSafe,
       deployDays: provider.getTimeSpan(
         Math.floor(Date.now() / 1000) - data.bornAt
       ).d,

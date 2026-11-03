@@ -7,6 +7,7 @@ exports[`Permit: fetchDataPermit 1`] = `
   "hasInteraction": true,
   "isDanger": false,
   "isEOA": false,
+  "isManualSafe": true,
   "protocol": {
     "id": "uniswap2",
     "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
@@ -48,6 +49,7 @@ exports[`Permit: fetchDataPermit 2`] = `
   "id": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
   "isDanger": false,
   "isEOA": false,
+  "isManualSafe": true,
   "protocol": {
     "id": "uniswap2",
     "logo_url": "https://static.debank.com/image/project/logo_url/uniswap2/87a541b3b83b041c8d12119e5a0d19f0.png",
@@ -91,6 +93,7 @@ exports[`Permit: formatSecurityEnginePermit 1`] = `
     "deployDays": 1539,
     "isDanger": false,
     "isEOA": false,
+    "isManualSafe": true,
     "riskExposure": 20000000000,
     "spender": "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
   },
@@ -104,6 +107,7 @@ exports[`Permit: formatSecurityEnginePermit 2`] = `
     "deployDays": 1539,
     "isDanger": false,
     "isEOA": false,
+    "isManualSafe": true,
     "riskExposure": 20000000000,
     "spender": "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
   },

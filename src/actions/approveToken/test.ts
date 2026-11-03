@@ -174,3 +174,78 @@ test('keeps parsed token data when apiProvider returns no token', async () => {
     raw_amount_hex_str: '0x0',
   });
 });
+
+test.each([
+  // auto, edit -> isManualSafe ($0 warning skipped), isDanger (rule 1029)
+  [null, null, false, false],
+  [null, false, true, false],
+  [null, true, false, true],
+  [false, null, false, false],
+  [false, false, true, false],
+  [false, true, false, true],
+  [true, null, false, true],
+  [true, false, true, false],
+  [true, true, false, true],
+])(
+  'is_danger auto=%p edit=%p -> isManualSafe=%p isDanger=%p',
+  async (auto, edit, isManualSafe, isDanger) => {
+    const actionData = createApproveTokenActionData();
+    const contractInfo = await apiProvider.getContractInfo('', ETH_CHAIN_ID);
+    const getContractInfo = jest
+      .fn()
+      .mockResolvedValue({ ...contractInfo, is_danger: { auto, edit } });
+
+    const requireData = (await fetchDataApproveToken({
+      type: 'transaction',
+      actionData,
+      contractCall: parseTxData.contract_call,
+      chainId: ETH_CHAIN_ID,
+      sender: SENDER,
+      walletProvider,
+      tx: txData,
+      apiProvider: Object.assign(Object.create(apiProvider), {
+        getContractInfo,
+      }),
+    })) as ApproveTokenRequireData;
+
+    const ctx = await formatSecurityEngineApproveToken({
+      type: 'transaction',
+      actionData,
+      requireData,
+      chainId: ETH_CHAIN_ID,
+      isTestnet: false,
+      provider: formatProvider,
+    });
+    expect(ctx.tokenApprove).toMatchObject({ isManualSafe, isDanger });
+  }
+);
+
+test('no contract info (EOA) -> isManualSafe=false isDanger=false', async () => {
+  const actionData = createApproveTokenActionData();
+  const requireData = (await fetchDataApproveToken({
+    type: 'transaction',
+    actionData,
+    contractCall: parseTxData.contract_call,
+    chainId: ETH_CHAIN_ID,
+    sender: SENDER,
+    walletProvider,
+    tx: txData,
+    apiProvider: Object.assign(Object.create(apiProvider), {
+      getContractInfo: jest.fn().mockResolvedValue(null),
+    }),
+  })) as ApproveTokenRequireData;
+
+  const ctx = await formatSecurityEngineApproveToken({
+    type: 'transaction',
+    actionData,
+    requireData,
+    chainId: ETH_CHAIN_ID,
+    isTestnet: false,
+    provider: formatProvider,
+  });
+  expect(ctx.tokenApprove).toMatchObject({
+    isEOA: true,
+    isManualSafe: false,
+    isDanger: false,
+  });
+});

@@ -28,6 +28,7 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
     isEOA: false,
     contract: null,
     riskExposure: 0,
+    isManualSafe: false,
     hasInteraction: false,
     rank: null,
     bornAt: 0,
@@ -49,7 +50,8 @@ export const fetchDataApproveToken: FetchActionRequiredData<{
       result.riskExposure = contractInfo.spend_usd_value;
       result.bornAt = contractInfo.create_at;
       result.isDanger =
-        contractInfo.is_danger.auto || contractInfo.is_danger.edit;
+        contractInfo.is_danger.edit ?? contractInfo.is_danger.auto;
+      result.isManualSafe = contractInfo.is_danger.edit === false;
       result.protocol = contractInfo.protocol;
     }
 
