@@ -62,6 +62,7 @@ test.each([
   ['edit false (reviewer marked safe)', { auto: null, edit: false }, true],
   ['edit null (never reviewed)', { auto: null, edit: null }, false],
   ['edit true (reviewer marked danger)', { auto: null, edit: true }, false],
+  ['edit false overrides auto true', { auto: true, edit: false }, true],
   ['no contract info (EOA)', null, false],
 ])('isManualSafe: %s', async (_, isDanger, expected) => {
   const actionData = parseActionApproveNFT({
