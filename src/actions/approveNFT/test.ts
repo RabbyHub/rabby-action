@@ -100,5 +100,5 @@ test.each([
     isTestnet: false,
     provider: formatProvider,
   });
-  expect(ctx.nftApprove?.isManualSafe).toBe(expected);
+  expect(ctx.nftApprove).toMatchObject({ isManualSafe: expected });
 });

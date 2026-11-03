@@ -209,5 +209,5 @@ test.each([
     isTestnet: false,
     provider: formatProvider,
   });
-  expect(ctx.tokenApprove?.isManualSafe).toBe(expected);
+  expect(ctx.tokenApprove).toMatchObject({ isManualSafe: expected });
 });
